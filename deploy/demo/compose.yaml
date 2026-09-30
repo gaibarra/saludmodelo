@@ -1,0 +1,91 @@
+name: salud-modelo-demo
+x-common: &common
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options: {max-size: "5m", max-file: "2"}
+  security_opt: ["no-new-privileges:true"]
+services:
+  db:
+    <<: *common
+    image: postgres:16-alpine
+    env_file: runtime/database.env
+    command: ["postgres", "-c", "listen_addresses=", "-c", "max_connections=40", "-c", "shared_buffers=64MB"]
+    network_mode: none
+    volumes: ["database:/var/lib/postgresql/data", "socket:/var/run/postgresql"]
+    mem_limit: 384m
+    cpus: 0.5
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h /var/run/postgresql -U salud_modelo_demo -d salud_modelo_demo"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+  backend:
+    <<: *common
+    image: salud-modelo-demo-backend:0.31
+    build:
+      context: ../..
+      dockerfile: deploy/demo/backend.Dockerfile
+    env_file: runtime/backend.env
+    volumes: ["socket:/pgsocket:ro", "private:/private"]
+    depends_on:
+      db: {condition: service_healthy}
+    networks: [application]
+    mem_limit: 512m
+    cpus: 1.0
+    read_only: true
+    tmpfs: ["/tmp:size=64m,mode=1777", "/home/salud/.gunicorn:size=1m,uid=1002,gid=1002,mode=0700"]
+    cap_drop: [ALL]
+  worker:
+    <<: *common
+    image: salud-modelo-demo-backend:0.31
+    env_file: runtime/backend.env
+    command: ["/bin/sh", "-c", "trap 'exit 0' TERM INT; while true; do python manage.py worker_cycle --state-dir /private/worker-state; sleep 30 & wait $$!; done"]
+    volumes: ["socket:/pgsocket:ro", "private:/private"]
+    depends_on:
+      db: {condition: service_healthy}
+    networks: [application]
+    mem_limit: 256m
+    cpus: 0.5
+    read_only: true
+    tmpfs: ["/tmp:size=64m,mode=1777"]
+    cap_drop: [ALL]
+  frontend:
+    <<: *common
+    image: salud-modelo-demo-frontend:0.31
+    build:
+      context: ../..
+      dockerfile: deploy/demo/frontend.Dockerfile
+    networks: [application]
+    mem_limit: 512m
+    cpus: 1.0
+    read_only: true
+    tmpfs: ["/tmp:size=64m,mode=1777"]
+    cap_drop: [ALL]
+  gateway:
+    <<: *common
+    image: nginx:1.27-alpine
+    user: "101:101"
+    entrypoint: ["nginx", "-g", "daemon off;"]
+    volumes: ["./gateway.conf:/etc/nginx/nginx.conf:ro"]
+    ports: ["127.0.0.1:3117:8080"]
+    depends_on: [backend, frontend]
+    networks: [application, ingress]
+    mem_limit: 64m
+    cpus: 0.25
+    read_only: true
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    cap_drop: [ALL]
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8080/health"]
+      interval: 15s
+      timeout: 3s
+      retries: 5
+networks:
+  application:
+    internal: true
+  ingress: {}
+volumes:
+  database:
+  socket:
+  private:

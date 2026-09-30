@@ -1,0 +1,20 @@
+[Unit]
+Description=Salud Modelo worker
+After=network.target
+[Service]
+Type=oneshot
+User=salud-modelo
+Group=salud-modelo
+WorkingDirectory=/opt/salud-modelo/backend
+EnvironmentFile=/etc/salud-modelo.env
+ExecStart=/opt/salud-modelo/backend/.venv/bin/python manage.py worker_cycle --state-dir /var/lib/salud-modelo/monitoring
+Restart=no
+TimeoutStartSec=30min
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/salud-modelo /opt/salud-modelo/frontend/.next
+[Install]
+WantedBy=multi-user.target

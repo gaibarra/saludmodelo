@@ -1,0 +1,23 @@
+"use client";
+import {useState} from 'react';
+import {api} from '../../lib/api';
+type RequestRow={id:number;entry:number;author:string;day:string;previous_minutes:number;minutes:number;rationale:string;state:string;requested_by:string;reviewed_by:string|null;review_reason:string;can_review:boolean};
+type RequestPage={results:RequestRow[];next_before:number|null};
+export function AdministrativeTimeForm({entry,onSaved}:{entry:{id:number;correction_version:number;effective_minutes:number};onSaved:()=>Promise<void>}){
+ const [minutes,setMinutes]=useState(String(entry.effective_minutes)),[reason,setReason]=useState(''),[busy,setBusy]=useState(false),[notice,setNotice]=useState(''),[key,setKey]=useState<string|null>(null);
+ return <form aria-label={`Solicitar ajuste administrativo ${entry.id}`} onSubmit={async e=>{
+  e.preventDefault();setBusy(true);setNotice('');const clientKey=key??crypto.randomUUID();setKey(clientKey);
+  try{const result=await api<RequestRow>(`tracking/time/${entry.id}/administrative/`,'POST',{version:entry.correction_version,minutes:Number(minutes),rationale:reason,client_key:clientKey});setNotice(`Solicitud ${result.id} registrada. Los minutos no cambian hasta su aprobación independiente.`);setReason('');setKey(null);await onSaved();}
+  catch(error){setNotice((error as Error).message);}finally{setBusy(false);}
+ }}><p>Corrección administrativa de horas ajenas. Otra persona de Dirección deberá revisarla; el autor de las horas no puede aprobarla.</p><label>Minutos propuestos<input type="number" min="0" max="1440" required disabled={busy} value={minutes} onChange={e=>{setMinutes(e.target.value);setKey(null);}}/></label><label>Justificación administrativa<textarea required maxLength={2000} disabled={busy} value={reason} onChange={e=>{setReason(e.target.value);setKey(null);}}/></label><button disabled={busy||!reason.trim()||Number(minutes)===entry.effective_minutes}>Solicitar corrección administrativa</button>{notice&&<p role="status">{notice}</p>}</form>;
+}
+function Decision({row,onSaved}:{row:RequestRow;onSaved:()=>Promise<void>}){
+ const [reason,setReason]=useState(''),[busy,setBusy]=useState(false),[notice,setNotice]=useState('');
+ async function decide(approve:boolean){setBusy(true);setNotice('');try{await api(`tracking/time-requests/${row.id}/decision/`,'POST',{approve,rationale:reason});await onSaved();}catch(e){setNotice((e as Error).message);}finally{setBusy(false);}}
+ return <div><label>Motivo de revisión de solicitud {row.id}<textarea required maxLength={5000} disabled={busy} value={reason} onChange={e=>setReason(e.target.value)}/></label><button disabled={busy||!reason.trim()} onClick={()=>void decide(true)}>Aprobar corrección {row.id}</button><button disabled={busy||!reason.trim()} onClick={()=>void decide(false)}>Rechazar corrección {row.id}</button>{notice&&<p role="status">{notice}</p>}</div>;
+}
+export default function AdministrativeTimeRequests({task,onSaved}:{task:number;onSaved:()=>Promise<void>}){
+ const [rows,setRows]=useState<RequestRow[]>([]),[next,setNext]=useState<number|null>(null),[busy,setBusy]=useState(false),[notice,setNotice]=useState('');
+ async function load(before?:number){setBusy(true);setNotice('');try{const result=await api<RequestPage>(`tracking/tasks/${task}/time-requests/${before?`?before=${before}`:''}`);setRows(old=>before?[...old,...result.results.filter(r=>!old.some(o=>o.id===r.id))]:result.results);setNext(result.next_before);if(!before&&!result.results.length)setNotice('No hay solicitudes administrativas para esta tarea.');}catch(e){setNotice((e as Error).message);setRows([]);setNext(null);}finally{setBusy(false);}}
+ return <section aria-label="Correcciones administrativas de horas"><h3>Correcciones administrativas de horas</h3><p>Revise los valores y la justificación antes de decidir. Si las horas cambiaron, rechace la solicitud anterior y prepare otra con los valores actuales.</p><button disabled={busy} onClick={()=>void load()}>Consultar solicitudes de corrección</button>{notice&&<p role="status">{notice}</p>}{rows.map(row=><article key={row.id} aria-label={`Solicitud administrativa ${row.id}`}><p>Solicitud {row.id} · Registro {row.entry} · {row.author} · {row.day}</p><p>{row.previous_minutes} → {row.minutes} minutos · {({pending:'Pendiente',approved:'Aprobada',rejected:'Rechazada'} as Record<string,string>)[row.state]??row.state}</p><p>Solicita: {row.requested_by}. Motivo: {row.rationale}</p>{row.reviewed_by&&<p>Revisó: {row.reviewed_by}. Decisión: {row.review_reason}</p>}{row.can_review&&<Decision row={row} onSaved={async()=>{await load();await onSaved();}}/>}</article>)}{next!==null&&<button disabled={busy} onClick={()=>void load(next)}>Cargar más solicitudes de corrección</button>}</section>;
+}

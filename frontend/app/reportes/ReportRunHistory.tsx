@@ -1,0 +1,10 @@
+"use client";
+import {useState} from 'react';
+import {api} from '../../lib/api';
+type Row={id:number;period:string;schedule_version:number;generation_mode:string;rationale:string;created_at:string;report:{id:number;state:string;availability:string}};
+type Page={results:Row[];next_before:number|null};
+export default function ReportRunHistory({service}:{service:string}){
+ const [rows,setRows]=useState<Row[]>([]),[next,setNext]=useState<number|null>(null),[busy,setBusy]=useState(false),[notice,setNotice]=useState('');
+ async function load(before?:number){setBusy(true);setNotice('');try{const page=await api<Page>(`reports/services/${service}/schedule/runs/${before?`?before=${before}`:''}`);setRows(old=>before?[...old,...page.results.filter(r=>!old.some(p=>p.id===r.id))]:page.results);setNext(page.next_before);if(!before&&!page.results.length)setNotice('No hay borradores programados o recuperados.');}catch(e){setNotice((e as Error).message);setRows([]);setNext(null);}finally{setBusy(false);}}
+ return <section aria-label="Historial de borradores programados"><h3>Historial completo de borradores programados y recuperados</h3><p>Ordenado por registro de generación, del más reciente al más antiguo. Recuperar una semana anterior no cambia este orden.</p><button disabled={busy} onClick={()=>void load()}>Consultar historial de borradores</button>{notice&&<p role="status">{notice}</p>}<ul>{rows.map(r=><li key={r.id}>Semana {r.period} · {r.generation_mode==='backfill'?'Recuperación explícita':'Programación automática'} · Configuración {r.schedule_version} · {({pending:'Pendiente',approved:'Aprobado',rejected:'Rechazado'} as Record<string,string>)[r.report.state]} · {r.report.availability==='retained'?'Conservado':r.report.availability==='withdrawn'?'Retirado':'Sustituido'}. {r.rationale} <a href={`/api/v1/reports/saved/${r.report.id}/`}>Consultar informe histórico {r.report.id}</a></li>)}</ul>{next!==null&&<button disabled={busy} onClick={()=>void load(next)}>Cargar más borradores históricos</button>}</section>;
+}

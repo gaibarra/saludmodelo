@@ -1,0 +1,199 @@
+[Preguntas comunes para todas las unidades]
+la oferta real y las solicitudes que se derivan|servicio; sede; población; exclusiones; destino de derivación|El servicio ficticio atiende adultos y deriva una solicitud fuera de su alcance.
+las personas que intervienen en cada paso|quién solicita; quién ejecuta; quién autoriza; suplente|Una persona recibe la solicitud y otra autoriza su cierre.
+el inicio y el cierre comprobable de una solicitud|canal de entrada; evento inicial; pasos; resultado de cierre|Una solicitud ficticia entra por recepción y termina con una entrega registrada.
+los datos obligatorios y los que dependen del caso|dato o documento; cuándo se solicita; excepción; responsable|Un campo ficticio sólo se pide cuando interviene un representante.
+los registros usados y cuál se reconoce como oficial|nombre del registro; función; dueño; versión; registro oficial|Una hoja ficticia apoya el trabajo, pero el formato aprobado conserva el registro oficial.
+el volumen y la duración del trabajo|periodo medido; casos diarios; temporada alta; duración; fuente|En una muestra ficticia se cuentan casos y se mide el tiempo de atención por separado.
+los errores que ocasionan retrabajo|error; paso donde ocurre; frecuencia observada; efecto; corrección|Una solicitud ficticia vuelve a captura porque falta un dato obligatorio.
+las diferencias de atención cuando existen condiciones especiales|condición; documento adicional; autorización; excepción|Un caso ficticio con tutor requiere comprobar su representación.
+la respuesta operativa ante interrupciones|tipo de falla; responsable; alternativa; registro; regreso a operación|Ante una falla ficticia se usa el procedimiento de contingencia aprobado.
+los límites del intercambio entre servicios|dato; servicio destinatario; finalidad; autorización; restricción|El servicio receptor ficticio recibe el estado de la referencia, no toda la historia.
+los informes y cómo se calculan sus cifras|reporte; destinatario; frecuencia; fórmula; registros de origen|Un informe ficticio distingue personas atendidas de número de sesiones.
+los resultados verificables para aceptar el sistema|recorrido; resultado esperado; excepción; evidencia; validador|El responsable ficticio reproduce un caso y sus excepciones antes de aceptar la entrega.
+[Unidad de odontología]
+la comprobación de identidad antes de abrir un expediente|identificador; búsqueda previa; posible duplicado; decisión de vinculación|Dos registros ficticios parecidos se revisan antes de decidir si corresponden a una persona.
+la lectura del odontograma y sus cambios históricos|nomenclatura; pieza; superficie; hallazgo; fecha; tratamiento|Un hallazgo ficticio permanece en el historial cuando se registra un tratamiento posterior.
+la autoría y revisión de los datos clínicos|dato clínico; capturista; validador; momento de revisión; corrección|Un alumno ficticio captura información y el supervisor la revisa antes de liberarla.
+la relación entre plan de tratamiento y presupuesto|tratamiento; concepto presupuestado; versión; cambio; autorización|Un presupuesto ficticio conserva la versión anterior cuando se modifica el plan.
+la documentación del consentimiento por procedimiento|procedimiento; consentimiento; explicación; representación; revisión|Un caso ficticio registra quién comprobó la representación antes de solicitar consentimiento.
+los recursos que deben coincidir para confirmar una cita|procedimiento; recursos obligatorios; recursos opcionales; duración y preparación; quién confirma; bloqueos; alternativa|Un procedimiento ficticio reserva sillón y supervisor; imagen se solicita sólo cuando está indicada.
+la supervisión de una atención realizada por alumnos|actividad; alumno asignado; supervisor; revisión; bloqueo de cierre|Una nota ficticia no se considera terminada mientras espera la revisión del supervisor.
+la vinculación de imágenes y trabajos externos con el tratamiento|tipo de archivo o solicitud; tratamiento; proveedor; entrega; repetición|Una entrega protésica ficticia conserva su solicitud y el motivo de una repetición.
+la trazabilidad del instrumental y de los materiales|lote o ciclo; liberación; material utilizado; atención vinculada; equipo retirado|Una carga ficticia sin liberación se mantiene identificada y fuera de disponibilidad.
+la ruta humana ante complicaciones y eventos adversos|evento; quién atiende; interrupción; referencia; seguimiento|Ante una complicación ficticia se registra la actuación del profesional y la referencia autorizada.
+los movimientos de cobro de tratamientos por etapas|etapa; anticipo; cargo; descuento; devolución; autorización|Un anticipo ficticio se conserva vinculado al tratamiento aunque una etapa no se complete.
+las actividades de seguimiento y el cierre del caso|seguimiento indicado; responsable; contacto autorizado; comprobación; cierre|Un caso ficticio permanece pendiente hasta documentar el seguimiento previsto por el profesional.
+[Unidad de fisioterapia]
+los casos admitidos y los que necesitan valoración externa|motivo; criterio de admisión; profesional que decide; referencia|Una solicitud ficticia se deriva cuando el responsable identifica que excede el alcance del servicio.
+las escalas y unidades autorizadas para evaluar|población; prueba o escala; unidad; versión; formato|Dos evaluaciones ficticias se comparan usando la misma escala y unidad.
+la forma de registrar la situación funcional inicial|dolor; movilidad; fuerza; limitación; objetivo inicial|Un objetivo ficticio se vincula a una limitación registrada en la evaluación inicial.
+quién decide el programa de sesiones y sus cambios|profesional; cantidad; frecuencia; duración; criterio de ajuste|Un cambio ficticio de frecuencia conserva la decisión y su responsable.
+la capacidad simultánea de personas y recursos|modalidad; terapeutas; camillas; equipos; límite de ocupación|Una sesión ficticia no se confirma si rebasa el límite aprobado de recursos.
+los datos que deben documentarse en cada intervención|técnica; parámetros; unidad; registro; validación|La nota ficticia registra los parámetros indicados por el profesional y quién los verificó.
+las comprobaciones profesionales previas a una técnica|técnica; antecedentes a revisar; contraindicaciones; quién decide; registro|Un profesional ficticio documenta su revisión antes de autorizar una técnica.
+la separación entre sesiones realizadas y saldo del paquete|paquete; sesiones usadas; cancelación; interrupción; cambio de terapeuta|Un paquete ficticio conserva por separado las sesiones efectuadas y el saldo administrativo.
+los criterios para reevaluar y decidir la continuidad|momento de reevaluación; escala; criterio; continuar o cambiar; alta o referencia|Una reevaluación ficticia queda vinculada a la decisión profesional de modificar el plan.
+la entrega y seguimiento de ejercicios domiciliarios|plan autorizado; versión; entrega; reporte de adherencia; revisión profesional|Una persona ficticia reporta dificultades y el profesional revisa sus indicaciones.
+la asignación de alumnos y cobertura de supervisión|alumno; actividad; periodo; supervisor; ausencia; nota pendiente|Una ausencia ficticia del supervisor activa la alternativa autorizada y conserva las notas pendientes.
+la retirada de un equipo averiado de la agenda|equipo; bloqueo; citas afectadas; alternativa; liberación técnica|Un equipo ficticio queda bloqueado y sus citas pasan a revisión de reprogramación.
+[Unidad de nutrición]
+la oferta y los horarios confirmados de cada sede|sede; servicio; horario; fuente vigente; quién confirma|Dos sedes ficticias confirman sus horarios por separado antes de publicarlos.
+los datos usados en una consulta nutricional|antecedentes; hábitos; recordatorio; mediciones; registro|Una consulta ficticia identifica qué datos se obtuvieron y cuáles siguen pendientes.
+la procedencia de cada medición o resultado|dato; medido o referido; fuente externa; fecha; responsable|Una medición ficticia referida por el paciente se distingue de la realizada en consulta.
+las fórmulas y unidades que deben conservarse|variable; unidad; fórmula; equipo; versión; aprobador|Un cálculo ficticio conserva la fórmula usada aunque después se apruebe otra versión.
+las condiciones personales consideradas al acordar metas|alergias; restricciones; preferencias; contexto; metas|Un plan ficticio documenta una restricción y la meta acordada por el profesional.
+la presentación y el historial del plan alimentario|equivalentes o menús; versión; ajuste; autor; entrega|Un ajuste ficticio crea otra versión del plan y permite consultar la anterior.
+las modalidades de atención según población|población; servicio ofrecido; formato; competencia; referencia|Un caso ficticio requiere un formato distinto y revisión del profesional competente.
+los criterios de seguimiento y evolución nutricional|frecuencia; indicador; unidad; objetivo; revisión|Un seguimiento ficticio registra indicadores acordados además del peso.
+la decisión y vigencia de una cuota socioeconómica|criterio; estudio; cuota; aprobador; vigencia; revisión|Una cuota ficticia conserva el estudio y la autorización que la sustentan.
+la información mínima intercambiada con otros servicios|dato; finalidad; destinatario; autorización; registro de entrega|Una referencia ficticia comparte sólo la información autorizada para su finalidad.
+la separación de historias en atención familiar|integrante; historia individual; permiso; información compartible|Dos integrantes ficticios conservan historias separadas aunque acudan juntos.
+los documentos entregados y la corrección de planes enviados|documento; versión; destinatario; entrega; corrección; aviso|Un plan ficticio corregido identifica la versión reemplazada y cómo se comunicó el cambio.
+[Unidad de psicología clínica]
+la población atendida y los límites del servicio|edad; motivo; modalidad; exclusión; canalización|Una solicitud ficticia fuera del alcance se canaliza por la ruta humana definida.
+la revisión humana de solicitudes potencialmente urgentes|quién revisa; canal; horario; alternativa fuera de horario; registro|Una solicitud ficticia fuera de horario muestra el canal humano aprobado, sin prometer atención inexistente.
+la separación entre datos de agenda y contenido terapéutico|dato; recepción; terapeuta; supervisor asignado; restricción|Recepción ficticia confirma una cita sin leer las notas de la sesión.
+los cambios de consentimiento y representación de menores|participantes; representación; consentimiento; cambio; verificador|Un cambio ficticio de representación conserva el documento anterior y la revisión del nuevo.
+la privacidad individual en casos de pareja o familia|caso; participante; nota individual; destinatario del informe; autorización|Un participante ficticio no recibe la nota individual de otro integrante.
+las licencias y competencias de uso de pruebas|prueba; licencia; quién aplica; quién califica; quién interpreta|Una prueba ficticia se registra en el catálogo sin copiar reactivos protegidos.
+los tipos de nota y las correcciones con historial|tipo de documento; autor; revisión; corrección; vínculo al original|Una corrección ficticia se agrega conservando la nota previamente liberada.
+los datos mínimos de una referencia interdisciplinaria|destino; finalidad; resumen autorizado; consentimiento o fundamento; recepción|Una referencia ficticia entrega un resumen autorizado, sin abrir todo el expediente.
+las autorizaciones diferenciadas para uso docente o grabación|finalidad; autorización; alcance; vigencia; revocación|Una autorización ficticia para observación no se toma como permiso de grabación.
+la transición al cambiar terapeuta o cerrar atención|motivo; responsable; traslado; cierre; autorización; seguimiento|Un cambio ficticio de terapeuta conserva quién recibió el caso y qué información fue autorizada.
+los recordatorios que protegen la confidencialidad|canal autorizado; contenido mínimo; destinatario; confirmación|Un recordatorio ficticio indica una cita sin revelar el motivo de atención.
+los informes agregados para Dirección|indicador; agrupación; periodo; exclusiones; riesgo de identificación|Un informe ficticio cuenta atenciones sin incluir contenido de sesiones individuales.
+[Ciencias del deporte y readaptación]
+las pruebas realmente ofrecidas y sus condiciones|prueba; equipo; personal; preparación; condiciones previas|Una prueba ficticia sólo aparece disponible cuando su responsable confirma recursos y condiciones.
+quién autoriza iniciar una prueba|profesional; criterio de aptitud; documento; decisión; fecha|Una prueba ficticia conserva la autorización profesional antes de su inicio.
+la diferencia entre una prueba válida y una suspendida|estado; motivo; quién decide; informe; efecto en cobro|Una prueba ficticia suspendida no se presenta en el informe como resultado definitivo.
+la comparabilidad de las mediciones deportivas|variable; unidad; método; protocolo; versión|Dos mediciones ficticias sólo se comparan después de comprobar método y unidades.
+los archivos que producen los equipos|equipo; formato; ejemplo autorizado; identificador; importación|Un archivo ficticio se vincula mediante un identificador revisado antes de incorporar resultados.
+la cadena de revisión de resultados|operador; intérprete; revisor; liberador; fecha|Un resultado ficticio permanece pendiente hasta que el profesional autorizado lo libera.
+las decisiones profesionales de readaptación y retorno|programa; responsable; criterio; reevaluación; autorización de retorno|Un retorno ficticio conserva la decisión del profesional y su revisión.
+la coordinación entre especialidades sin duplicar registros|servicio; episodio; referencia; responsable; cobro asociado|Tres servicios ficticios vinculan sus intervenciones a referencias identificadas.
+los límites de acceso de entrenadores y organizaciones|solicitante; finalidad; datos autorizados; aprobador; entrega|Un entrenador ficticio recibe únicamente el informe autorizado para su finalidad.
+la organización y cobro de una jornada empresarial|cotización; convenio; asistencia grupal; atención individual; informe|Una jornada ficticia registra asistencia sin mezclarla con expedientes individuales.
+las instrucciones previas a una evaluación|prueba; preparación; responsable que aprueba; versión; entrega|Una instrucción ficticia al usuario muestra quién la validó y para qué prueba sirve.
+la actuación ante equipo sin verificación o con falla|equipo; condición; suspensión; citas afectadas; responsable; liberación|Una falla ficticia se registra y el recurso permanece bloqueado hasta su revisión autorizada.
+[Atención y prevención de la salud]
+la población que puede solicitar atención|alumnos; personal; visitantes; público; criterios|Una cartera ficticia distingue a qué grupos presta atención y a cuáles canaliza.
+los actos permitidos para cada función|perfil; acto; competencia; límite; destino de referencia|Un perfil ficticio canaliza una solicitud que rebasa sus facultades.
+la ruta para pedir y recibir ayuda en campus|canal; receptor; responsable inmediato; ubicación; alternativa|Una solicitud ficticia identifica al responsable humano que recibe el aviso.
+los datos inmediatos y los que se completan después|dato mínimo; momento de captura; responsable; registro posterior|Un incidente ficticio separa la hora real del evento de la captura posterior.
+quién puede ser informado de un incidente|contacto; representación; información autorizada; decisor; registro|Un aviso ficticio registra a quién se informó y quién autorizó esa comunicación.
+la comprobación de que una referencia fue recibida|destino; envío; recepción; responsable; seguimiento|Una referencia ficticia conserva el acuse y el pendiente de seguimiento.
+la información permitida a áreas académicas o laborales|área destinataria; finalidad; dato mínimo; autorización|Un área ficticia recibe una constancia autorizada sin el detalle clínico.
+la diferencia entre una constancia y un documento clínico|tipo; finalidad; contenido; emisor; permisos|Una constancia ficticia acredita una gestión sin copiar diagnósticos.
+los registros separados de programas especialmente sensibles|programa confirmado; finalidad; expediente; permisos; responsable|Un programa ficticio conserva un expediente separado con acceso restringido.
+la continuidad fuera de horario y sin conexión|horario; canal alternativo; formato de contingencia; custodia; recaptura|Una interrupción ficticia activa el formato autorizado y registra la recaptura posterior.
+la organización y registro de actividades preventivas|campaña; población; consentimiento; asistencia; resultado; responsable|Un taller ficticio registra asistencia por separado de cualquier atención individual.
+los indicadores preventivos sin identificación innecesaria|indicador; unidad de conteo; periodo; agrupación; acceso|Un reporte ficticio separa asistentes únicos y actividades realizadas.
+[Servicios comunitarios laborales y educativos]
+la oferta comunitaria y sus responsables por actividad|actividad; modalidad; sede; responsable; alcance|Una cartera ficticia distingue atención clínica, taller educativo y servicio laboral.
+los criterios de elegibilidad y cuotas sociales|criterio; documento; cuota o descuento; vigencia; autorizador|Una cuota ficticia conserva su criterio y la fecha de revisión acordada.
+el papel de la USC al tramitar una cita|recepción de solicitud; asignación o canalización; confirmación; responsable|La unidad ficticia remite la solicitud y espera confirmación del servicio receptor.
+la comprobación de recepción de personas canalizadas|referencia; receptor; confirmación; dato mínimo de resultado; pendiente|Una canalización ficticia confirma recepción sin recibir notas clínicas completas.
+la formalización de un servicio a organizaciones|organización; propuesta; convenio; cotización; firmante autorizado|Una jornada ficticia no se presenta como comprometida hasta registrar la autorización correspondiente.
+la separación de datos laborales y clínicos|proceso laboral; dato; finalidad; expediente; acceso|Una evaluación ficticia de selección se conserva separada de una historia de terapia.
+los productos entregables a la organización contratante|informe; destinatario; datos agregados; datos restringidos; autorización|Una empresa ficticia recibe resultados agregados conforme al alcance autorizado.
+los servicios educativos realmente ofrecidos|servicio; edades; metodología; instrumento autorizado; responsable|Un taller ficticio identifica su población y el instrumento aprobado para evaluar resultados.
+la organización de una actividad y el trabajo de alumnos|actividad; sede; asistencia; equipo; alumno; supervisión|Una jornada ficticia registra participantes y trabajo supervisado sin contarlos como lo mismo.
+la evaluación y seguimiento de proyectos comunitarios|objetivo; indicador; satisfacción; queja; seguimiento; dueño|Un proyecto ficticio registra una queja y comprueba la acción de seguimiento.
+los documentos que deben revisarse al repetir un servicio|documento; versión; vigencia; cambio; aprobador|Un convenio ficticio se revisa antes de reutilizarlo en otra jornada.
+el conteo de personas únicas entre varias unidades|identificador; evento; servicio; regla de deduplicación; indicador|Una persona ficticia con dos atenciones cuenta una vez como beneficiaria y dos como atención.
+[Vinculación con el despacho jurídico]
+la oferta jurídica que se confirma para la plataforma|materia; servicio; exclusión; canalización; responsable|Un asunto ficticio fuera de la cartera se canaliza sin abrir un expediente completo.
+la revisión de conflictos antes de asignar asuntos|partes; verificador; revisión; decisión; restricción de acceso|Un conflicto ficticio se revisa antes de mostrar documentos al equipo.
+los datos de las partes y sus permisos de consulta|solicitante; contraparte; tercero; dato requerido; acceso|Un asunto ficticio limita los datos de terceros a quienes participan en su atención.
+la documentación que acredita facultades para actuar|acto; poder o autorización; verificador; alcance; vigencia cuando proceda|Una autorización ficticia se revisa antes de permitir una actuación concreta.
+la distinción entre orientación y representación|modalidad; actividad; compromiso; autorización; cierre|Una consulta ficticia de orientación no se registra como representación procesal.
+la revisión profesional de plazos y entregas|evento; plazo; fuente; responsable; verificador; entrega|Un vencimiento ficticio queda pendiente hasta comprobar su fuente y responsable.
+las actividades autorizadas para estudiantes|estudiante; actividad; periodo; supervisor; revisión|Un borrador ficticio de alumno requiere la revisión del supervisor antes de entregarse.
+la custodia y devolución de documentos|documento; original o copia; ingreso; custodio; entrega; acuse|Un original ficticio conserva quién lo recibió y el acuse de devolución.
+la información mínima de seguimiento para la USC|referencia; estado; destinatario; dato permitido; restricción|La USC ficticia recibe el estado del asunto sin consultar su contenido reservado.
+las cuotas, gastos y comprobantes de un asunto|concepto; gratuidad; cuota; gasto; comprobante; autorización|Un gasto ficticio se distingue de la cuota de asesoría y conserva su comprobante.
+la atención de solicitudes sobre documentación|solicitud; legitimación; decisión; copia o corrección; entrega|Una solicitud ficticia de copia conserva la verificación del solicitante y el acuse.
+el cierre del asunto y las obligaciones que continúan|causa de cierre; autorización; documentos; seguimiento; responsable|Un asunto ficticio cerrado mantiene un pendiente de devolución documental.
+[Recepción administración docencia y recursos]
+la corrección de identidad sin perder registros previos|identificadores; coincidencia; decisión humana; vinculación; historial|Dos registros ficticios similares se revisan sin fusionarlos automáticamente.
+la reserva de recursos y tiempos de preparación|servicio; recurso; duración; limpieza; margen; bloqueo|Una cita ficticia incluye el margen autorizado de preparación del recurso.
+las autorizaciones de excepciones administrativas|excepción; quién solicita; quién autoriza; límite; fundamento|Un descuento ficticio conserva una autorización distinta de su captura.
+la separación de documentos y movimientos financieros|presupuesto; cargo; pago; factura; devolución; sistema o PAC|Un pago ficticio se vincula a su cargo sin confundirlo con la factura.
+la conciliación de medios de pago y diferencias|medio; registro; corte; diferencia; revisión; aprobación|Una diferencia ficticia de corte permanece pendiente hasta revisión autorizada.
+las facultades de alumnos y pasantes por asignación|persona; semestre; rotación; actividad; supervisor; vigencia|Una rotación ficticia autoriza actividades concretas durante un periodo definido.
+la terminación de accesos sin borrar notas previas|rotación; fecha de término; accesos; notas pendientes; reasignación|Una rotación ficticia vencida conserva autoría, pero impide nuevas capturas no autorizadas.
+la identificación y control de materiales sensibles al inventario|material; lote; caducidad; stock mínimo; trazabilidad; urgencia|Un material ficticio conserva lote y vencimiento cuando su regla aprobada lo requiere.
+la liberación de instrumental y su relación con la atención|ciclo; resultado; liberador; instrumental; atención vinculada|Una liberación ficticia conserva el ciclo de origen del instrumental utilizado.
+la revisión y autorización de retorno de equipos|equipo; mantenimiento; calibración; bloqueo; liberador|Un equipo ficticio vuelve a disponibilidad sólo tras registrar su liberación autorizada.
+las solicitudes de datos que necesitan revisión jurídica|solicitud; categoría; fundamento; conservación; autorización; entrega|Una solicitud ficticia de eliminación se revisa antes de disponer de registros.
+la respuesta técnica y autorización de recuperación|incidente; responsable; respaldo; comprobación; autorización de retorno|Un ensayo ficticio documenta quién restauró y quién verificó la recuperación.
+[ODC]
+los procedimientos efectivamente realizados y su respaldo operativo|procedimiento; profesional; establecimiento; autorización por verificar|Un procedimiento ficticio queda pendiente hasta confirmar quién lo realiza y en qué sede.
+la revisión del consentimiento cuando cambia el plan|cambio; nueva explicación; documento; firma por verificar; responsable|Un cambio ficticio de plan conserva qué explicación se dio y qué consentimiento se revisó.
+la identificación de ciclos de esterilización y cargas fallidas|equipo; ciclo; carga; resultado; liberador; inmovilización|Una carga ficticia fallida se identifica y se mantiene inmovilizada conforme al protocolo autorizado.
+el equipo radiológico existente que debe evaluar el especialista|tipo; marca; modelo; uso; permisos; revisión especializada|El inventario ficticio identifica un equipo concreto para que el especialista determine los requisitos.
+la ruta ante accidentes por punzocortantes o reacciones|evento; atención humana; responsable de aviso; seguimiento; registro|Un evento ficticio conserva por separado la atención y el seguimiento institucional.
+las competencias del alumno y la supervisión presencial|alumno; actividad permitida; supervisor presente; registro; liberación|Un procedimiento ficticio registra quién supervisó y quién liberó la nota.
+[FIC]
+la clasificación de atención y quién determina el diagnóstico|modalidad real; profesional; competencia; diagnóstico; referencia|Un servicio ficticio distingue rehabilitación médica de otra atención ofrecida.
+las comprobaciones previas a cada modalidad terapéutica|modalidad; comprobación; señal de alarma; decisor; registro|Una revisión ficticia queda documentada por el profesional antes de decidir la intervención.
+la autorización y capacitación para usar equipos|equipo; usuario autorizado; capacitación; mantenimiento; evidencia|Una asignación ficticia de equipo conserva quién verificó capacitación y mantenimiento.
+la existencia de técnicas que requieren revisión específica|técnica confirmada; competencia; protocolo; instalación; verificador|Una técnica ficticia permanece por confirmar hasta revisar su protocolo y personal competente.
+los criterios comparables de reevaluación y cierre|escala; unidad; evaluación previa; criterio de cierre; responsable|Un cierre ficticio conserva la comparación y la decisión del profesional.
+la respuesta a incidentes durante una intervención|incidente; atención humana; dispositivo; responsable; seguimiento|Una falla ficticia de dispositivo genera registro y revisión por el responsable competente.
+[NUC]
+la clasificación de actividades nutricionales realmente ofrecidas|orientación; consulta; tratamiento; alimentación colectiva; venta; responsable|Una cartera ficticia separa consulta y venta de productos para revisar sus reglas propias.
+la documentación clínica y la referencia nutricional|diagnóstico profesional; alergias; restricciones; objetivos; referencia|Un formato ficticio enlaza los objetivos definidos por el profesional con la referencia documentada.
+la aprobación y conservación de los cálculos nutricionales|cálculo; datos; unidad; versión de fórmula; validador|Un resultado ficticio conserva la fórmula original aunque después cambie el catálogo.
+los formatos que cambian según población atendida|población; modalidad; formato; adaptación; aprobación profesional|Un formato ficticio adaptado a una población conserva quién autorizó sus campos.
+la operación alimentaria cuando existe preparación de alimentos|actividad confirmada; proveedor; temperatura; higiene; lote; queja|Una cocina ficticia registra un lote y el seguimiento de una queja según su procedimiento aprobado.
+la revisión de materiales y ofertas dirigidas al público|material; finalidad; afirmación; revisor; versión autorizada|Un anuncio ficticio se devuelve para corregir una promesa no sustentada antes de publicarse.
+[PSC]
+la finalidad de cada servicio psicológico y el titular de sus registros|modalidad; finalidad; participante; registro; permisos|Un caso ficticio distingue una evaluación laboral de una atención terapéutica.
+la ruta humana aprobada ante situaciones críticas|situación; protocolo; responsable humano; canal inmediato; referencia|Una consulta ficticia registra el canal humano previsto sin delegar la intervención al software.
+las decisiones profesionales sobre avisos y referencias|evento; decisor; fundamento por verificar; plazo; envío; acuse|Un aviso ficticio no recibe un plazo automático hasta que el responsable confirma su fundamento.
+la comprobación de representación y restricciones familiares|menor; representante; documento; restricción; revisión jurídica|Un caso ficticio conserva la revisión de una restricción antes de entregar información.
+las autorizaciones de entrega de informes a terceros|solicitante; finalidad; contenido; fundamento; aprobador; acuse|Un empleador ficticio recibe sólo el informe expresamente autorizado.
+las condiciones de sesiones remotas, grabaciones y pruebas|modalidad; tecnología; licencia; autorización; privacidad; responsable|Una grabación ficticia tiene una autorización diferenciada de la atención.
+[DEC]
+la finalidad real de cada prueba deportiva|prueba; rendimiento o atención clínica; finalidad; responsable de clasificación|Una prueba ficticia se clasifica por su finalidad antes de asignar controles.
+la decisión profesional de iniciar, ajustar o interrumpir una prueba|aptitud; contraindicación; intensidad; interrupción; profesional; registro|Una suspensión ficticia conserva la decisión de quien estaba autorizado para revisar la prueba.
+las técnicas realizadas y quién interpreta sus resultados|técnica; equipo; muestra si existe; personal; competencia; informe|Un catálogo ficticio confirma una técnica antes de ofrecerla o habilitar su captura.
+la participación de menores y entrega de resultados a equipos|participante; representación; destinatario; autorización; límite de datos|Un club ficticio recibe exclusivamente resultados autorizados para su finalidad.
+las verificaciones de funcionamiento de instrumentos|instrumento; prueba técnica; calibración; registro; responsable; liberación|Un instrumento ficticio conserva la evidencia técnica que permite volver a utilizarlo.
+los proyectos que usan datos para investigación|proyecto; finalidad; datos; aprobación; consentimiento; responsable|Un conjunto ficticio de investigación permanece separado de la operación asistencial.
+[UAC]
+los actos realizados frente a los que sólo se canalizan|acto; personal; capacidad; autorización; referencia|Una solicitud ficticia de una actividad no confirmada se remite al servicio competente.
+las facultades y comprobaciones al administrar productos|prescriptor; aplicador; identidad; alergias; indicación; revisión|Un registro ficticio conserva quién comprobó los datos antes de la administración autorizada.
+la trazabilidad de medicamentos o biológicos administrados|producto; lote; caducidad; temperatura cuando corresponda; persona; registro|Una administración ficticia queda vinculada al lote y al personal que la registró.
+la ruta humana de notificación epidemiológica|alerta; receptor; responsable; canal oficial; plazo verificado; acuse|Una alerta ficticia genera revisión humana y conserva el acuse del aviso autorizado.
+las condiciones de pruebas rápidas o toma de muestras|actividad confirmada; control de calidad; consentimiento; referencia; responsable|Una muestra ficticia identifica quién comprobó los controles y cómo se documentó la referencia.
+la referencia ante una necesidad que supera la capacidad|capacidad; protocolo; responsable humano; destino; traslado; recepción|Un caso ficticio documenta la referencia y recepción sin prometer atención que no existe.
+[COC]
+la responsabilidad operativa de una jornada externa|unidad; sede; permiso por verificar; personal; materiales; responsable|Una jornada ficticia identifica quién verifica el lugar y los recursos antes de autorizarla.
+las responsabilidades delimitadas por el convenio|partes; servicio; derivación; pagos; datos; atención posterior|Un convenio ficticio identifica quién conserva datos y quién da seguimiento tras la jornada.
+la custodia del registro original entre instituciones|registro; institución custodio; acceso; copia; entrega autorizada|Dos instituciones ficticias dejan por escrito cuál conserva el original.
+los productos de información entregados al empleador|resultado agregado; recomendación; dato individual; finalidad; autorización|Un informe ficticio al empleador no incorpora datos individuales sin revisión autorizada.
+la clasificación del centro de trabajo y metodología a revisar|centro; número de trabajadores; fecha; método; alcance contractual; validador|Un servicio ficticio registra el tamaño del centro para que el especialista confirme la metodología aplicable.
+la comprobación de acceso al servicio receptor de una referencia|referencia; destino; confirmación; seguimiento; evidencia mínima|Una referencia ficticia queda abierta hasta comprobar la recepción o registrar un impedimento.
+[JUC]
+la identificación del cliente ante intereses contrapuestos|cliente; partes; interés; conflicto; decisión del responsable|Un asunto ficticio queda pendiente mientras se determina a quién representa el despacho.
+la revisión de conflictos antes de recibir documentos|partes; control previo; verificador; decisión; acceso restringido|Un documento ficticio no se distribuye antes de completar la revisión de conflicto.
+las facultades documentadas para cada actuación|acto; representante; documento; alcance; verificador|Un poder ficticio se revisa para una actuación concreta, sin presumir facultades universales.
+la justificación de una entrega de información clínica|dato necesario; finalidad; fundamento; profesional validador; destinatario|Una entrega ficticia conserva quién autorizó la información mínima solicitada.
+la conservación de documentos por litigio o investigación|documento; causa; custodia; suspensión de eliminación; quién puede levantarla|Un archivo ficticio queda bajo conservación especial hasta una decisión autorizada.
+la base y revisión de cada cálculo de plazo|fuente; jurisdicción; notificación; calendario; cálculo; revisor|Un vencimiento ficticio permanece propuesto hasta comprobar fuente, fecha inicial y revisión jurídica.
+[ADC]
+la entidad que presta servicios y conserva sus registros|razón social; servicio; cobro; factura; custodia del expediente|Un catálogo ficticio distingue a quien presta la atención de quien emite un comprobante.
+la correspondencia entre permisos, domicilio y cartera|domicilio; actividad; documento; titular; responsable; revisión|Una sede ficticia conserva la revisión de sus actividades frente a los documentos exhibidos.
+la verificación de competencias antes de asignar atención|persona; título; cédula; capacitación; actividad autorizada; verificador|Una asignación ficticia registra quién comprobó las facultades para esa actividad.
+la autorización y vigencia de una asignación de alumno|documento; alumno; supervisor; actividad; inicio; fin|Un permiso ficticio termina con la rotación sin eliminar la autoría de notas anteriores.
+la separación de autorizaciones por finalidad|atención; docencia; investigación; imagen; documento; revocación|Una autorización ficticia para docencia no se reutiliza como autorización de imagen.
+los controles que impiden usar un recurso no apto|recurso; compra o mantenimiento; caducidad; retiro; bloqueo; liberador|Un material ficticio retirado deja de estar disponible aunque siga en el inventario histórico.
+[p00885::p00887]
+la ayuda a personas y la interrupción segura durante una evacuación|persona que ayuda; procedimiento en curso; ruta; capacitación; simulacro; corrección|Un simulacro ficticio registra quién apoyó a una persona y qué corrección quedó pendiente.
+[p00898::p00900]
+la separación entre atención inmediata, reporte y corrección de incidentes|incidente; atención humana; decisor de reporte; acuse; proveedor; verificación de eficacia|Un incidente ficticio conserva la atención y una revisión posterior de la corrección implementada.
+[p00930::p00931]
+las responsabilidades y decisiones pendientes del tratamiento de datos|responsable y encargado; proveedor; alojamiento; intercambio; firmante; ruta de conformidad; derechos e incidentes|Un proveedor ficticio se registra para revisión de finalidad, ubicación y condiciones antes de habilitar un intercambio.

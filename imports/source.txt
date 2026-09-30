@@ -1,0 +1,1525 @@
+p00001 Plan de trabajo de Escuela Salud Modelo
+p00002 Documentación de procesos y aplicación web integrada
+p00003 Propuesta de trabajo para Gonzalo Arturo Ibarra Mendoza y responsables de las unidades. Versión 3.1 del 23 de septiembre de 2026. Inicio de todos los trabajos: 1 de octubre. Meta de aceptación: 15 de diciembre de 2026.
+p00004 El proyecto debe producir un inventario validado de procesos y una aplicación que conecte admisión, atención, seguimiento, docencia y administración. La primera decisión propuesta es iniciar en Mérida y La Casita, con estructura preparada para otros campus. La incorporación de Valladolid y Chetumal requiere levantar sus propias reglas, servicios y responsables.
+p00005 Esta propuesta utiliza la investigación pública previa como punto de partida. La falta de información en la web se trata como un dato por levantar, no como prueba de que la institución carece de un procedimiento. Los responsables, plazos y reglas aquí propuestos deben validarse en el arranque.
+p00006 Tres resultados esperados
+p00007 • Procesos documentados por unidad, formularios, responsables, reglas, excepciones y preguntas respondidas con evidencia.
+p00008 • Una aplicación web con un registro de identidad común y expedientes por especialidad, cuyo acceso dependa de funciones, asignación y finalidad.
+p00009 • Una landing page institucional para conocer servicios y solicitar citas, acompañada por un diseño visual de referencia.
+p00010 Alcance de la propuesta
+p00011 Incluye odontología, fisioterapia, nutrición, psicología, ciencias del deporte y readaptación, atención y prevención de la salud, servicios comunitarios y su vinculación laboral, educativa y jurídica. Integra recepción, caja, inventario, equipamiento y supervisión académica. La ubicación administrativa de cada unidad queda por confirmar.
+p00012 La aplicación facilitará el trabajo profesional. Los diagnósticos, indicaciones, autorizaciones clínicas y decisiones sobre urgencias permanecerán bajo responsabilidad del personal competente. No se propone atención de urgencias mediante un chatbot.
+p00013 Organización del documento
+p00014 El plan desarrolla procesos, aplicación e identidad visual. C01 a C20 integran NOM y cumplimiento; C21 a C26 fijan la ejecución simultánea; C27 incorpora el gestor asistido por IA. El calendario de esta versión sustituye los anteriores y comienza el 1 de octubre de 2026.
+p00015 Responsables propuestos
+p00016 Dirección designa a un dueño del proyecto y resuelve prioridades. Cada unidad nombra a un responsable de proceso. Gonzalo coordina análisis y desarrollo. Recepción, Finanzas, coordinación académica, TI y el área jurídica validan sus reglas. Estos roles son una propuesta; no se atribuyen nombramientos a personas sin confirmación.
+p00017 Meta propuesta: operación gradual desde el 7 de diciembre y aceptación el 15 de diciembre de 2026. Se trabajará por frentes simultáneos y programación asistida por Codex en bloques de pocas horas. C21 a C26 establecen capacidad, dependencias, hitos y condiciones de logro.
+p00019 Método de levantamiento y calendario
+p00020 Todas las unidades inician el levantamiento en paralelo. Cada responsable prepara formatos y respuestas; Gonzalo realiza sesiones de 90 minutos escalonadas, dos observaciones por unidad y una validación de 60 minutos. Las primeras reglas se liberan por paquetes para programar sin esperar el cierre de todas las entrevistas. Usar ejemplos anonimizados y acceso autorizado.
+p00021 Periodo de 2026
+p00022 Actividades simultáneas
+p00023 Resultado y validación
+p00024 1 a 7 oct
+p00025 Todas las unidades, recepción, caja, TI y Jurídico
+p00026 Responsables, formatos, catálogo y dependencias externas
+p00027 5 a 9 oct
+p00028 Procesos críticos de todas las unidades y núcleo común
+p00029 Reglas, permisos y ruta del expediente definidos
+p00030 12 a 16 oct
+p00031 Excepciones, módulos y revisión normativa
+p00032 Matriz inicial, formularios y requisitos aprobados
+p00033 19 a 23 oct
+p00034 Validación transversal, formación de enlaces y ensayos
+p00035 Autorización por unidad para pilotos desde el 26 de octubre
+p00037 Preguntas comunes para todas las unidades
+p00038 1. ¿Qué servicios prestan hoy, en qué sede y a qué población? ¿Qué solicitudes rechazan o derivan?
+p00039 2. ¿Quién inicia cada proceso, quién lo ejecuta, quién lo autoriza y quién sustituye al responsable?
+p00040 3. ¿Cómo entra una solicitud y qué evento determina que terminó correctamente?
+p00041 4. ¿Qué datos y documentos son indispensables y cuáles sólo se piden en ciertos casos?
+p00042 5. ¿Qué formatos, hojas de cálculo, expedientes y sistemas utilizan? ¿Cuál es el registro oficial?
+p00043 6. ¿Cuántos casos atienden por día y en temporada alta? ¿Cuánto dura cada actividad?
+p00044 7. ¿Qué errores, retrasos, duplicidades y retrabajos ocurren con mayor frecuencia?
+p00045 8. ¿Qué cambia con menores de edad, tutores, becas, convenios o personas sin identificación?
+p00046 9. ¿Qué debe ocurrir ante ausencia del profesional, falla de equipo, impago o interrupción de internet?
+p00047 10. ¿Qué información pueden consultar otros servicios y qué información debe permanecer restringida?
+p00048 11. ¿Qué reportes entregan, a quién, con qué frecuencia y con qué definición de cada indicador?
+p00049 12. ¿Qué resultado concreto les permitiría aceptar el sistema y dejar de duplicar capturas?
+p00050 Paquete mínimo por proceso
+p00051 Asignar código, versión, sede, dueño y fecha. Documentar objetivo, disparador, entradas, pasos y decisiones; actores, datos, recursos, tiempos, salidas, excepciones, permisos e indicador. Adjuntar un caso normal y dos excepciones, el formato vigente y las decisiones aún pendientes.
+p00052 Separar el proceso observado de la mejora propuesta. El responsable valida ambos expresamente antes de convertirlos en requisitos de programación. Una discrepancia entre dos entrevistados se registra y resuelve; no se convierte en una regla por suposición.
+p00054 Unidad de odontología
+p00055 Prioridad propuesta alta. Entrevistar a la coordinación clínica, docente supervisor, recepción, caja y encargado de esterilización. Observar una primera valoración, un tratamiento de varias sesiones y el cierre de una atención.
+p00056 Procesos que se deben documentar
+p00057 OD01 admisión y valoración; OD02 historia y odontograma; OD03 diagnóstico y plan; OD04 presupuesto y consentimiento; OD05 agenda de unidad dental y supervisor; OD06 procedimiento y evolución; OD07 imágenes y laboratorio protésico; OD08 instrumental y esterilización; OD09 cobro y seguimiento; OD10 alta, derivación e incidentes.
+p00058 Preguntas para el desarrollador
+p00059 1. ¿Cómo identifican al paciente y evitan abrir dos expedientes para la misma persona?
+p00060 2. ¿Qué nomenclatura usan en el odontograma y cómo registran pieza, superficie, hallazgo y tratamiento en el tiempo?
+p00061 3. ¿Quién captura y quién valida antecedentes, alergias, medicamentos, exploración y diagnósticos?
+p00062 4. ¿Cómo convierten el plan clínico en presupuesto? ¿Puede cambiar y qué autorización conserva cada versión?
+p00063 5. ¿Qué procedimientos requieren consentimiento específico y cómo se acredita la representación de un menor?
+p00064 6. ¿La cita reserva simultáneamente sillón, instrumental, alumno, docente y equipo de imagen? ¿Qué bloquea la reserva?
+p00065 7. ¿Cómo se supervisan los tratamientos de alumnos y qué impide dar una nota por terminada sin revisión?
+p00066 8. ¿Cómo vinculan radiografías, fotografías, solicitudes protésicas, entregas externas y repeticiones con el tratamiento?
+p00067 9. ¿Cómo registran lote de esterilización, liberación del instrumental, material usado y equipo fuera de servicio?
+p00068 10. ¿Cómo manejan extracciones complicadas, eventos adversos, interrupciones, urgencias y referencia externa?
+p00069 11. ¿Cómo se cobran tratamientos por etapas, anticipos, descuentos, devoluciones y trabajos no concluidos?
+p00070 12. ¿Qué seguimiento se exige después de una intervención y quién verifica el cierre del caso?
+p00071 Evidencia y resultado
+p00072 Solicitar historia y odontograma vacíos, consentimientos, catálogo con precios y vigencias, presupuesto, orden protésica, notas de evolución, agenda, bitácora de esterilización y matriz de supervisión. Revisar tres casos anonimizados con distinto recorrido.
+p00073 Entregar un procedimiento validado, diccionario del odontograma, catálogo de tratamientos, reglas de agenda y firma, estados del plan y tabla de permisos. Aceptación: reconstruir un tratamiento desde la valoración hasta el cobro y alta, distinguiendo hallazgo, tratamiento planeado y procedimiento ejecutado, sin sobrescribir la historia.
+p00074 Indicadores propuestos: planes iniciados y terminados; ausencias; notas pendientes de revisión; tiempo entre valoración e inicio. Definir denominadores y responsables durante el taller. Cumplimiento específico y preguntas adicionales: C03.
+p00076 Unidad de fisioterapia
+p00077 Prioridad propuesta alta. Entrevistar a coordinación, terapeutas, supervisores y recepción. Observar evaluación inicial, sesión subsecuente y reevaluación.
+p00078 Procesos que se deben documentar
+p00079 FI01 ingreso y referencia; FI02 evaluación funcional; FI03 plan y objetivos; FI04 agenda de sesiones y recursos; FI05 intervención; FI06 registro de evolución; FI07 reevaluación; FI08 programa domiciliario; FI09 alta, abandono o derivación; FI10 control de equipo.
+p00080 Preguntas para el desarrollador
+p00081 1. ¿Qué motivos de consulta admiten y cuándo solicitan valoración o referencia de otro profesional?
+p00082 2. ¿Qué escalas, pruebas, unidades y formatos usan por tipo de padecimiento y población?
+p00083 3. ¿Cómo registran dolor, movilidad, fuerza, limitaciones funcionales y objetivos iniciales?
+p00084 4. ¿Quién define cantidad, frecuencia, duración y criterios de cambio de las sesiones?
+p00085 5. ¿Las sesiones son individuales o compartidas? ¿Cómo se limita la capacidad de terapeutas, camillas y equipos?
+p00086 6. ¿Qué parámetros de cada intervención se documentan y quién valida que estén completos?
+p00087 7. ¿Qué antecedentes o contraindicaciones debe revisar el profesional antes de cada técnica?
+p00088 8. ¿Cómo se manejan paquetes, sesiones no utilizadas, cancelaciones, interrupciones y cambio de terapeuta?
+p00089 9. ¿Cuándo se reevalúa y con qué criterio se decide continuar, modificar el plan, dar alta o derivar?
+p00090 10. ¿Cómo entregan ejercicios domiciliarios y registran adherencia sin sustituir el juicio profesional?
+p00091 11. ¿Cómo se asignan alumnos y se revisan sus notas? ¿Qué ocurre si el supervisor está ausente?
+p00092 12. ¿Cómo se retira de la agenda un equipo averiado y cómo se reprograman los pacientes afectados?
+p00093 Evidencia y resultado
+p00094 Recabar formatos iniciales y de evolución, escalas autorizadas, plan de sesiones, hojas de ejercicios, catálogo de técnicas, tarifas y paquetes, inventario y mantenimiento. Confirmar si existe atención pediátrica, geriátrica o de otras especialidades y bajo qué condiciones; la oferta académica no basta para confirmarlo.
+p00095 Entregar un modelo de episodio de rehabilitación y sesión, reglas de capacidad y plan de seguimiento. Aceptación: comparar evaluación inicial y reevaluación con la misma escala y unidad; conservar sesiones realizadas y saldo del paquete por separado; impedir asignar un recurso fuera de servicio.
+p00096 Indicadores propuestos: continuidad del tratamiento, sesiones efectuadas sobre planeadas, abandono y evolución funcional según escala. No mezclar escalas diferentes en un único promedio. Cumplimiento específico y preguntas adicionales: C04.
+p00098 Unidad de nutrición
+p00099 Prioridad propuesta alta. Levantar por separado el consultorio universitario y el servicio nutricional de La Casita. Confirmar si comparten personal, tarifas, agenda y documentación.
+p00100 Procesos que se deben documentar
+p00101 NU01 admisión y estudio socioeconómico cuando aplique; NU02 evaluación nutricional; NU03 objetivos y plan; NU04 entrega de indicaciones; NU05 seguimiento; NU06 referencia interdisciplinaria; NU07 alta o abandono; NU08 talleres y servicios a instituciones.
+p00102 Preguntas para el desarrollador
+p00103 1. ¿Qué servicios presta cada sede y qué horarios son los vigentes, dado que las páginas públicas difieren?
+p00104 2. ¿Qué antecedentes, hábitos, recordatorios alimentarios y mediciones se capturan en cada consulta?
+p00105 3. ¿Cómo se distinguen mediciones hechas en consulta, datos referidos y resultados de laboratorio externos?
+p00106 4. ¿Qué unidades, fórmulas y equipos utilizan? ¿Quién aprueba los cálculos y sus versiones?
+p00107 5. ¿Cómo registran alergias, restricciones, preferencias, contexto económico y metas del paciente?
+p00108 6. ¿El plan alimentario utiliza equivalentes, menús o ambos? ¿Cómo se conservan versiones y ajustes?
+p00109 7. ¿Qué atención ofrecen a menores, embarazadas, deportistas y pacientes con enfermedades crónicas?
+p00110 8. ¿Cómo se decide la frecuencia del seguimiento y se mide la evolución más allá del peso?
+p00111 9. ¿Cómo se determina y autoriza la cuota socioeconómica, su vigencia y revisión?
+p00112 10. ¿Qué información se intercambia con psicología, odontología o fisioterapia y con qué autorización?
+p00113 11. ¿Cómo se atienden familias sin mezclar historias individuales ni mostrar información privada a otros integrantes?
+p00114 12. ¿Qué documentos se entregan al paciente y cómo se corrige un plan ya enviado?
+p00115 Evidencia y resultado
+p00116 Solicitar historia, evaluación, plan alimentario, formatos de seguimiento, catálogo de mediciones y unidades, tablas de referencia autorizadas, estudio socioeconómico y material educativo. Obtener evidencia del cálculo de un indicador, sin asumir que todas las fórmulas aplican a toda población.
+p00117 Entregar catálogo de variables y fórmulas versionadas, historial de mediciones, planes aprobados y reglas de consulta familiar. Aceptación: reproducir un cálculo con datos y fórmula conocidos, identificar quién aprobó el plan y recuperar sus versiones anteriores.
+p00118 Automatización candidata: recordatorios de seguimiento y entrega del plan validado mediante acceso protegido. Un generador automático de dietas no forma parte de la primera versión; requeriría reglas y revisión profesional propias. Cumplimiento específico y preguntas adicionales: C05.
+p00120 Unidad de psicología clínica
+p00121 Prioridad alta por sensibilidad de la información. Levantar por separado atención individual, de pareja, familiar y cualquier modalidad grupal confirmada. Entrevistar al responsable clínico y de privacidad, además de recepción con acceso limitado.
+p00122 Procesos que se deben documentar
+p00123 PS01 solicitud y admisión; PS02 entrevista inicial; PS03 evaluación; PS04 plan de intervención; PS05 sesiones; PS06 supervisión; PS07 referencia y situaciones críticas; PS08 cierre; PS09 solicitudes de acceso y entrega de informes.
+p00124 Preguntas para el desarrollador
+p00125 1. ¿Qué población, edades y motivos atienden y qué casos deben canalizarse a otro servicio?
+p00126 2. ¿Quién revisa una solicitud potencialmente urgente y cuál es el canal humano fuera del horario de atención?
+p00127 3. ¿Qué datos puede ver recepción y qué contenido sólo corresponde al terapeuta o supervisor asignado?
+p00128 4. ¿Cómo se documentan consentimiento, tutela, participantes y cambios de representación en menores?
+p00129 5. ¿Cómo se separan notas individuales dentro de un caso de pareja o familiar y quién puede recibir cada informe?
+p00130 6. ¿Qué pruebas utilizan, cuáles requieren licencia y quién puede aplicar, calificar e interpretar sus resultados?
+p00131 7. ¿Qué tipos de notas e informes existen y cómo se corrigen sin borrar el registro original?
+p00132 8. ¿Qué información mínima puede compartirse mediante una referencia interdisciplinaria?
+p00133 9. ¿Qué autorizaciones se necesitan para observación docente, grabación o uso académico y cómo se revocan?
+p00134 10. ¿Cómo se maneja cambio de terapeuta, abandono, cierre y solicitud de transferencia del expediente?
+p00135 11. ¿Qué contenido de un recordatorio es aceptable para no revelar el motivo de atención a terceros?
+p00136 12. ¿Qué datos pueden reportarse a Dirección únicamente de forma agregada?
+p00137 Evidencia y resultado
+p00138 Solicitar formatos vacíos, política de atención crítica, consentimientos por modalidad, informes, reglas de supervisión y catálogo de pruebas con restricciones de uso. No incorporar reactivos de pruebas protegidas al sistema sin autorización.
+p00139 Entregar matriz de acceso específica, modelo de caso con participantes y documentos por persona, reglas de referencia y cierre. Aceptación: recepción puede gestionar una cita sin leer notas; un participante no accede a información individual de otro; el supervisor sólo consulta casos asignados y su acceso queda registrado.
+p00140 Los permisos del portal para tutores se definirán caso por caso según reglas aprobadas. No se propone que todo tutor tenga acceso automático e ilimitado a todas las notas. Cumplimiento específico y preguntas adicionales: C06.
+p00142 Ciencias del deporte y readaptación
+p00143 Confirmar si el laboratorio, la readaptación deportiva y la atención nutricional o psicológica deportiva son una sola unidad o servicios coordinados. Evitar duplicar episodios y cobros cuando participan varias especialidades.
+p00144 Procesos que se deben documentar
+p00145 DE01 solicitud individual o institucional; DE02 elegibilidad para evaluación; DE03 preparación y consentimiento; DE04 pruebas; DE05 informe; DE06 programa de entrenamiento o readaptación; DE07 reevaluación; DE08 activación física empresarial; DE09 mantenimiento y calibración.
+p00146 Preguntas para el desarrollador
+p00147 1. ¿Qué pruebas se realizan realmente, con qué equipo, personal y condiciones previas?
+p00148 2. ¿Quién determina si la persona puede iniciar una prueba y qué documento registra esa decisión?
+p00149 3. ¿Cómo se identifica una prueba suspendida o inválida y cómo afecta al informe y al cobro?
+p00150 4. ¿Qué variables, unidades, protocolos y versiones se usan para comparar mediciones?
+p00151 5. ¿Los equipos exportan datos o imágenes? ¿En qué formato y con qué identificador de paciente?
+p00152 6. ¿Qué profesional interpreta, revisa y libera cada resultado?
+p00153 7. ¿Quién define el programa de readaptación y los criterios de retorno a la actividad deportiva?
+p00154 8. ¿Cómo se integran nutrición, psicología y fisioterapia sin abrir registros duplicados?
+p00155 9. ¿Qué pueden consultar entrenadores, clubes o empresas sobre una persona evaluada?
+p00156 10. ¿Cómo se cotiza y registra una jornada empresarial y cómo se distinguen asistencia grupal y expediente individual?
+p00157 11. ¿Qué preparación debe recibir el usuario antes de acudir y quién valida esas instrucciones?
+p00158 12. ¿Qué ocurre si el equipo no está calibrado o falla durante una evaluación?
+p00159 Evidencia y resultado
+p00160 Recabar protocolos, formatos de resultados, instrucciones al usuario, consentimiento, reglas de suspensión, ejemplos de exportación, inventario y contrato tipo con organizaciones. Confirmar el precio publicado de la prueba de esfuerzo y la aplicación de cuotas socioeconómicas antes de cargar tarifas.
+p00161 Entregar catálogo de pruebas y parámetros, informes con firma del responsable y flujos individuales y empresariales. Aceptación: cada resultado permite rastrear paciente, fecha, protocolo, equipo y profesional; una prueba inválida no se presenta como resultado definitivo.
+p00162 La primera versión admite carga estructurada o archivo. La integración automática con equipos sólo se programa cuando existan documentación técnica, muestras autorizadas y una necesidad suficiente para justificarla. Cumplimiento específico y preguntas adicionales: C07.
+p00164 Atención y prevención de la salud
+p00165 La unidad aparece con distintas denominaciones y siglas en fuentes institucionales. Confirmar nombre oficial, adscripción, alcance, personal y relación con orientación, ESMODELO y primeros auxilios.
+p00166 Procesos que se deben documentar
+p00167 AP01 recepción de solicitud; AP02 primera atención; AP03 canalización; AP04 registro y seguimiento; AP05 incidentes en campus; AP06 actividades preventivas; AP07 acompañamiento y coordinación con otros programas; AP08 resguardo de documentación.
+p00168 Preguntas para el desarrollador
+p00169 1. ¿Atiende exclusivamente a alumnos y personal o también a visitantes y público externo?
+p00170 2. ¿Qué actuaciones realiza cada perfil y cuáles se canalizan a profesionales o servicios externos?
+p00171 3. ¿Cómo se solicita ayuda en el campus y quién asume la atención inmediata?
+p00172 4. ¿Qué datos se registran durante el incidente y cuáles se completan después para no retrasar la atención?
+p00173 5. ¿Qué contactos o representantes pueden ser informados y quién toma esa decisión?
+p00174 6. ¿Cómo se registra la referencia, recepción del paciente y seguimiento posterior?
+p00175 7. ¿Qué datos pueden recibir coordinación académica, recursos humanos o Dirección?
+p00176 8. ¿Cómo se distingue una constancia administrativa de un documento clínico?
+p00177 9. ¿Qué procesos de ESMODELO requieren un expediente distinto y permisos especialmente restringidos?
+p00178 10. ¿Qué sucede fuera del horario de atención o durante fallas de conectividad?
+p00179 11. ¿Qué campañas, talleres o tamizajes realizan y cómo registran consentimiento, asistencia y resultados?
+p00180 12. ¿Qué indicadores solicitan sin identificar innecesariamente a las personas atendidas?
+p00181 Evidencia y resultado
+p00182 Recabar manual de primera atención, rutas de referencia, registro de incidentes, directorio de atención humana y formatos de constancia. Revisar separación entre documentación clínica, administrativa y protocolos de convivencia.
+p00183 Entregar un flujo de primera atención y referencia, con directorio controlado y seguimiento de pendientes. Aceptación: registrar un incidente y la entrega al responsable sin exigir completar una historia extensa antes de prestar ayuda; mantener separados los contenidos que no deben circular a otras áreas.
+p00184 El portal podrá mostrar instrucciones institucionales aprobadas y canales humanos. No realizará clasificación autónoma de urgencias, ni prometerá atención continua si no existe un equipo asignado para ello. Cumplimiento específico y preguntas adicionales: C08.
+p00186 Servicios comunitarios laborales y educativos
+p00187 La Casita funciona como punto de acceso y articulación. Los servicios clínicos ya se levantan en sus respectivas unidades; aquí se documentan admisión social, coordinación comunitaria, talleres y servicios a organizaciones. Confirmar el catálogo educativo porque la página pública contiene información repetida.
+p00188 Procesos que se deben documentar
+p00189 SC01 solicitud individual o institucional; SC02 estudio socioeconómico; SC03 asignación y canalización; SC04 convenio; SC05 diagnóstico de necesidades; SC06 cotización y programa; SC07 ejecución de talleres o intervención; SC08 informe y cierre; SC09 seguimiento de referencias.
+p00190 Preguntas para el desarrollador
+p00191 1. ¿Qué servicios clínicos, laborales y educativos se prestan actualmente y quién responde por cada uno?
+p00192 2. ¿Qué criterios y documentos determinan elegibilidad, cuota social, descuento y vigencia?
+p00193 3. ¿La USC asigna directamente las citas o remite solicitudes a las unidades?
+p00194 4. ¿Cómo confirma que una persona canalizada fue recibida y qué información necesita conocer del resultado?
+p00195 5. ¿Cómo se formaliza el servicio a una escuela o empresa y quién firma el convenio o cotización?
+p00196 6. ¿Cómo se manejan reclutamiento, perfiles de puesto, entrevistas y evaluaciones sin mezclar esos datos con expedientes clínicos?
+p00197 7. ¿Qué informes recibe la organización contratante y qué datos individuales no le corresponden?
+p00198 8. ¿Qué servicios educativos concretos ofrecen, a qué edades y con qué instrumentos autorizados?
+p00199 9. ¿Cómo se organiza una actividad comunitaria, se verifica asistencia y se registra el trabajo de alumnos?
+p00200 10. ¿Cómo se evalúan resultados, satisfacción, quejas y seguimiento de cada proyecto?
+p00201 11. ¿Qué documentos se renuevan cuando una organización repite el servicio?
+p00202 12. ¿Cómo evitan contar dos veces al mismo beneficiario cuando recibe atención en varias unidades?
+p00203 Evidencia y resultado
+p00204 Solicitar formato socioeconómico, reglas de cuotas, convenios, propuestas de servicio, listas de asistencia, informes y formatos de evaluación. Confirmar quién autoriza utilizar imágenes o testimonios de participantes.
+p00205 Entregar catálogo comunitario validado, flujo de referencia y módulo de proyectos con organizaciones, actividades y participantes. Aceptación: reportar personas únicas, atenciones y actividades por separado; consultar únicamente el estado de una referencia cuando el detalle clínico no es necesario.
+p00206 Automatización candidata: avisos de referencias sin respuesta y vencimientos de convenios. Su envío se hará a responsables designados y sólo con los datos mínimos requeridos. Cumplimiento específico y preguntas adicionales: C09.
+p00208 Vinculación con el despacho jurídico
+p00209 Su integración se propone como servicio relacionado de la red comunitaria. Dirección debe confirmar si será operado en la misma plataforma. La aplicación puede compartir identidad y agenda autorizadas, pero los asuntos jurídicos requieren un dominio de datos y permisos propio.
+p00210 Procesos que se deben documentar
+p00211 JU01 solicitud; JU02 revisión de elegibilidad y conflictos; JU03 apertura del asunto; JU04 asesoría y actuaciones; JU05 documentos y plazos; JU06 derivación; JU07 cierre; JU08 reporte de actividad y supervisión de alumnos.
+p00212 Preguntas para el desarrollador
+p00213 1. ¿Qué materias y servicios se ofrecen y qué asuntos se excluyen o canalizan?
+p00214 2. ¿Quién revisa posibles conflictos de interés antes de mostrar o asignar un asunto?
+p00215 3. ¿Qué datos del solicitante, contraparte y otras personas se requieren y quién puede consultarlos?
+p00216 4. ¿Qué documentos de representación y autorización deben existir antes de iniciar actuaciones?
+p00217 5. ¿Se presta sólo orientación o también representación? ¿Cómo cambia el flujo en cada caso?
+p00218 6. ¿Quién registra, revisa y controla plazos, vencimientos y entregas al cliente?
+p00219 7. ¿Qué acciones pueden realizar estudiantes y qué requiere revisión del supervisor?
+p00220 8. ¿Cómo se registra entrega de documentos, originales, copias y devolución al cierre?
+p00221 9. ¿Qué información necesita la USC sobre un asunto derivado sin acceder a su contenido completo?
+p00222 10. ¿Qué cuotas o gratuidades aplican y cómo se registran gastos y comprobantes?
+p00223 11. ¿Cómo se solicita corrección, copia o transferencia de la documentación?
+p00224 12. ¿Qué eventos constituyen un cierre y qué obligaciones de seguimiento pueden continuar?
+p00225 Evidencia y resultado
+p00226 Recabar ficha de ingreso, criterios de aceptación, formatos de representación, control de plazos, inventario de documentos, políticas de supervisión y cierre. No inferir reglas procesales por programación; el responsable jurídico suministrará y aprobará las aplicables.
+p00227 Entregar un submódulo de asuntos separado de los episodios clínicos. Aceptación: un usuario de una clínica no puede consultar documentos jurídicos por compartir la identidad de la persona; un vencimiento tiene responsable, fecha, confirmación de revisión y escalamiento.
+p00228 Si el despacho queda fuera del alcance inicial, conservar una referencia con estado, destino y contacto institucional. No almacenar el expediente jurídico completo hasta que exista dueño de proceso, permisos y capacidad de operación. Cumplimiento específico y preguntas adicionales: C10.
+p00230 Recepción administración docencia y recursos
+p00231 Estas funciones sostienen todas las unidades. Entrevistar a recepción, caja, Finanzas, coordinación académica, almacén, mantenimiento, TI y responsable de privacidad. Nombrar un dueño para cada proceso, aunque no exista una unidad administrativa independiente.
+p00232 Procesos transversales
+p00233 TR01 catálogo y tarifas; TR02 identidad, tutela y duplicados; TR03 agenda y lista de espera; TR04 admisión; TR05 cobro, devolución y corte; TR06 asignación académica; TR07 almacén y compras; TR08 esterilización; TR09 mantenimiento; TR10 archivo y permisos; TR11 quejas e incidentes; TR12 reportes y contingencia.
+p00234 Preguntas para el desarrollador
+p00235 1. ¿Qué identificadores existen y cómo se corrige o fusiona un registro duplicado con trazabilidad?
+p00236 2. ¿Qué recursos y tiempos de limpieza o preparación reserva cada servicio?
+p00237 3. ¿Quién autoriza excepciones de agenda, cuotas, descuentos, créditos, cancelaciones y reembolsos?
+p00238 4. ¿Cómo se separan presupuesto, cargo, pago, factura y devolución? ¿Qué sistema contable o PAC utilizan?
+p00239 5. ¿Cómo se concilian efectivo, transferencias y pagos electrónicos y quién aprueba diferencias?
+p00240 6. ¿Qué facultades tienen alumnos y pasantes según semestre, rotación y supervisor?
+p00241 7. ¿Qué sucede con el acceso y las notas pendientes cuando termina una rotación?
+p00242 8. ¿Qué materiales exigen lote, caducidad, mínimo de stock, trazabilidad o compra urgente?
+p00243 9. ¿Cómo se libera instrumental esterilizado y se registra su vínculo con una atención cuando corresponde?
+p00244 10. ¿Qué equipos requieren mantenimiento o calibración y quién los habilita para volver a operar?
+p00245 11. ¿Qué solicitudes de información, conservación, exportación y eliminación requieren revisión jurídica?
+p00246 12. ¿Quién atiende incidentes técnicos, restaura respaldos y autoriza volver a usar el sistema?
+p00247 Evidencia y resultado
+p00248 Obtener tarifarios, recibos anonimizados, políticas de cobro, plantillas de alumnos, inventario, formatos de mantenimiento, roles de acceso y reportes actuales. Registrar volumen de citas, expedientes, archivos, usuarios simultáneos y dispositivos disponibles.
+p00249 Entregar catálogo maestro, matriz de roles, flujo financiero y reglas de asignación de recursos. Aceptación: una cita no se duplica por concurrencia; una devolución conserva su pago original; una rotación vencida bloquea acceso nuevo sin borrar autoría previa. Cumplimiento específico y preguntas adicionales: C11.
+p00251 Cierre del levantamiento y control de requisitos
+p00252 Un proceso estará documentado cuando su responsable pueda ejecutarlo y explicar sus excepciones utilizando la ficha, los formatos y un caso de prueba. No basta con una transcripción de la entrevista.
+p00253 Ficha reutilizable para cada pregunta
+p00254 Registrar código de unidad y pregunta; respuesta; quién respondió y su función; fecha; evidencia; contradicciones; decisión; responsable de resolver; vencimiento y estado. Los estados propuestos son pendiente, respondida, por contrastar y validada. No convertir una respuesta sin evidencia en requisito cerrado.
+p00255 Ficha reutilizable para cada proceso
+p00256 Registrar código, nombre y versión; sede; propósito; dueño; inicio y fin; pasos; decisiones; actores; reglas y excepciones; datos obligatorios; documentos; equipos; permisos; indicador; contingencia; fecha y validación. Mantener la versión anterior cuando cambien reglas o formatos.
+p00257 Entregable
+p00258 Aceptación propuesta
+p00259 Validador
+p00260 Inventario de procesos
+p00261 Todos los servicios confirmados tienen proceso y dueño
+p00262 Dirección y unidad
+p00263 Diagramas y reglas
+p00264 Un caso normal y dos excepciones por proceso crítico
+p00265 Operador y responsable
+p00266 Diccionario de datos
+p00267 Campos, tipos, obligatoriedad, catálogo y sensibilidad definidos
+p00268 Unidad y desarrollador
+p00269 Matriz de acceso
+p00270 Lectura, captura, revisión, exportación y administración explícitas
+p00271 Unidad y privacidad
+p00272 Formularios
+p00273 Versión vigente, uso y responsable identificados
+p00274 Responsable de unidad
+p00275 Requisitos
+p00276 Cada requisito enlaza evidencia, proceso y prueba de aceptación
+p00277 Dueño del proyecto
+p00279 Priorización
+p00280 Primero resolver aquello que puede bloquear atención, confidencialidad, identificación, agenda, supervisión o dinero. Después abordar seguimiento, informes y eficiencia. Mejoras cosméticas y análisis avanzados se programan cuando el circuito de atención es estable.
+p00281 Una solicitud nueva debe registrar beneficio, unidad, esfuerzo, dependencia e impacto en la fecha. Dirección decide si sustituye otro requisito o amplía la capacidad. El desarrollador no debe absorber cambios de alcance de forma invisible.
+p00282 Preparación y primera semana
+p00283 El 1 y 2 de octubre se confirman alcance, responsables y agenda y se inicia el núcleo de captura. Todas las unidades preparan formatos y documentan su operación hasta el 7 de octubre; Gonzalo concentra entrevistas de agenda, identidad, privacidad y cobro. La preparación y observación local avanzan en paralelo, sin trabajos programados en septiembre.
+p00284 El 9 de octubre deben estar validados los procesos críticos y clasificadas las dependencias externas. El 16 de octubre se cierra la matriz normativa inicial. Las decisiones pendientes tendrán dueño y fecha; ningún módulo se habilita para atención real con reglas críticas sin resolver.
+p00286 Aplicación web integrada
+p00287 Nombre de trabajo propuesto: Salud Modelo. El producto tendrá una entrada pública, un portal del paciente y un espacio operativo con permisos. La arquitectura admite varios campus, pero los servicios se publican sólo donde exista atención confirmada.
+p00288 Módulo
+p00289 Función y resultado
+p00290 Catálogo público
+p00291 Servicios por sede, requisitos, horarios validados y solicitud de cita
+p00292 Identidad y admisión
+p00293 Persona única, contactos, tutela, consentimientos y prevención de duplicados
+p00294 Agenda
+p00295 Profesional, alumno, supervisor, sala, equipo, duración, bloqueos y espera
+p00296 Expedientes
+p00297 Episodios por especialidad, notas, planes, adjuntos, revisión y cierre
+p00298 Referencias
+p00299 Solicitud, aceptación, atención y respuesta con información mínima
+p00300 Finanzas
+p00301 Presupuestos, cargos, pagos, cuotas sociales, devoluciones y conciliación
+p00302 Docencia
+p00303 Rotaciones, asignaciones, revisión de notas y actividad académica
+p00304 Recursos
+p00305 Insumos, instrumental, mantenimiento y disponibilidad de equipos
+p00306 Comunidad y organizaciones
+p00307 Convenios, proyectos, talleres, participantes y resultados
+p00308 Dirección
+p00309 Indicadores definidos, informes agregados y auditoría autorizada
+p00311 Recorrido del paciente
+p00312 Consulta el catálogo, elige sede y solicita atención. Recepción verifica elegibilidad y disponibilidad, confirma la cita y registra los documentos necesarios. El profesional realiza y documenta la atención; cuando interviene un alumno, el supervisor revisa conforme a la regla aprobada. La unidad registra cargos y programa seguimiento o referencia. Cada etapa conserva su responsable y fecha.
+p00313 La landing no mostrará horarios disponibles ficticios. Mientras no exista agenda en tiempo real, el botón indicará Solicitar cita y explicará que la confirmación depende de recepción. La cuenta del paciente mostrará citas y documentos liberados; no dará acceso automático a todos los apuntes internos.
+p00314 Primera versión operativa
+p00315 La primera entrega habilita catálogo, admisión, agenda, roles y documentos protegidos para todos los servicios confirmados. Los módulos especializados avanzan en entregas cortas y pilotos por unidad. La meta del 15 de diciembre comprende el alcance validado completo de Mérida y La Casita; C21 define su aceptación.
+p00316 El alcance completo incluye todos los servicios confirmados en el levantamiento. No incluye reemplazar el sistema escolar, contabilidad completa, nómina o un hospital. Se utilizarán conectores o referencias cuando esos sistemas ya existan.
+p00318 Modelo de datos y permisos
+p00319 La persona tendrá una identidad institucional común. Cada atención se asociará con sede, unidad, profesionales y episodio. Las notas psicológicas y los asuntos jurídicos conservarán permisos propios. La asignación a una unidad no concederá acceso a todas las personas atendidas por ella.
+p00320 Entidades principales
+p00321 Institución, campus, sede, unidad, servicio y tarifa; persona, tutor y relación de representación; usuario, rol, asignación y rotación; profesional y credencial; recurso, disponibilidad y cita; episodio, plan, sesión y nota versionada; consentimiento, archivo y referencia; presupuesto, cargo, pago y devolución; inventario, lote, mantenimiento y esterilización; organización, convenio, proyecto y actividad; evento de auditoría y notificación.
+p00322 Perfil
+p00323 Acceso propuesto
+p00324 Restricción principal
+p00325 Recepción
+p00326 Identidad mínima, citas y documentos de admisión
+p00327 Sin lectura de notas clínicas
+p00328 Profesional
+p00329 Episodios asignados y referencias autorizadas
+p00330 Sin acceso general a otras especialidades
+p00331 Alumno o pasante
+p00332 Captura en casos y periodo asignados
+p00333 No libera notas que exigen supervisión
+p00334 Supervisor
+p00335 Revisa y libera casos bajo su responsabilidad
+p00336 Sin acceso indiscriminado por ser docente
+p00337 Caja
+p00338 Cargos, pagos, datos fiscales necesarios
+p00339 Sin contenido clínico
+p00340 Dirección
+p00341 Indicadores agregados
+p00342 Detalle identificable sólo si se autoriza por función
+p00343 TI
+p00344 Operación y configuración
+p00345 Sin acceso clínico habitual; acceso excepcional trazado
+p00346 Paciente o representante
+p00347 Documentos liberados y citas autorizadas
+p00348 Límites según identidad, representación y modalidad
+p00350 Reglas de diseño
+p00351 Cada tabla operativa tendrá sede y unidad cuando corresponda, identificadores estables y fechas de creación y cambio. Los permisos se aplican en el servidor, incluyendo búsquedas, exportaciones y enlaces de archivos. Ocultar un botón no constituye control de acceso.
+p00352 Una nota liberada conserva autoría, revisor, fecha, versión y evidencia de autenticación. Las correcciones se agregan con motivo y vínculo al original. La forma de firma y su suficiencia jurídica se definirá con los responsables; una casilla o imagen de firma no equivale por sí sola a una firma válida para todos los efectos.
+p00353 El proceso de duplicados propondrá coincidencias para revisión humana. No fusionará automáticamente expedientes por nombre o teléfono. Toda fusión permitirá rastrear los identificadores previos y corregir asociaciones equivocadas mediante un procedimiento autorizado.
+p00355 Arquitectura técnica propuesta
+p00356 La aplicación utilizará Next.js, TypeScript, Django, Django REST Framework y PostgreSQL. El despliegue será con Gunicorn, Nginx, systemd y Certbot. Tailwind CSS facilita los estilos. Las versiones se fijarán según soporte y seguridad al implementar. C27 integra la asistencia con las API de OpenAI y DeepSeek.
+p00357 Componentes y responsabilidades
+p00358 Next.js presenta portales y gestor del plan. Django aplica permisos, reglas y auditoría; PostgreSQL conserva transacciones y la cola persistente inicial. Los adjuntos serán privados. Gunicorn sirve Django y un proceso Node sirve Next.js, ambos bajo systemd y detrás de Nginx con TLS mediante Certbot. Redis, Celery y S3 quedan opcionales según necesidad validada.
+p00359 n8n puede coordinar avisos o tareas administrativas mediante endpoints limitados. No decidirá permisos ni será el registro definitivo de citas o pagos. Una falla de n8n no debe perder una cita confirmada o modificar un saldo.
+p00360 Datos y despliegue
+p00361 Para una sola institución, comenzar con una base PostgreSQL y segregación explícita por sede y unidad. Si se confirman entidades jurídicas que requieren aislamiento independiente, decidir antes de migrar si se separan bases. La expansión a campus no obliga por sí sola a crear una base por cada uno.
+p00362 Usar un entorno dedicado para salud en el VPS, con procesos y credenciales separados de sitios públicos ajenos al proyecto. Base de datos, Redis y almacenamiento no deben exponerse directamente a internet. Separar desarrollo, pruebas y producción; mantener secretos fuera del repositorio y accesos de administración con autenticación reforzada.
+p00363 Interfaces e integraciones
+p00364 Documentar la API con OpenAPI. Usar sesiones seguras o autenticación institucional validada; evitar tokens duraderos en almacenamiento accesible a JavaScript. Integrar pagos y mensajería con firmas de webhook, idempotencia, reintentos controlados y conciliación. El PAC y el proveedor de cobro se elegirán tras conocer los contratos existentes.
+p00365 Resiliencia propuesta
+p00366 Respaldos cifrados fuera del servidor y pruebas de restauración. Objetivos iniciales para aprobación: pérdida máxima de datos de una hora y recuperación en cuatro horas. Verificar que infraestructura y presupuesto permiten cumplirlos antes de asumir un compromiso de servicio. Registrar métricas, alertas y bitácoras sin incluir notas clínicas en logs.
+p00367 Reservar exportación estructurada y definir los escenarios reales de intercambio. La NOM-024-SSA3-2012 se incorpora desde el diseño: C15 exige resolver conformidad, guías aplicables y firma antes del registro clínico oficial. Una integración FHIR no acredita por sí sola ese cumplimiento.
+p00369 Reglas operativas y automatización
+p00370 Los estados propuestos se validarán durante el levantamiento. Cada cambio conservará actor, fecha, motivo y objeto afectado. La transición podrá ser rechazada si falta un requisito aprobado.
+p00371 Objeto
+p00372 Estados propuestos
+p00373 Regla crítica
+p00374 Cita
+p00375 Solicitada, confirmada, llegada, en atención, concluida, cancelada o ausente
+p00376 Reservar recursos en una transacción y evitar solapamientos
+p00377 Nota
+p00378 Borrador, enviada a revisión, devuelta, liberada, corregida por adenda
+p00379 No sobrescribir una versión liberada
+p00380 Plan
+p00381 Propuesto, aceptado, en curso, suspendido, terminado o cerrado
+p00382 Mantener la versión de objetivos y presupuesto
+p00383 Referencia
+p00384 Emitida, aceptada, programada, atendida, respondida o cerrada
+p00385 Enviar sólo el resumen autorizado
+p00386 Pago
+p00387 Pendiente, confirmado, rechazado, conciliado o reembolsado
+p00388 Un webhook repetido no crea un segundo pago
+p00389 Recurso
+p00390 Disponible, reservado, fuera de servicio o en mantenimiento
+p00391 No permitir uso durante un bloqueo
+p00393 Automatizaciones incluidas
+p00394 • Confirmaciones y recordatorios con permiso de contacto, contenido mínimo, zona horaria de la sede y enlace protegido.
+p00395 • Lista de espera con ofertas temporales que no generen dos confirmaciones para el mismo espacio.
+p00396 • Avisos de notas pendientes de revisión y caducidad de rotaciones a supervisores.
+p00397 • Alertas de mantenimiento, materiales por caducar y existencias mínimas a sus responsables.
+p00398 • Seguimiento de referencias y convenios sin respuesta o próximos a vencer.
+p00399 • Tableros calculados desde registros transaccionales, sin pedir otra captura manual.
+p00400 Controles de integración
+p00401 La transacción de negocio guardará un evento de salida pendiente; una tarea lo entregará después. Cada evento tendrá identificador único y registro de intentos. Una notificación fallida no revierte una atención; se registra para reintento o contacto manual.
+p00402 La IA se incorpora desde el levantamiento para explicar preguntas, extraer información autorizada y proponer borradores con fuentes. OpenAI y DeepSeek operan mediante controles del servidor y revisión humana. No se enviarán expedientes identificables por defecto ni se aprobarán decisiones clínicas o normativas automáticamente. C27 define alcance y aceptación.
+p00403 Cuando el servicio esté fuera de línea, cada unidad utilizará un formato de contingencia aprobado. La recaptura marcará fecha real de atención, fecha de ingreso al sistema y responsable; se revisarán duplicados antes de incorporar el registro.
+p00405 Cronograma de desarrollo y entregas
+p00406 Calendario objetivo del 1 de octubre al 15 de diciembre de 2026, incluida toda preparación. Se proponen 32 horas semanales de Gonzalo durante diez semanas, más 16 de arranque y 18 de cierre. Las unidades documentan y validan simultáneamente; el código se organiza en bloques objetivo de 2 a 4 horas con Codex. C24 detalla la capacidad.
+p00407 Fechas de 2026
+p00408 Frente
+p00409 Trabajo
+p00410 Criterio de salida
+p00411 1 a 7 oct
+p00412 Arranque
+p00413 Preparación paralela y gestor mínimo al 5 de octubre
+p00414 Dueños, formatos y dependencias identificados
+p00415 1 a 9 oct
+p00416 Núcleo
+p00417 Identidad, agenda, roles y archivos
+p00418 Recorridos comunes y permisos comprobados
+p00419 5 a 16 oct
+p00420 Procesos
+p00421 Reglas, NOM y prototipos por unidad
+p00422 Matriz inicial y requisitos aprobados
+p00423 12 oct a 6 nov
+p00424 Servicios
+p00425 Módulos especializados en bloques con Codex
+p00426 Funciones revisadas por cada unidad
+p00427 19 oct a 13 nov
+p00428 Integración
+p00429 Caja, docencia, recursos y automatizaciones
+p00430 Circuitos integrados sin duplicidades
+p00431 26 oct a 20 nov
+p00432 Pilotos
+p00433 Pruebas simultáneas por servicio
+p00434 Alcance completo integrado y probado
+p00435 23 a 27 nov
+p00436 Aceptación
+p00437 Correcciones y congelación funcional
+p00438 Cero defectos críticos y actas por unidad
+p00439 30 nov a 4 dic
+p00440 Preparación
+p00441 Ensayo de carga, restauración y capacitación
+p00442 Autorización documentada de arranque
+p00443 7 a 15 dic
+p00444 Operación
+p00445 Arranque, estabilización y cierre
+p00446 Aceptación consolidada el 15 de diciembre
+p00448 Este calendario sustituye la secuencia de 32 semanas y la ampliación de 46 semanas de la versión 2.0. Es una reestimación por entregas breves, reutilización y trabajo institucional simultáneo. El 9 de octubre se contrasta con resultados reales; la fecha exige disponibilidad de validadores y resolución temprana de dependencias.
+p00449 Dependencias que cambian el plazo
+p00450 La agenda depende de conocer tiempos y recursos. El expediente depende de formularios y reglas de firma. Los pagos dependen del sistema contable y proveedor. La migración depende del estado de los datos. La apertura de otro campus requiere su validación local. Una unidad con reglas sin resolver no debe bloquear la entrada de las que ya cumplen los criterios.
+p00451 Cadencia
+p00452 Revisión semanal de 30 minutos y dos demostraciones breves por semana. Los responsables contestan en dos días hábiles y tienen suplente. Un tablero común muestra trabajo listo, en revisión y bloqueado. Gonzalo integra una entrega a la vez; las unidades pueden preparar y probar sus propios paquetes simultáneamente.
+p00454 Requisitos y pruebas de aceptación
+p00455 El listado se convertirá en historias pequeñas con dueño, prioridad, dependencia y caso verificable. Los siguientes criterios permiten evaluar comportamiento, no sólo la apariencia de las pantallas.
+p00456 Código
+p00457 Requisito
+p00458 Prueba mínima
+p00459 R01
+p00460 Persona y representación
+p00461 Detectar posible duplicado sin fusionarlo automáticamente; verificar tutor autorizado
+p00462 R02
+p00463 Agenda y recursos
+p00464 Dos solicitudes simultáneas al mismo recurso permiten sólo una confirmación
+p00465 R03
+p00466 Privacidad
+p00467 Recepción y caja reciben denegación del servidor al intentar abrir una nota
+p00468 R04
+p00469 Supervisión
+p00470 Alumno captura; supervisor devuelve o libera; toda acción conserva autor
+p00471 R05
+p00472 Odontología
+p00473 Un procedimiento se enlaza con pieza, plan, consentimiento y cobro correspondientes
+p00474 R06
+p00475 Rehabilitación
+p00476 Sesiones y reevaluaciones conservan escala, unidad, fecha y autor
+p00477 R07
+p00478 Nutrición
+p00479 Un cambio de fórmula no altera resultados históricos sin recalcular de forma explícita
+p00480 R08
+p00481 Psicología
+p00482 Un integrante de caso familiar no consulta notas individuales ajenas
+p00483 R09
+p00484 Referencia
+p00485 Unidad receptora sólo recibe información autorizada y devuelve estado de atención
+p00486 R10
+p00487 Finanzas
+p00488 Notificación de pago duplicada no duplica saldo; devolución enlaza pago original
+p00489 R11
+p00490 Recursos y docencia
+p00491 Equipo bloqueado y rotación vencida impiden nuevas asignaciones indebidas
+p00492 R12
+p00493 Continuidad
+p00494 Restaurar respaldo y verificar expedientes, archivos y pagos de la muestra
+p00496 Calidad de la aplicación
+p00497 Probar tareas con teclado, lector de pantalla cuando esté disponible, contraste, mensajes de error y teléfono móvil. Objetivo propuesto: WCAG 2.2 nivel AA en los recorridos principales. Definir el volumen real antes de fijar pruebas de carga; como referencia de trabajo, verificar listados y agenda con la concurrencia acordada y medir tiempos, no sólo afirmar que son rápidos.
+p00498 Probar autorización por rol, sede, asignación y archivo; caducidad de enlaces; intentos de consultar identificadores ajenos; sesiones; webhooks y reintentos. Revisar dependencias y configuración de producción. El responsable clínico prueba fórmulas y documentos; Finanzas prueba saldos y conciliación.
+p00499 Aceptación por unidad
+p00500 Cada responsable ejecuta un caso normal, uno cancelado y uno con referencia o excepción. Firma un acta con versión, fecha, defectos pendientes y decisión. La salida requiere cero defectos críticos abiertos y procedimiento de contingencia conocido. Las mejoras menores pueden quedar programadas con dueño y fecha. Aplicar también los criterios C18.
+p00502 Migración capacitación y puesta en marcha
+p00503 La migración comienza con inventario de archivos y sistemas: formato, dueño, cantidad, sensibilidad, calidad y necesidad de conservarlos. No se importará todo por defecto ni se considerará que una hoja de cálculo es fuente autorizada sin validación del área.
+p00504 Secuencia de migración
+p00505 1. Definir qué expedientes activos, saldos, catálogos y citas futuras necesita el arranque.
+p00506 2. Mapear campos y normalizar unidades, fechas e identificadores sin perder el dato original.
+p00507 3. Identificar duplicados para revisión humana y registrar decisiones de vinculación.
+p00508 4. Importar una muestra autorizada, conciliar conteos y totales y verificar permisos y adjuntos.
+p00509 5. Corregir reglas y realizar ensayo completo con reporte de registros rechazados.
+p00510 6. Fijar ventana de corte, congelar cambios donde corresponda y conciliar la carga final.
+p00511 Los datos de pruebas serán sintéticos o anonimizados y estarán separados de producción. La aplicación operativa no mostrará pacientes ni estadísticas ficticias. Los expedientes históricos pueden conservarse como documentos vinculados cuando su captura estructurada no justifique el costo y sea admisible según las reglas de conservación.
+p00512 Capacitación por función
+p00513 Recepción practica altas, duplicados, agenda y cancelaciones. Profesionales y alumnos practican notas y revisión. Supervisores practican asignación y cierre. Caja practica pagos, devoluciones y conciliación. Dirección practica lectura de indicadores. TI practica restauración y respuesta a incidentes. Entregar guías breves con tareas y canal de soporte.
+p00514 Arranque y reversión
+p00515 Desde el 7 de diciembre abrir turnos limitados de las unidades aprobadas y ampliar durante la semana. Los pilotos previos se realizan en paralelo con responsables distintos. Definir el registro oficial de cada operación y fecha; evitar doble captura indefinida. El 15 de diciembre se firma la aceptación consolidada.
+p00516 Si ocurre un incidente crítico, detener nuevas operaciones del módulo afectado y activar contingencia. Para revertir una versión conservar los registros creados desde el corte y conciliarlos antes de restaurar. Nunca reemplazar la base con una copia antigua descartando atenciones o pagos nuevos.
+p00517 Operación posterior
+p00518 Asignar responsable funcional y técnico, ventana de mantenimiento, revisión de accesos, prueba de respaldos y presupuesto de actualizaciones. Revisar incidencias diariamente durante el arranque y semanalmente al estabilizarse. La salida del desarrollador de una guardia no elimina la necesidad de un responsable institucional de operación.
+p00520 Indicadores presupuesto y decisiones pendientes
+p00521 Indicadores con definición propuesta
+p00522 Indicador
+p00523 Cálculo
+p00524 Responsable sugerido
+p00525 Ausencias
+p00526 Citas ausentes entre citas confirmadas vencidas elegibles
+p00527 Recepción
+p00528 Ocupación
+p00529 Minutos reservados entre minutos disponibles del recurso
+p00530 Coordinación
+p00531 Espera
+p00532 Minutos entre llegada e inicio de atención
+p00533 Unidad
+p00534 Notas pendientes
+p00535 Notas que exceden plazo aprobado sin liberación
+p00536 Supervisor
+p00537 Continuidad
+p00538 Episodios con seguimiento cumplido entre episodios que lo requieren
+p00539 Unidad
+p00540 Conciliación
+p00541 Pagos conciliados entre pagos recibidos del periodo
+p00542 Finanzas
+p00543 Beneficiarios
+p00544 Personas únicas atendidas en el periodo por alcance definido
+p00545 Dirección
+p00547 Separar beneficiarios, atenciones y sesiones. Segmentar por sede y servicio, y excluir cancelaciones según la definición aprobada. Los objetivos se fijarán después de medir la línea base; no se inventan cifras de impacto institucional.
+p00548 Presupuesto de trabajo
+p00549 Capacidad propuesta: 295 horas de Gonzalo más 59 de reserva, total 354, con programación asistida por Codex. Sustituye la estimación de 1368 horas de la versión 2.0. C24 desglosa actividades y tiempo institucional separado. Cotizar aparte asesoría especializada, evaluación de conformidad, trámites, adecuaciones y captura histórica masiva.
+p00550 Costos recurrentes por cotizar: servidor dedicado o capacidad reservada, almacenamiento y respaldos externos, mensajería, correo transaccional, dominio si hace falta, monitoreo, PAC y comisiones de cobro. Añadir soporte y mantenimiento. No asumir que el VPS existente tiene capacidad o controles suficientes antes de evaluarlo.
+p00551 Decisiones institucionales necesarias
+p00552 • Confirmar sedes iniciales y si jurídico y ESMODELO operarán dentro de la plataforma.
+p00553 • Designar dueño del producto, responsables de cada unidad y suplentes.
+p00554 • Definir supervisión, firma, conservación y acceso a documentos por modalidad de atención.
+p00555 • Confirmar tarifarios, facturación, convenios, proveedores e integración escolar.
+p00556 • Asignar tiempo de usuarios para validar y recursos para soporte después del arranque.
+p00557 Revisión normativa del diseño
+p00558 C01 a C20 conservan las obligaciones, evidencias y pruebas. C17 y C21 a C26 coordinan el trabajo simultáneo; C18 mantiene los criterios de autorización. La aceleración del código no reduce los requisitos sanitarios, jurídicos ni de seguridad para operar.
+p00560 Identidad visual y landing page
+p00561 La referencia solicitada es www.modelo.edu.mx. En la consulta directa se recuperó una portada institucional con escudo y recursos CSS. El buscador mostró contenido discordante; no se utilizó ese contenido como referencia de marca ni se infiere de ello un diagnóstico técnico del dominio.
+p00562 Elemento
+p00563 Valor observado en CSS
+p00564 Uso propuesto
+p00565 Azul
+p00566 #052148
+p00567 Encabezados, navegación y botón principal
+p00568 Acento
+p00569 #39B9D6
+p00570 Detalles, iconos y superficies de apoyo
+p00571 Fondo
+p00572 #F1F1F1
+p00573 Fondo secundario y divisiones
+p00574 Blanco
+p00575 #FFFFFF
+p00576 Superficies y texto sobre azul
+p00577 Texto
+p00578 #333333 y #444444
+p00579 Cuerpo y texto secundario
+p00580 Tipografía
+p00581 Futura y Arial
+p00582 Títulos geométricos y cuerpo legible
+p00584 Estos son valores del recurso web recuperado, no un manual de marca certificado. Futura requiere comprobar licencia antes de distribuir su archivo; la propuesta CSS usa fuentes locales y alternativas. El escudo final debe provenir del archivo institucional aprobado.
+p00585 Composición propuesta
+p00586 Una barra superior azul identifica la Escuela de Salud. El encabezado blanco contiene marca, Servicios, Cómo agendar, Sedes y Contacto, con acceso separado para pacientes y personal. El bloque principal presenta Tu salud en un mismo lugar, una breve explicación y los botones Solicitar cita y Conocer servicios.
+p00587 La sección de servicios muestra odontología, fisioterapia, nutrición, psicología, ciencias del deporte y atención comunitaria. Cada tarjeta remite al catálogo de la sede; una sección adicional presenta servicios para organizaciones y orientación jurídica cuando se confirme el alcance.
+p00588 El recorrido explica elegir servicio, solicitar horario y recibir confirmación. El pie contiene sede, contacto institucional y privacidad. No se publican tarifas, testimonios, disponibilidad ni cifras sin validación. Las imágenes clínicas del concepto son ilustrativas y no prueban que representen instalaciones o personal reales.
+p00589 Criterios de interfaz
+p00590 Diseño adaptable desde 360 píxeles, texto base de 16 píxeles o mayor, objetivos táctiles cómodos y estados de foco visibles. Usar azul oscuro sobre blanco y reservar el cian para acentos o fondos con texto oscuro; comprobar contraste antes de aprobar componentes. No depender únicamente del color para errores o estados.
+p00591 Se entrega un archivo CSS con variables de la referencia y reglas base propuestas, además de la imagen conceptual de landing. La imagen orienta la construcción; no es una aplicación funcional ni demuestra accesibilidad, permisos o integración de agenda.
+p00593 Fuentes y preparación de la primera reunión
+p00594 Fuentes consultadas el 23 de septiembre de 2026. Las páginas de servicios fundamentan el inventario inicial; la operación real y los horarios deben validarse con cada responsable. Las recomendaciones de arquitectura, alcance, plazos e indicadores son propuestas de este documento.
+p00595 Identidad y servicios institucionales
+p00596 • Referencia visual: https://www.modelo.edu.mx/
+p00597 • CSS recuperado: https://www.modelo.edu.mx/css/style.css
+p00598 • Escudo recuperado: https://www.modelo.edu.mx/images/logo.png
+p00599 • Directorio general: https://www.unimodelo.edu.mx/servicios
+p00600 • Odontología: https://www.unimodelo.edu.mx/merida/servicios/clinica-dental
+p00601 • Fisioterapia: https://www.unimodelo.edu.mx/merida/servicios/clinica-fisioterapia
+p00602 • Servicios comunitarios: https://www.unimodelo.edu.mx/merida/servicios/casita
+p00603 • Deporte: https://www.unimodelo.edu.mx/merida/servicios/laboratorio-ciencias-deporte
+p00604 • Directorio complementario: https://ingenieria.eium.com.mx/servicioseium/
+p00605 Fuentes oficiales para revisar requisitos
+p00606 • Ley Federal de Protección de Datos Personales en Posesión de los Particulares, texto de Cámara de Diputados: https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+p00607 • NOM 004 SSA3 2012 del expediente clínico: https://sidof.segob.gob.mx/notas/5272787
+p00608 • NOM 024 SSA3 2012 sobre sistemas de información de registro electrónico para la salud: https://platiica.economia.gob.mx/normalizacion/nom-024-ssa3-2012/
+p00609 Material que debe llevar cada responsable
+p00610 Catálogo real de servicios; horarios; organigrama operativo; formatos vacíos; un caso anonimizado y sus excepciones; tarifas vigentes; registros y sistemas utilizados; volumen aproximado; problemas frecuentes y tres prioridades. El área de TI aportará inventario de infraestructura e integraciones; Finanzas, reglas de cobro y conciliación.
+p00611 Acuerdos que deben salir de la reunión
+p00612 Confirmar Mérida y La Casita, responsables y suplentes el 1 y 2 de octubre; reservar validaciones hasta el 15 de diciembre; habilitar evidencias; recibir formatos al 7 de octubre; asignar dueño y fecha a decisiones y dependencias. C21 a C27 contienen calendario y automatización vigentes.
+p00613 Registro de acuerdos sugerido: código, decisión, evidencia, responsable, fecha compromiso, impacto en alcance y estado. El documento de procesos y la lista de requisitos deberán permanecer vinculados para que un cambio operativo pueda rastrearse hasta la pantalla, la regla y la prueba correspondiente.
+p00615 C01 Alcance del cumplimiento integral
+p00616 Esta ampliación incorpora el cumplimiento normativo al levantamiento, al diseño del sistema y a la autorización de cada servicio. Forma parte del plan de trabajo y complementa sus 120 preguntas originales. La institución deberá validar la matriz con sus responsables sanitario, jurídico, académico, de seguridad y de tecnologías antes de liberar módulos clínicos.
+p00617 Fecha de corte de la consulta documental: 23 de septiembre de 2026. Se revisaron fuentes oficiales de la Secretaría de Economía, DOF, Secretaría de Salud, COFEPRIS, STPS, Cámara de Diputados y Gobierno de Yucatán. Las fichas del catálogo permiten identificar la norma; su texto publicado, modificaciones y transitorios determinan la obligación.
+p00618 Cómo interpretar la matriz
+p00619 Clasificación
+p00620 Significado
+p00621 Decisión requerida
+p00622 B base del servicio
+p00623 La actividad descrita encuadra inicialmente en la norma
+p00624 Confirmar sede, modalidad y numerales aplicables
+p00625 C condicionada
+p00626 La obligación depende de equipo, procedimiento, población o modalidad
+p00627 Comprobar si se activa el supuesto y documentar la conclusión
+p00628 T transversal
+p00629 Afecta a varias unidades o al establecimiento como conjunto
+p00630 Asignar dueño institucional y evidencia por sede
+p00631 P propuesta de control
+p00632 Diseño operativo o informático sugerido para acreditar cumplimiento
+p00633 Aprobar su implementación y periodicidad
+p00635 Vigente no significa aplicable a todos los servicios. Tampoco significa que la institución ya cumple. Cada obligación comenzará con estado «pendiente de evaluar», separado de «no aplica justificado», «cumple», «parcial» o «incumplimiento comprobado». Un proyecto de NOM o un tema de un programa de normalización no sustituye por sí solo una norma vigente.
+p00636 Entregables obligatorios del levantamiento ampliado
+p00637 • Matriz por razón social, sede, unidad y actividad, con norma y numeral, obligación, supuesto de aplicación, responsable y evidencia.
+p00638 • Dictamen interno de aplicabilidad validado; diagnóstico de brechas comprobadas; acciones correctivas con plazos y presupuesto.
+p00639 • Procedimientos y formatos aprobados, pruebas del sistema y acta de autorización de cada servicio.
+p00640 • Registro de cambios legales con evaluación humana antes de modificar reglas o formularios.
+p00641 No se ha inspeccionado la operación ni se han examinado permisos, expedientes o instalaciones. Por ello, este documento es un programa de verificación y ejecución; no constituye una certificación ni declara infracciones. El inventario deberá ampliarse si aparecen actividades no documentadas, como hospitalización, banco de sangre, farmacia, radioterapia o atención obstétrica.
+p00642 Lectura de la ampliación
+p00643 C02 resume el mapa de servicios; C03 a C11 desarrollan cada unidad. C12 a C16 cubren controles transversales y digitales. C17 y C18 establecen el trabajo y su aceptación. C19 contiene el registro de NOM y C20 las fuentes complementarias. Las denominaciones temáticas abreviadas del registro facilitan la lectura; los enlaces llevan a la identificación oficial.
+p00645 C02 Mapa normativo por servicio
+p00646 En todos los servicios clínicos se revisan expediente NOM-004-SSA3-2012, registro electrónico NOM-024-SSA3-2012 al usar SIRES, accesibilidad física NOM-030-SSA3-2013, protección de datos y seguridad del paciente. La infraestructura se clasifica conforme al tipo de consultorio; no se asigna categoría hospitalaria por pertenecer a una universidad.
+p00647 Servicio
+p00648 NOM centrales
+p00649 Supuestos que amplían la revisión
+p00650 Odontología
+p00651 013-SSA2-2015; 005-SSA3-2018 o 016-SSA3-2012; 087-SEMARNAT-SSA1-2002
+p00652 Rayos X, anestesiología, cirugía mayor, residuos químicos y servicio social
+p00653 Fisioterapia
+p00654 004-SSA3-2012; 015-SSA-2023 cuando atienda discapacidad; 030-SSA3-2013
+p00655 Consulta de especialidad, hidroterapia, radiación no ionizante y técnicas invasivas
+p00656 Nutrición
+p00657 043-SSA2-2012; 005-SSA3-2018
+p00658 Sobrepeso u obesidad: 008-SSA3-2017; alimentos preparados y enfermedades crónicas
+p00659 Psicología clínica
+p00660 004-SSA3-2012; 005-SSA3-2018
+p00661 Violencia: 046-SSA2-2005; adicciones: 028-SSA2-2009; hospitalización psiquiátrica sólo si existe
+p00662 Deporte y readaptación
+p00663 Normas clínicas anteriores cuando exista atención a la salud
+p00664 Laboratorio clínico, pruebas con muestras, rehabilitación, alberca o investigación
+p00665 UAPS y prevención
+p00666 005-SSA3-2018; 017-SSA2-2012; 009-SSA2-2013 según actividad escolar
+p00667 Enfermería, vacunación, crónicos, embarazo, pruebas VIH y toma de muestras
+p00668 Servicios comunitarios
+p00669 Normas del acto que se realice, aunque sea gratuito o fuera del campus
+p00670 Orientación alimentaria, asistencia alimentaria, trabajo con menores y campañas
+p00671 Servicios laborales y educativos
+p00672 035-STPS-2018 y 030-STPS-2009 según contrato y alcance
+p00673 Evaluación clínica individual, datos del empleador, riesgos físicos y químicos
+p00674 Despacho jurídico
+p00675 No se identifica una NOM clínica propia por asesorar
+p00676 Datos sensibles recibidos, secreto profesional, representación y expedientes separados
+p00677 Recepción caja docencia y recursos
+p00678 NOM clínicas en su función de apoyo; NOM laborales del centro
+p00679 Servicio social, investigación, proveedores, esterilización, mantenimiento y publicidad
+p00681 Las claves de la tabla llevan el prefijo NOM. Cada fila se desarrolla a continuación y remite al registro C19. Una norma referida dentro de otra puede haber sido sustituida: se revisará la versión vigente y no se copiará automáticamente la bibliografía histórica.
+p00682 Cambios que deben reflejarse en los formatos
+p00683 Usar NOM-005-SSA3-2018 en lugar de la versión 2010; NOM-015-SSA-2023 para discapacidad en lugar de NOM-015-SSA3-2012; NOM-017-STPS-2024 para EPP en lugar de 2008. Para agua, revisar NOM-127-SSA1-2021 y su alcance. Las denominaciones actuales de protección civil son NOM-003-SSPC-2011 y NOM-008-SSPC-2015, antes SEGOB; documentar la correspondencia sin duplicar obligaciones. [Registro C19; fuente F12]
+p00685 C03 Odontología
+p00686 Responsable propuesto: coordinación odontológica y responsable sanitario del establecimiento, con apoyo de esterilización, mantenimiento, docencia y TI.
+p00687 Aplicabilidad y controles
+p00688 B — NOM-013-SSA2-2015. Revisar capítulos 5, 8 y 9: expediente odontológico, prevención de infecciones y consentimiento. Verificar odontograma y periodontograma iniciales y de seguimiento, evolución, auxiliares diagnósticos y cambios del plan. Su numeral 8.24 establece testigos biológicos cada dos meses; el protocolo puede ser más exigente por equipo, fabricante o riesgo. NOM-004-SSA3-2012 complementa la custodia y confidencialidad. [N01, N02; F01]
+p00689 B/C — NOM-005-SSA3-2018, numeral 6.4 y apéndice B, para estomatología general; NOM-016-SSA3-2012 para infraestructura de especialidad según clasificación real. Levantar áreas de lavado y esterilización, suministro de agua, seguridad eléctrica e inventario. [N03, N04]
+p00690 B/C — NOM-087-SEMARNAT-SSA1-2002 por RPBI; NOM-052-SEMARNAT-2005 si existen residuos peligrosos químicos. Separar punzocortantes, residuos biológicos y materiales como amalgamas o químicos de revelado según su caracterización. [N07, N32]
+p00691 C — NOM-229-SSA1-2002 con modificaciones y NOM-012-STPS-2012 según equipo radiológico y exposición. La primera incluye panorámica dental y excluye aplicaciones odontológicas convencionales en su campo original; COFEPRIS incluye panorámica y tomografía dental en su orientación sobre licencia. El asesor radiológico deberá resolver el equipo concreto, sin interpretar la exclusión como ausencia de protección radiológica. [N08, N43; F04]
+p00692 C — NOM-006-SSA3-2011 y NOM-026-SSA3-2012 si se realiza anestesiología o cirugía mayor ambulatoria; no atribuirlas automáticamente a una aplicación ordinaria de anestesia local. [N24, N25]
+p00693 Preguntas adicionales para el desarrollador
+p00694 ODC01 ¿Qué procedimientos se hacen realmente, con qué profesional y en qué establecimiento autorizado?
+p00695 ODC02 ¿Qué cambia en el consentimiento si cambia el plan y cómo se prueba su explicación y firma?
+p00696 ODC03 ¿Cómo se identifica equipo, ciclo, carga, resultado y liberador de esterilización? ¿Cómo se inmoviliza una carga fallida?
+p00697 ODC04 ¿Qué tipo, marca y modelo de rayos X existe y qué permisos, controles y dictámenes corresponden?
+p00698 ODC05 ¿Qué accidente por punzocortante o reacción a medicamento activa atención, notificación y seguimiento?
+p00699 ODC06 ¿Qué puede realizar un alumno, quién supervisa presencialmente y quién libera el registro?
+p00700 Evidencias y resultado del trabajo
+p00701 Solicitar formatos vigentes, una muestra anonimizada, bitácoras de esterilización, mantenimiento, registros de residuos, credenciales y documentos radiológicos si proceden. Propuesta del sistema: trazabilidad de instrumental y lotes, consentimiento versionado, firma del supervisor y bloqueo de recursos fuera de servicio. El cierre requiere que coordinación valide los casos normal, cambio de plan, carga fallida y urgencia con referencia.
+p00703 C04 Fisioterapia y rehabilitación
+p00704 Responsable propuesto: coordinación de fisioterapia, responsable clínico, mantenimiento y seguridad y salud en el trabajo.
+p00705 Aplicabilidad y controles
+p00706 B — NOM-004-SSA3-2012 para la atención clínica y NOM-024-SSA3-2012 para el registro electrónico. El sistema deberá conservar valoración, objetivos, intervención, evolución, reevaluación y alta según formatos aprobados. [N01, N05]
+p00707 C — NOM-015-SSA-2023 cuando se otorgue atención médica integral a personas con discapacidad. Revisar evaluación funcional, accesibilidad y coordinación interdisciplinaria dentro de las competencias del equipo. NOM-030-SSA3-2013 regula accesibilidad arquitectónica, no sustituye una evaluación del sitio web. [N09, N06]
+p00708 C — NOM-005-SSA3-2018 o NOM-016-SSA3-2012 según el establecimiento y la consulta de especialidad realmente presentes; Jurídico y el responsable sanitario documentarán el encuadre. NOM-039-SSA-2023 sólo si se participa en certificación de discapacidad bajo los requisitos correspondientes; una valoración funcional no equivale a ese certificado. [N03, N04, N10]
+p00709 C — NOM-013-STPS-1993 ante fuentes electromagnéticas no ionizantes, según exposición. Revisar equipos de electroterapia, láser u otras tecnologías y las instrucciones del fabricante. La NOM-240-SSA1-2012 orienta la tecnovigilancia conforme al papel del establecimiento. [N44, N27]
+p00710 C — NOM-245-SSA1-2010 cuando una instalación de hidroterapia encuadre como alberca de uso público. Una tina individual exige evaluación específica; no se asume que toda hidroterapia tiene el mismo régimen. Revisar agua, limpieza, recirculación y muestreo con el responsable sanitario. [N28]
+p00711 Preguntas adicionales para el desarrollador
+p00712 FIC01 ¿Se atiende discapacidad, lesión deportiva, dolor o consulta de rehabilitación médica y quién determina el diagnóstico?
+p00713 FIC02 ¿Qué contraindicaciones y señales de alarma se comprueban antes de cada modalidad?
+p00714 FIC03 ¿Quién autoriza el uso de cada equipo y dónde consta su mantenimiento y capacitación?
+p00715 FIC04 ¿Existen hidroterapia, punción seca u otras técnicas invasivas? ¿Qué competencia y protocolo las respaldan?
+p00716 FIC05 ¿Qué escalas, unidades y criterios clínicos permiten reevaluar y cerrar un episodio?
+p00717 FIC06 ¿Cómo se atienden caídas, quemaduras, lesión durante movilización o falla de dispositivo?
+p00718 Evidencias y resultado del trabajo
+p00719 Solicitar catálogo de técnicas, perfiles profesionales, formatos, inventario con manuales, mantenimiento y registros de incidentes. Si existe agua terapéutica, agregar clasificación de instalación y controles sanitarios. Evaluar también movilización segura y ergonomía, distinguiendo obligaciones normativas de protocolos preventivos propios.
+p00720 Propuesta del sistema: plan por episodio, dosis y parámetros documentados, registro por sesión, restricciones visibles al profesional asignado, mantenimiento que impida reservar equipo no disponible y seguimiento de incidentes. Cierre: simular una sesión suspendida por contraindicación, un evento adverso y una referencia, con validación clínica.
+p00722 C05 Nutrición
+p00723 Responsable propuesto: coordinación de nutrición; apoyo de responsable sanitario, cocina si existe y Finanzas para paquetes.
+p00724 Aplicabilidad y controles
+p00725 B — NOM-043-SSA2-2012 para orientación alimentaria. Registrar el alcance de la consejería y aprobar materiales dirigidos a edades, contextos culturales y condiciones de los usuarios. NOM-005-SSA3-2018, numeral 6.8 y apéndice F, establece el equipamiento del consultorio de nutriología. [N11, N03]
+p00726 C — NOM-008-SSA3-2017 al ofrecer tratamiento integral del sobrepeso y la obesidad. Confirmar competencias, participación interdisciplinaria y prácticas autorizadas. La aplicación no deberá convertir una fórmula antropométrica en prescripción médica ni habilitar medicamentos a perfiles sin facultad. [N12]
+p00727 C — NOM-015-SSA2-2010, NOM-030-SSA2-2009 y NOM-037-SSA2-2012 en intervenciones de diabetes, hipertensión y dislipidemias, respectivamente, conforme a la actividad profesional realizada. Documentar referencia y coordinación con el médico, sin trasladar al nutriólogo funciones ajenas. [N13, N14, N15]
+p00728 C — NOM-251-SSA1-2009 si se preparan o procesan alimentos, bebidas o suplementos; dar una consulta no activa por sí solo todo el régimen de una cocina. NOM-014-SSA3-2013 si se realiza asistencia social alimentaria a grupos de riesgo. [N29, N30]
+p00729 Preguntas adicionales para el desarrollador
+p00730 NUC01 ¿Se ofrece orientación, consulta clínica, tratamiento de obesidad, alimentación colectiva o venta de productos?
+p00731 NUC02 ¿Cómo se documentan diagnóstico nutricional, alergias, restricciones, objetivos y referencia médica?
+p00732 NUC03 ¿Qué cálculos se emplean, quién los valida y qué versión de fórmula debe conservar cada resultado?
+p00733 NUC04 ¿Qué población requiere formatos distintos: menores, embarazadas, adultos mayores o pacientes con enfermedades crónicas?
+p00734 NUC05 ¿Se preparan alimentos? ¿Cómo se registran proveedores, temperaturas, higiene, lotes y atención de quejas?
+p00735 NUC06 ¿Cómo se controla que planes, anuncios y paquetes no prometan resultados garantizados ni mezclen finalidades comerciales sin informar?
+p00736 Evidencias y resultado del trabajo
+p00737 Solicitar formatos y materiales educativos aprobados, criterios de referencia, fichas de equipos de medición, verificación de básculas y expedientes de cocina si corresponde. Distinguir el equipo de uso clínico de instrumentos sujetos a verificación metrológica comercial; confirmar el supuesto antes de exigir un dictamen específico.
+p00738 Propuesta del sistema: mediciones con unidades y autor, cálculos versionados, planes históricos, consentimientos pertinentes y trazabilidad de entregas alimentarias si se activan. Cierre: revisar un caso de enfermedad crónica, una medición errónea corregida sin perder historial y una referencia documentada.
+p00740 C06 Psicología clínica
+p00741 Responsable propuesto: coordinación de psicología, responsable clínico y Jurídico para menores, crisis y comunicación a terceros.
+p00742 Aplicabilidad y controles
+p00743 B — NOM-004-SSA3-2012 y NOM-005-SSA3-2018, numeral 6.7 y apéndice E, para expediente y consultorio. Diferenciar atención clínica de orientación escolar o evaluación laboral; clasificar los registros y accesos por finalidad. [N01, N03]
+p00744 C — NOM-046-SSA2-2005 y su modificación de 2016 cuando corresponda la prevención y atención de violencia familiar, sexual y contra las mujeres. Preparar detección, documentación, atención dentro de capacidad, referencia y avisos previstos por la normativa. No sustituir estas obligaciones con un formulario genérico de confidencialidad. [N16; F05]
+p00745 C — NOM-028-SSA2-2009 para actividades de prevención, tratamiento o control de adicciones dentro de su campo. NOM-025-SSA2-2014 corresponde a unidades de atención integral hospitalaria médico-psiquiátrica: no debe imponerse íntegramente a una consulta psicológica ambulatoria por compartir la temática de salud mental. [N17, N18]
+p00746 T — Protección de datos y derechos de niñas, niños y adolescentes. Validar representación, información al menor conforme a su situación y protección frente a violencia. No conceder acceso automático a toda la historia a quien paga ni a cualquier familiar. [F06, F09]
+p00747 Preguntas adicionales para el desarrollador
+p00748 PSC01 ¿Qué servicios son clínicos, escolares, laborales, de pareja o familiares y quién es el titular de cada registro?
+p00749 PSC02 ¿Qué procedimiento aplica ante riesgo suicida, violencia, abuso o necesidad de intervención urgente?
+p00750 PSC03 ¿Quién decide avisos y referencias, en qué plazo y con qué fundamento? ¿Cómo se acredita su recepción?
+p00751 PSC04 ¿Cómo se verifica la representación de un menor y se resuelven restricciones de custodia o conflicto familiar?
+p00752 PSC05 ¿Qué se entrega a escuela, empleador, familiar o autoridad y quién aprueba esa entrega?
+p00753 PSC06 ¿Se realizan sesiones remotas, grabaciones o pruebas psicométricas? ¿Qué licencias, permisos y medidas de privacidad existen?
+p00754 Evidencias y resultado del trabajo
+p00755 Solicitar protocolos de crisis, directorio de referencia, formatos de consentimiento, reglas de acceso y materiales de evaluación con licencias cuando correspondan. No incorporar reactivos protegidos por derechos de autor sin autorización.
+p00756 Propuesta del sistema: acceso por caso y profesional, notas individuales separadas en terapia familiar, registro de fundamento y destinatario de entregas, alertas internas con contenido mínimo. Una alerta de crisis requiere atención humana inmediata según protocolo; no puede quedar sólo en una cola de mensajes. Cierre: ensayar atención de menor, solicitud de empleador y crisis fuera del horario habitual.
+p00758 C07 Ciencias del deporte y readaptación
+p00759 Responsable propuesto: coordinación del laboratorio o servicio, profesional clínico cuando intervenga y encargado de equipos.
+p00760 Aplicabilidad y controles
+p00761 B/C — Clasificar cada actividad como entrenamiento, evaluación de rendimiento, atención clínica, rehabilitación o investigación. No se identificó en las fuentes revisadas una sola NOM que regule íntegramente «ciencias del deporte». Las obligaciones se activan por el acto y el riesgo, no por el nombre del laboratorio.
+p00762 C — NOM-004-SSA3-2012, NOM-024-SSA3-2012, NOM-015-SSA-2023 y NOM-016-SSA3-2012 cuando se desarrollen atención clínica, rehabilitación de personas con discapacidad o consulta especializada, según su respectivo campo. Nutrición deportiva incorpora NOM-043-SSA2-2012 y, si procede, NOM-008-SSA3-2017. [N01, N05, N09, N04, N11, N12]
+p00763 C — NOM-007-SSA3-2011 si existe laboratorio clínico; no se presume por usar la palabra laboratorio ni por hacer mediciones físicas. Si se toman muestras capilares u otras muestras biológicas, el responsable sanitario deberá clasificar el proceso, controles analíticos, destino y obligaciones. NOM-087-SEMARNAT-SSA1-2002 aplica a los RPBI generados. [N23, N07]
+p00764 C — NOM-012-SSA3-2012 cuando se desarrollen proyectos de investigación para la salud en seres humanos; una atención o práctica docente no es automáticamente un proyecto de investigación. NOM-245-SSA1-2010 si se utiliza alberca dentro de su campo. [N26, N28]
+p00765 Preguntas adicionales para el desarrollador
+p00766 DEC01 ¿Cuáles pruebas son de rendimiento y cuáles tienen finalidad diagnóstica o terapéutica?
+p00767 DEC02 ¿Quién determina aptitud, contraindicaciones, intensidad y criterios para interrumpir cada prueba?
+p00768 DEC03 ¿Se realizan pruebas de esfuerzo, lactato, espirometría u otras técnicas y qué personal competente las interpreta?
+p00769 DEC04 ¿Se reciben menores o deportistas remitidos por equipos? ¿Quién puede recibir resultados individuales?
+p00770 DEC05 ¿Qué prueba de funcionamiento, calibración o verificación requiere cada instrumento?
+p00771 DEC06 ¿Qué proyecto usa datos para investigación y cuáles aprobaciones y consentimientos lo respaldan?
+p00772 Evidencias y resultado del trabajo
+p00773 Solicitar protocolos, fichas técnicas, planes de atención a incidentes, registros de mantenimiento y contratos con equipos deportivos. Propuesta del sistema: resultados con unidad y método, versión de protocolo, operador, equipo y estado de aceptación; señalización de resultado no validado. Los informes a clubes deben limitarse a la finalidad autorizada.
+p00774 El cierre requiere simular una prueba interrumpida, un resultado fuera de rango revisado por profesional y una solicitud de datos por parte de un entrenador. El consentimiento del participante no exime de disponer de personal competente, equipo seguro y referencia ante urgencia.
+p00776 C08 Atención y prevención de la salud
+p00777 Responsable propuesto: coordinación UAPS, personal médico o de enfermería según oferta real y enlace de epidemiología.
+p00778 Aplicabilidad y controles
+p00779 B/C — NOM-005-SSA3-2018 y NOM-004-SSA3-2012 según atención ambulatoria. NOM-019-SSA3-2013 cuando se presten cuidados de enfermería. Precisar competencias de cada perfil y actos sujetos a indicación médica. [N03, N01, N19]
+p00780 C — NOM-036-SSA2-2012 cuando se apliquen vacunas u otros biológicos de su ámbito. La agenda no podrá ofrecer esta actividad sin confirmar recursos, personal, cadena de frío y procedimiento de incidentes. NOM-220-SSA1-2016 contempla farmacovigilancia según funciones del servicio. [N20, N21]
+p00781 B/C — NOM-017-SSA2-2012 para vigilancia epidemiológica dentro de su campo y NOM-035-SSA3-2012 para información en salud conforme a obligaciones del prestador. Definir unidad notificante, evento, canal, responsable, suplente y plazo concreto; no programar el mismo plazo para todos los eventos. [N22, N31]
+p00782 C — NOM-009-SSA2-2013 en promoción de salud escolar; NOM-015-SSA2-2010, NOM-030-SSA2-2009 y NOM-037-SSA2-2012 para crónicos; NOM-010-SSA-2023 para VIH; NOM-007-SSA2-2016 si se brinda atención de embarazo o del recién nacido dentro de la capacidad autorizada. Toma de muestras: evaluar NOM-007-SSA3-2011 y RPBI. [N33, N13, N14, N15, N34, N35, N23, N07]
+p00783 Preguntas adicionales para el desarrollador
+p00784 UAC01 ¿Qué actos se realizan y cuáles sólo se canalizan a otra institución?
+p00785 UAC02 ¿Quién prescribe, aplica medicamentos o vacunas y comprueba identidad, alergias y dosis?
+p00786 UAC03 ¿Qué registro conserva lote, caducidad, temperatura y persona que administró el producto?
+p00787 UAC04 ¿Quién recibe alertas epidemiológicas y quién realiza la notificación oficial y conserva el acuse?
+p00788 UAC05 ¿Se realizan pruebas rápidas o muestras? ¿Qué control de calidad, consentimiento y referencia requieren?
+p00789 UAC06 ¿Qué sucede si el paciente llega con una urgencia que supera la capacidad del servicio?
+p00790 Evidencias y resultado del trabajo
+p00791 Solicitar cartera autorizada, protocolos, inventario de medicamentos y biológicos, bitácoras y canales oficiales de referencia. La existencia de un botiquín no convierte al área en servicio formal de urgencias; si se opera como tal debe ampliarse la matriz antes de habilitarlo.
+p00792 Propuesta del sistema: identificar lotes, generar recordatorios de seguimiento, registrar aviso oficial con acuse y detectar tareas vencidas. Las notificaciones sanitarias requieren revisión y envío por la persona autorizada; no se enviarán automáticamente a autoridades por detectar una palabra en la nota. Cierre: ensayar cadena de frío fuera de rango, evento notificable y traslado.
+p00794 C09 Servicios comunitarios laborales y educativos
+p00795 Responsable propuesto: coordinación de La Casita y vinculación, con el responsable de cada intervención clínica y cada convenio.
+p00796 Aplicabilidad y controles
+p00797 B/C — En una jornada comunitaria se aplican las NOM del servicio efectivamente prestado. La gratuidad, el descuento, el voluntariado o la actividad universitaria no eliminan el deber de documentar atención, proteger datos y actuar dentro de las competencias.
+p00798 C — NOM-009-SSA2-2013 para promoción de salud escolar, NOM-043-SSA2-2012 para orientación alimentaria, NOM-014-SSA3-2013 para asistencia social alimentaria a grupos de riesgo y NOM-251-SSA1-2009 para preparación de alimentos. [N33, N11, N30, N29]
+p00799 C — NOM-035-STPS-2018 si se ofrecen servicios a empleadores para riesgos psicosociales. Definir el alcance por tamaño del centro de trabajo: hasta 15; de 16 a 50; y más de 50 trabajadores. La contratación de un cuestionario no cubre por sí sola la política, prevención, medidas y seguimiento del empleador. [N41]
+p00800 C — NOM-030-STPS-2009 si el contrato abarca servicios preventivos de seguridad y salud. El alcance puede activar otras NOM según los riesgos del centro cliente; no anunciar una evaluación psicológica como auditoría integral de SST. [N40]
+p00801 Preguntas adicionales para el desarrollador
+p00802 COC01 ¿Qué unidad responde por cada jornada y quién acredita local, permisos, personal y materiales?
+p00803 COC02 ¿Qué convenio delimita responsabilidades, derivaciones, pagos, datos y atención posterior?
+p00804 COC03 ¿Quién conserva el registro original cuando participan varias instituciones?
+p00805 COC04 ¿Qué recibe el empleador: resultados agregados, recomendaciones o información individual autorizada?
+p00806 COC05 ¿Cómo se determina el tamaño del centro de trabajo y la metodología válida para el servicio NOM-035?
+p00807 COC06 ¿Cómo se documenta una referencia y se verifica que la persona accedió al servicio receptor?
+p00808 Evidencias y resultado del trabajo
+p00809 Solicitar convenios, programas, listas de personal autorizado, formatos y reportes de ejemplo anonimizados. Determinar si se prestan servicios en centros de asistencia social o sólo orientación; una nueva modalidad residencial exige ampliar requisitos.
+p00810 Propuesta del sistema: expediente de jornada, sede temporal, equipo responsable, captura sin conexión con custodia segura y sincronización controlada; informes agregados con protección frente a reidentificación. Separar evaluación laboral de expediente de terapia individual. Cierre: validar una campaña externa y un contrato laboral con campos de datos, responsabilidades y productos claramente delimitados.
+p00812 C10 Vinculación jurídica y protección de derechos
+p00813 Responsable propuesto: despacho jurídico o asesoría institucional; coordinación con el responsable sanitario sólo para el asunto concreto.
+p00814 Alcance normativo
+p00815 No se identifica una NOM sanitaria propia aplicable al simple servicio de orientación jurídica. Sí deben revisarse ejercicio profesional local, representación, contratos, secreto profesional, conflictos de interés y protección de datos. Cuando el asunto nace de atención clínica, las NOM de ese servicio aportan el marco del hecho, sin convertir el expediente jurídico en expediente clínico.
+p00816 La LFPDPPP regula el tratamiento privado de datos y la LGDNNA aporta el marco de protección de menores. Revisar la legislación estatal y procesal correspondiente al asunto y la transición local del régimen procesal antes de automatizar plazos. Este plan no fija calendarios judiciales universales. [F06, F09]
+p00817 NOM-151-SCFI-2016 puede ser relevante para conservación de mensajes de datos y digitalización dentro de su ámbito mercantil. Jurídico definirá cuándo se requiere un mecanismo de constancia con un prestador acreditado. Un PDF, una imagen de firma o un hash propio no equivalen por sí solos a esa constancia. Tampoco sustituyen el cumplimiento clínico de NOM-004 y NOM-024. [N52]
+p00818 Preguntas adicionales para el desarrollador
+p00819 JUC01 ¿Quién es el cliente del despacho cuando existe un conflicto entre paciente e institución?
+p00820 JUC02 ¿Cómo se detecta y documenta conflicto de interés antes de recibir información confidencial?
+p00821 JUC03 ¿Qué poder, autorización o representación permite actuar o recibir documentos?
+p00822 JUC04 ¿Qué información clínica es necesaria, con qué fundamento y qué profesional valida la entrega?
+p00823 JUC05 ¿Qué documentos se preservan por litigio o investigación y quién puede levantar la retención?
+p00824 JUC06 ¿Qué plazos se calculan, cuál es su fuente, jurisdicción y fecha de notificación, y quién verifica el resultado?
+p00825 Evidencias y resultado del trabajo
+p00826 Solicitar formatos de apertura, carta de servicios, poderes, protocolo de conflicto de interés, reglas de custodia y matriz de jurisdicciones. Mantener reservado el contenido del asunto frente a recepción clínica y áreas que no participan en él.
+p00827 Propuesta del sistema: compartimento jurídico separado, expediente de autorizaciones y entregas, control de vencimientos con validación profesional y conservación por litigio. El acceso por emergencia clínica no debe abrir automáticamente un expediente jurídico; son finalidades distintas.
+p00828 Cierre: simular una solicitud de expediente por autoridad, un familiar sin representación y un conflicto institucional. Registrar recepción, verificación, decisión, documentación entregada y acuse. La transparencia hacia el paciente debe articularse con sus derechos y la reserva de terceros, sin tratar el secreto profesional como una prohibición absoluta de atender solicitudes legítimas.
+p00830 C11 Recepción administración docencia y recursos
+p00831 Responsable propuesto: Dirección, responsables de unidad, Recursos Humanos, coordinación académica, Finanzas y mantenimiento.
+p00832 Controles por función
+p00833 Recepción verificará identidad y representación, información del servicio, privacidad y agenda; no tendrá acceso rutinario a notas clínicas. Caja conservará concepto, importe y comprobante, sin copiar diagnósticos al recibo o al log de pagos. La coordinación definirá qué datos mínimos requiere cada función.
+p00834 La Ley General de Salud, artículos 79 y 83, es parte de la revisión de títulos, ejercicio y datos profesionales. Verificar cédulas y facultades por actividad; una matrícula escolar o la presencia de un docente no habilita por sí sola cualquier acto clínico. [F07]
+p00835 C — NOM-009-SSA3-2013 para campos clínicos del servicio social de medicina y estomatología. No extenderla automáticamente a todas las prácticas de fisioterapia, nutrición o psicología; éstas requieren revisar convenios, reglas académicas y supervisión propios. NOM-012-SSA3-2012 cuando exista investigación para la salud en seres humanos. [N36, N26]
+p00836 T/C — Recursos debe integrar esterilización, limpieza, inventario, mantenimiento y tecnovigilancia según equipos. Autoclaves y compresores requieren clasificación técnica frente a NOM-020-STPS-2011; no todos tienen iguales obligaciones ni toda unidad necesita el mismo trámite. [N27, N46]
+p00837 Preguntas adicionales para el desarrollador
+p00838 ADC01 ¿Qué razón social presta, cobra y factura cada servicio y quién conserva el expediente?
+p00839 ADC02 ¿Qué permisos amparan cada domicilio y cartera real, incluidos cambios de responsable?
+p00840 ADC03 ¿Cómo se verifica título, cédula, capacitación y alcance de actuación antes de asignar pacientes?
+p00841 ADC04 ¿Qué documento autoriza a un alumno, fija supervisor y fecha de término de su acceso?
+p00842 ADC05 ¿Cómo se distinguen consentimiento asistencial, participación docente, investigación y uso de imagen?
+p00843 ADC06 ¿Qué compras, mantenimiento, calibración, retiro y caducidades deben impedir utilizar un recurso?
+p00844 Evidencias y resultado del trabajo
+p00845 Solicitar padrón de profesionales, expedientes de alumnos, convenios, permisos, inventario y contratos. No exigir a una cédula profesional una caducidad inexistente; distinguir verificación de identidad y registro de las renovaciones reales de certificados, permisos o acreditaciones.
+p00846 Propuesta del sistema: credenciales verificadas, asignación limitada por actividad y vigencia de rotación, doble autoría alumno supervisor, catálogo de recursos y retiro trazable. Un proyecto de investigación debe tener sus aprobaciones específicas y su conjunto de datos autorizado, separado de la operación asistencial. Cierre: comprobar acceso de alumno vencido, equipo retirado y cobro sin acceso a diagnóstico.
+p00848 C12 Seguridad laboral y protección civil
+p00849 El diagnóstico debe realizarse por centro de trabajo y sede, con inventario de puestos, trabajadores, alumnos expuestos, equipos y sustancias. Las NOM laborales obligan conforme a su campo; para estudiantes se definirán también medidas institucionales y convenios, sin confundir categorías laborales.
+p00850 Norma o grupo
+p00851 Qué se debe comprobar
+p00852 Evidencia propuesta
+p00853 NOM-001-STPS-2008 y NOM-002-STPS-2010
+p00854 Instalaciones seguras y prevención de incendios conforme al riesgo
+p00855 Recorridos, evaluación de incendio, mantenimiento y simulacros
+p00856 NOM-019-STPS-2011 y NOM-030-STPS-2009
+p00857 Comisión de seguridad e higiene y servicios preventivos
+p00858 Actas, diagnóstico, programa o relación de acciones y seguimiento
+p00859 NOM-017-STPS-2024
+p00860 Selección y manejo de EPP según peligros
+p00861 Matriz por puesto, entrega, capacitación y reposición
+p00862 NOM-025-STPS-2008 y NOM-026-STPS-2008
+p00863 Iluminación y señalización
+p00864 Evaluaciones técnicas y verificación física
+p00865 NOM-035-STPS-2018
+p00866 Riesgos psicosociales según tamaño del centro
+p00867 Política, evaluación aplicable, medidas y seguimiento
+p00868 NOM-005-STPS-1998, 018-STPS-2015 y 010-STPS-2014
+p00869 Sustancias peligrosas y exposición a agentes químicos, cuando proceda
+p00870 Inventario, hojas de datos de seguridad, análisis y controles
+p00871 NOM-012-STPS-2012 y 013-STPS-1993
+p00872 Fuentes ionizantes o no ionizantes, respectivamente
+p00873 Clasificación de exposición y controles del especialista
+p00874 NOM-020-STPS-2011
+p00875 Recipientes y generadores de vapor dentro de su campo
+p00876 Expediente técnico y clasificación de cada equipo
+p00877 NOM-029-STPS-2011 y NOM-001-SEDE-2012
+p00878 Mantenimiento e instalación eléctrica, según alcance
+p00879 Planos, revisiones, personal autorizado y dictámenes exigibles
+p00880 NOM-036-1-STPS-2018 y NOM-037-STPS-2023
+p00881 Manejo manual de cargas y teletrabajo, si se activan sus supuestos
+p00882 Evaluación por actividad y modalidad; medidas preventivas
+p00884 Fuentes individuales en C19, N37 a N51 y N56 a N60. El análisis puede activar otras NOM por ruido, maquinaria, altura u otros peligros: registrar esa extensión, no declarar automáticamente exhaustivo este listado.
+p00885 Protección civil y autorizaciones locales
+p00886 Revisar NOM-003-SSPC-2011 y NOM-008-SSPC-2015, así como la Ley y Reglamento de Protección Civil de Yucatán y requisitos de la autoridad competente. Verificar que el programa interno incluya clínicas, usuarios con movilidad reducida, sustancias, equipos y sedes externas. Confirmar jurisdicción municipal por domicilio; no presumirla por el nombre comercial del campus. [N50, N51; F10, F12]
+p00887 El plan de evacuación deberá poder ejecutarse con pacientes en tratamiento. Responsable propuesto: seguridad y mantenimiento. Preguntas clave: ¿quién ayuda a cada persona?, ¿cómo se interrumpe de forma segura un procedimiento?, ¿qué evidencia acredita capacitación y correcciones? La app conservará tareas y vencimientos; la eficacia se comprobará físicamente.
+p00889 C13 Bioseguridad ambiente y vigilancia
+p00890 Responsables propuestos: sanitario, encargado de residuos, mantenimiento y enlace con proveedores autorizados.
+p00891 Residuos y esterilización
+p00892 NOM-087-SEMARNAT-SSA1-2002 exige clasificar RPBI y manejarlo conforme al tipo de generador y residuo. Verificar segregación en origen, envase, almacenamiento, recolección y destino. No todo residuo de consultorio es RPBI. Determinar el nivel del generador antes de configurar tiempos máximos de almacenamiento. [N07]
+p00893 NOM-052-SEMARNAT-2005 y LGPGIR amplían la revisión a residuos peligrosos químicos y a las obligaciones del generador. Solicitar registro que corresponda, contratos, autorizaciones de gestores y comprobantes de entrega. No mezclar amalgamas, solventes, medicamentos caducos u otros residuos con la bolsa de RPBI sin clasificación. [N32; F11]
+p00894 Propuesta de control: cada entrega tendrá tipo, cantidad, fecha, sede, recolector y evidencia; una alerta de vencimiento no sustituirá el retiro. Para esterilización, vincular equipo, ciclo y liberación, con protocolo de carga fallida, inmovilización y evaluación de pacientes potencialmente afectados por el responsable clínico.
+p00895 Agua e instalaciones
+p00896 NOM-127-SSA1-2021 establece calidad del agua para uso y consumo humano; identificar si la institución opera un sistema de abastecimiento y qué controles le corresponden, además del agua usada en procedimientos. NOM-245-SSA1-2010 se revisa en albercas de su ámbito. Muestrear y mantener según programa sanitario aprobado; no fijar frecuencias sólo por comodidad del software. [N53, N28]
+p00897 Para aguas residuales, identificar destino antes de seleccionar norma: NOM-002-SEMARNAT-1996 para alcantarillado urbano o municipal; NOM-001-SEMARNAT-2021 para cuerpos receptores nacionales. Revisar permisos de extracción y descarga bajo la Ley de Aguas Nacionales cuando se activen esos supuestos; un pozo o una infiltración requieren análisis propio. [N54, N55; F13]
+p00898 Incidentes y vigilancia
+p00899 NOM-220-SSA1-2016 y NOM-240-SSA1-2012: definir la ruta aplicable para sospechas de reacciones a medicamentos e incidentes con dispositivos. No imponer funciones de fabricante a una clínica usuaria; sí identificar sus responsabilidades de registro y comunicación. NOM-017-SSA2-2012 se articula con epidemiología. [N21, N27, N22]
+p00900 Preguntas de cierre: ¿qué incidentes requieren atención inmediata?, ¿quién decide el reporte y conserva el acuse?, ¿qué proveedor recibe avisos?, ¿quién verifica corrección y eficacia? El sistema registrará atención clínica por separado del análisis institucional del incidente y limitará acceso a ambas finalidades.
+p00902 C14 Permisos ética publicidad y finanzas
+p00903 El cumplimiento integral incluye obligaciones que no son NOM. Jurídico elaborará el registro de instrumentos aplicables y Dirección designará titulares por establecimiento. Las siguientes acciones son propuestas de verificación; no acreditan que falte un permiso.
+p00904 Apertura y operación sanitaria
+p00905 Con la Ley General de Salud y su Reglamento en materia de prestación de servicios de atención médica, revisar tipo de establecimiento, aviso de funcionamiento, responsable sanitario y licencias cuando correspondan. Confirmar titular, domicilio, actividades, cambios y autoridad receptora. No presentar un aviso como equivalente de una licencia para actividades que la requieren. [F07, F08, F14]
+p00906 Verificar títulos y competencias, información a usuarios, referencia ante urgencias, quejas y responsabilidad profesional. Revisar seguro y cobertura de estudiantes y prácticas; documentar si es obligación, requisito contractual o medida institucional. Ninguna carta de consentimiento debe presentarse como exoneración general de responsabilidad.
+p00907 Seguridad del paciente y conducta institucional
+p00908 Integrar las Acciones Esenciales para la Seguridad del Paciente, cuyo anexo fue actualizado en 2023. Adaptar identificación, comunicación, seguridad de medicamentos y procedimientos, prevención de infecciones y caídas, registro de eventos y cultura de seguridad a cada servicio. No confundir su implementación con obtener voluntariamente una certificación institucional. [F15]
+p00909 Propuesta de gobierno: canal de quejas, trato digno, prevención de discriminación y acoso, conflictos de interés y criterios transparentes de becas y descuentos. Registrar resolución y acciones, con revisión independiente cuando exista conflicto.
+p00910 Landing page y comunicación comercial
+p00911 Revisar el Reglamento de la Ley General de Salud en materia de Publicidad y el trámite COFEPRIS aplicable: permiso o aviso según anunciante y contenido. Aprobar cada servicio, nombre profesional, tarifa, promoción, imagen y afirmación clínica antes de publicar. Una web universitaria que anuncia atención clínica debe evaluarse por ese contenido. [F16]
+p00912 Propuesta del sistema: ninguna tarjeta pública se activará sin aprobación del dueño del servicio y revisión documental. Conservar versión publicada, responsable y fecha. No usar fotografías identificables de pacientes ni testimonios sin base y autorizaciones pertinentes.
+p00913 Facturación contratos y personal
+p00914 Finanzas determinará por concepto y prestador el tratamiento de IVA, CFDI, descuentos y devoluciones. La exención de servicios médicos tiene condiciones; no extenderla automáticamente a todo lo que se anuncia como salud o deporte. [F17]
+p00915 RH y Jurídico revisarán contratación, seguridad social, riesgos de trabajo, prestadores independientes y convenios de alumnos. La aplicación deberá separar expedientes laborales y clínicos; sus detalles fiscales y laborales se validarán con el régimen real de la entidad y la normativa vigente al implementar.
+p00917 C15 Expediente digital privacidad y datos
+p00918 Responsables propuestos: sanitario para contenido clínico, Jurídico para bases y derechos, TI para seguridad y Gonzalo para implementación.
+p00919 Obligaciones que condicionan el diseño
+p00920 NOM-004-SSA3-2012: verificar integración, autoría, fecha, hora y firma de notas; conservación mínima de cinco años desde el último acto médico, sin perjuicio de plazos mayores aplicables. La propiedad del soporte institucional no elimina los derechos del paciente sobre su información. Eliminar un usuario no debe destruir sus notas. [N01; F02]
+p00921 NOM-024-SSA3-2012: los prestadores que utilizan SIRES deben usar sistemas conformes. Su alcance incluye integridad, confidencialidad, conservación e intercambio. Elaborar matriz de numerales 5 y 6 y revisar el procedimiento de evaluación de conformidad del capítulo 7 y las guías DGIS aplicables. Definir la ruta regulatoria antes de convertir la aplicación en registro clínico oficial; desarrollar con Django no acredita conformidad por sí mismo. [N05; F03]
+p00922 LFPDPPP vigente: documentar finalidades, aviso, base de tratamiento y, cuando corresponda, consentimiento expreso y escrito para datos sensibles, considerando excepciones legales. Configurar derechos ARCO, confidencialidad, seguridad, encargados y transferencias. La ley de 2025 exige actualizar referencias heredadas del régimen anterior; Jurídico verificará autoridad y disposiciones transitorias. [F06]
+p00923 Controles propuestos para implementar
+p00924 • Identidad común, episodios separados y permisos por función, sede, asignación y finalidad; el servidor debe rechazar accesos indebidos.
+p00925 • Firma y autoría trazables; notas liberadas inalterables, con adendas vinculadas y motivo. Resolver jurídicamente el mecanismo de firma y su verificación.
+p00926 • Registro de accesos, exportaciones y modificaciones, con custodia e integridad; no colocar texto clínico en logs ni mensajes de error.
+p00927 • Retención por tipo documental, suspensión de eliminación por litigio y autorización de disposición final. Cinco años no constituye una orden automática de borrar.
+p00928 • Cifrado, autenticación reforzada, archivos privados, respaldos probados, segregación de ambientes y revocación de accesos.
+p00929 • Consentimientos diferenciados para atención, datos, docencia, investigación, imagen y mercadotecnia, según necesidad y fundamento.
+p00930 Decisiones para el desarrollador
+p00931 ¿Quién es responsable de datos y quién es encargado? ¿Qué prestadores externos reciben información y dónde la alojan? ¿Qué escenarios de intercambio existen? ¿Cómo se identifica al firmante? ¿Quién verifica la ruta DGIS y cuánto cuesta? ¿Cómo se atiende un incidente o solicitud de derechos?
+p00932 La página pública y agenda pueden ponerse en marcha antes del expediente clínico si su propio tratamiento de datos está validado. El registro clínico oficial requiere pasar su criterio de autorización normativa y técnica. La IA y n8n se limitarán inicialmente a tareas administrativas aprobadas; cualquier envío de información sensible a un tercero exige análisis específico.
+p00934 C16 Módulo de cumplimiento y automatizaciones
+p00935 Se incorpora un módulo transversal que vincula obligación, proceso, evidencia y prueba. Su finalidad es facilitar el trabajo del responsable y conservar trazabilidad; ningún semáforo sustituye una inspección, dictamen o autorización.
+p00936 Datos que debe conservar
+p00937 Norma: clave, título, fuente oficial, publicación, vigencia, modificaciones, fecha de última revisión y estado. Obligación: numeral, texto resumido, supuesto, sede, servicio, responsable, suplente y periodicidad con fundamento. Evaluación: evidencia, verificador, fecha, resultado y justificación. Acción: prioridad, causa, medida, plazo y comprobación de eficacia.
+p00938 Permiso: titular, autoridad, domicilio, alcance, folio, emisión y vencimiento cuando exista. Evidencia: versión, archivo, fecha, origen, responsable, confidencialidad y conservación. Prueba del sistema: requisito vinculado, caso, resultado y versión liberada. No inventar caducidades para documentos que no las tienen.
+p00939 Automatización propuesta
+p00940 Disparador
+p00941 Control humano
+p00942 Avisos de vigencia
+p00943 Fechas verificadas de permiso, convenio o mantenimiento
+p00944 Dueño confirma renovación y alcance
+p00945 Seguimiento de obligaciones
+p00946 Periodicidad legal o institucional identificada
+p00947 Verificador acepta evidencia y cierre
+p00948 Esterilización y recursos
+p00949 Carga fallida o equipo fuera de servicio
+p00950 Profesional libera tras corrección documentada
+p00951 Accesos docentes
+p00952 Inicio, cambio o fin de rotación
+p00953 Supervisor aprueba actividades autorizadas
+p00954 Vigilancia normativa
+p00955 Cambio detectado en fuentes oficiales
+p00956 Jurídico valida vigencia, impacto y nueva regla
+p00957 Preparación de auditoría
+p00958 Selección de sede, servicio y periodo
+p00959 Responsable revisa integridad y datos a entregar
+p00961 Reglas del módulo
+p00962 Estados: pendiente de evaluar, aplica, no aplica justificado; evaluación separada de cumple, parcial o incumple. Una tarea «realizada» no es evidencia de cumplimiento hasta su verificación. Una evidencia vencida o fuera de alcance no pondrá el indicador en verde.
+p00963 Las alertas irán por correo o canal institucional con enlace autenticado. n8n recibirá preferentemente identificadores y vencimientos, no expedientes. Conservar idempotencia, reintentos y acuse interno; no transmitir automáticamente a autoridades ni renovar trámites mediante respuestas generadas por IA.
+p00964 Indicadores propuestos
+p00965 Cobertura: obligaciones con aplicabilidad resuelta entre obligaciones revisadas. Evidencia válida: obligaciones aplicables verificadas conformes entre aplicables evaluadas. Mostrar por separado las pendientes, no aplicables, brechas críticas y correcciones vencidas. No inflar el porcentaje incluyendo «no aplica» en el numerador.
+p00966 Propuesta de prueba: una norma sustituida genera análisis de impacto; no altera retroactivamente consentimientos firmados ni cierra tareas. Un documento con vencimiento desconocido permanece pendiente. La app debe mostrar quién decidió la aplicabilidad y sobre qué fundamento.
+p00968 C17 Plan de ejecución de cumplimiento
+p00969 El cumplimiento inicia en paralelo en todas las unidades el 1 de octubre de 2026. Al 9 se resuelven clasificación y ruta regulatoria; al 16 se aprueba la matriz inicial. Las correcciones físicas y gestiones avanzan desde que se detectan. Su conclusión se comprueba antes de habilitar el servicio correspondiente.
+p00970 Momento
+p00971 Trabajo y entregable
+p00972 Dueño y criterio de salida
+p00973 1 a 7 oct
+p00974 Inventario por sede de actividades, profesionales, equipos, permisos y datos
+p00975 Dirección y unidades confirman alcance real
+p00976 5 a 9 oct
+p00977 Aplicabilidad por norma y numeral; visitas y muestreo de evidencias
+p00978 Sanitario y Jurídico validan supuestos y pendientes
+p00979 12 a 16 oct
+p00980 Brechas comprobadas, prioridad, procedimientos y requisitos de software
+p00981 Cada unidad acepta acciones, recursos y responsable
+p00982 19 a 23 oct
+p00983 Matriz aprobada y puertas de autorización por servicio
+p00984 Dirección decide alcance del piloto y dependencias
+p00985 Diseño y núcleo
+p00986 Firmas, privacidad, retención, acceso y modelo de obligaciones
+p00987 TI, Jurídico y clínicos aceptan pruebas diseñadas
+p00988 Antes de cada piloto
+p00989 Evidencia sanitaria, controles físicos y casos de excepción
+p00990 Responsable sanitario y dueño del servicio autorizan
+p00991 Antes del registro oficial
+p00992 Conformidad de SIRES y mecanismo de firma resueltos
+p00993 Validación documentada de ruta regulatoria y técnica
+p00994 Operación
+p00995 Seguimiento de incidentes, auditoría y vigilancia normativa
+p00996 Dueños comprueban correcciones y eficacia
+p00998 Trabajo concreto que aporta cada unidad
+p00999 Odontología entrega expediente, esterilización, residuos y clasificación radiológica; fisioterapia, técnicas y equipos; nutrición, cartera y formulación; psicología, privacidad y crisis; deporte, clasificación de pruebas; UAPS, actos autorizados y notificación; comunidad, convenios y jornadas; jurídico, bases y permisos; administración, credenciales, contratos y recursos. C03 a C11 contienen 54 preguntas adicionales, seis por unidad, vinculadas al inventario original.
+p01000 Esfuerzo y calendario actualizados
+p01001 El trabajo de cumplimiento se integra en las 295 horas base propuestas en C24: análisis, controles comunes, módulo, pruebas y revisión de evidencias. No se agregan nuevamente las 180 horas de la versión anterior. Las unidades, Jurídico y responsables sanitarios aportan tiempo propio en paralelo.
+p01002 La meta es el 15 de diciembre de 2026, con 59 horas de reserva técnica y estabilización del 7 al 11 de diciembre. Las cifras anteriores de 1140 y 1368 horas quedan sustituidas. El 9 de octubre se reestima con los primeros paquetes aceptados, bloqueos y disponibilidad real.
+p01003 Permisos, adecuaciones y evaluación de conformidad tienen responsables y seguimiento independiente desde el 1 de octubre. Si una dependencia impide operar un servicio, Dirección decide su solución y comunica el impacto. Una entrega parcial no equivale al cumplimiento de la meta integral.
+p01005 C18 Aceptación auditoría y cierre de brechas
+p01006 Puertas de autorización propuestas
+p01007 G1 Catálogo: servicio, domicilio, titular y responsable definidos. G2 Operación: permisos, competencias, equipos y contingencia acreditados. G3 Datos: avisos, roles y transferencias validados. G4 Sistema: firma, conservación, seguridad y conformidad resueltos. G5 Piloto: pruebas aceptadas y brechas críticas cerradas.
+p01008 Si falta un requisito obligatorio, Dirección y el responsable sanitario determinarán restricciones y corrección; aceptar internamente el riesgo no sustituye la obligación. El sistema permitirá desactivar oferta y reserva ordinaria, conservando registros y referencias. La atención de una urgencia seguirá su protocolo, sin depender de un bloqueo comercial.
+p01009 Prueba adicional
+p01010 Resultado esperado
+p01011 Validador
+p01012 Expediente y firma
+p01013 Autoría verificable; cambios por adenda; recuperación completa
+p01014 Sanitario y TI
+p01015 Acceso indebido
+p01016 Caja, alumno vencido y usuario ajeno reciben denegación
+p01017 TI y privacidad
+p01018 Cambio de plan dental
+p01019 Se conserva el plan previo y se solicita consentimiento pertinente
+p01020 Odontología
+p01021 Recurso no apto
+p01022 Carga o equipo bloqueado no se asigna a nueva atención
+p01023 Unidad y mantenimiento
+p01024 Menor o conflicto familiar
+p01025 Representación revisada; entrega de datos autorizada y trazable
+p01026 Psicología y Jurídico
+p01027 Evento notificable
+p01028 Responsable y suplente identificados; plazo y acuse registrados
+p01029 Enlace sanitario
+p01030 Evidencia vencida
+p01031 No genera cumplimiento automático ni cierre sin revisión
+p01032 Compliance
+p01033 Continuidad
+p01034 Restauración conserva archivos, versiones y permisos; contingencia operable
+p01035 TI y unidades
+p01037 Registro de hallazgos
+p01038 Cada hallazgo tendrá código, servicio, norma y numeral, evidencia, riesgo, causa, acción, responsable, fecha y prueba de eficacia. Distinguir «no exhibido» de «inexistente», conservando solicitud y respuesta. La ausencia de un documento en internet no demuestra incumplimiento.
+p01039 Prioridad propuesta: crítica ante riesgo inmediato grave o requisito indispensable ausente; alta ante falla relevante; media ante debilidad documental sin riesgo inmediato identificado. Fijar corrección según riesgo y norma, sin un plazo universal de 30 días.
+p01040 Gobierno posterior
+p01041 Proponer seguimiento mensual, revisión trimestral de accesos y evaluación anual, además de revisión ante cambios de servicio, sede, equipo, incidente o norma. Son frecuencias institucionales propuestas; cada obligación mantiene su periodicidad legal.
+p01042 Dirección recibirá indicadores agregados, sin acceso indiscriminado a notas clínicas. El dueño y un verificador competente cerrarán cada acción con evidencia de eficacia. La matriz permanecerá vinculada a los procesos y sus responsables.
+p01044 C19 Registro de NOM 1 a 10
+p01045 Consulta del catálogo oficial al 23 de septiembre de 2026. Las fichas consultadas reportan estas normas vigentes; la aplicabilidad institucional permanece sujeta al levantamiento. Abrir la ficha para acceder a publicación, historial y texto. Revisar modificaciones y transitorios antes de cerrar cada obligación.
+p01046 ID
+p01047 Norma y fuente
+p01048 Materia resumida
+p01049 Alcance por validar
+p01050 N01
+p01051 NOM-004-SSA3-2012Ficha oficial
+p01052 Expediente clínico
+p01053 Atención clínica en las unidades
+p01054 N02
+p01055 NOM-013-SSA2-2015Ficha oficial
+p01056 Prevención y control de enfermedades bucales
+p01057 Odontología
+p01058 N03
+p01059 NOM-005-SSA3-2018Ficha oficial
+p01060 Infraestructura y equipo para atención ambulatoria
+p01061 Consultorios no especializados según tipo
+p01062 N04
+p01063 NOM-016-SSA3-2012Ficha oficial
+p01064 Infraestructura de hospitales y consultorios especializados
+p01065 Clasificación del establecimiento
+p01066 N05
+p01067 NOM-024-SSA3-2012Ficha oficial
+p01068 Sistemas de registro electrónico e intercambio en salud
+p01069 Aplicación con SIRES
+p01070 N06
+p01071 NOM-030-SSA3-2013Ficha oficial
+p01072 Accesibilidad arquitectónica de establecimientos de salud
+p01073 Instalaciones de atención médica
+p01074 N07
+p01075 NOM-087-SEMARNAT-SSA1-2002Ficha oficial
+p01076 Clasificación y manejo de RPBI
+p01077 Actividades que generan RPBI
+p01078 N08
+p01079 NOM-229-SSA1-2002Ficha oficial
+p01080 Instalaciones y protección para diagnóstico con rayos X
+p01081 Según equipo; revisar modificaciones y exclusiones
+p01082 N09
+p01083 NOM-015-SSA-2023Ficha oficial
+p01084 Atención médica integral a personas con discapacidad
+p01085 Fisioterapia y demás atención comprendida
+p01086 N10
+p01087 NOM-039-SSA-2023Ficha oficial
+p01088 Certificación de discapacidad
+p01089 Sólo actividad de certificación comprendida
+p01091 Para cada norma aplicable se abrirán obligaciones por numeral y se adjuntará la evidencia correspondiente. Las recomendaciones operativas del plan no sustituyen el texto normativo. No se presume que una ficha de catálogo incorpore por sí sola todas las reformas publicadas.
+p01093 C19 Registro de NOM 11 a 20
+p01094 Consulta del catálogo oficial al 23 de septiembre de 2026. Las fichas consultadas reportan estas normas vigentes; la aplicabilidad institucional permanece sujeta al levantamiento. Abrir la ficha para acceder a publicación, historial y texto. Revisar modificaciones y transitorios antes de cerrar cada obligación.
+p01095 ID
+p01096 Norma y fuente
+p01097 Materia resumida
+p01098 Alcance por validar
+p01099 N11
+p01100 NOM-043-SSA2-2012Ficha oficial
+p01101 Orientación y educación alimentaria
+p01102 Nutrición y actividades educativas
+p01103 N12
+p01104 NOM-008-SSA3-2017Ficha oficial
+p01105 Tratamiento integral de sobrepeso y obesidad
+p01106 Cuando se ofrece ese tratamiento
+p01107 N13
+p01108 NOM-015-SSA2-2010Ficha oficial
+p01109 Prevención y control de diabetes mellitus
+p01110 Según intervención en el paciente
+p01111 N14
+p01112 NOM-030-SSA2-2009Ficha oficial
+p01113 Prevención y control de hipertensión arterial
+p01114 Según intervención en el paciente
+p01115 N15
+p01116 NOM-037-SSA2-2012Ficha oficial
+p01117 Prevención y control de dislipidemias
+p01118 Según intervención en el paciente
+p01119 N16
+p01120 NOM-046-SSA2-2005Ficha oficial
+p01121 Prevención y atención de violencia familiar y sexual
+p01122 Atención de salud; modificación de 2016
+p01123 N17
+p01124 NOM-028-SSA2-2009Ficha oficial
+p01125 Prevención y tratamiento de adicciones
+p01126 Según actividades de prevención o atención
+p01127 N18
+p01128 NOM-025-SSA2-2014Ficha oficial
+p01129 Atención integral hospitalaria médico psiquiátrica
+p01130 No asignar a consulta ambulatoria sin encuadre
+p01131 N19
+p01132 NOM-019-SSA3-2013Ficha oficial
+p01133 Ejercicio de enfermería en el sistema de salud
+p01134 Si se ofrecen cuidados de enfermería
+p01135 N20
+p01136 NOM-036-SSA2-2012Ficha oficial
+p01137 Aplicación de vacunas y otros biológicos
+p01138 Si se administran productos de su ámbito
+p01140 Para cada norma aplicable se abrirán obligaciones por numeral y se adjuntará la evidencia correspondiente. Las recomendaciones operativas del plan no sustituyen el texto normativo. No se presume que una ficha de catálogo incorpore por sí sola todas las reformas publicadas.
+p01142 C19 Registro de NOM 21 a 30
+p01143 Consulta del catálogo oficial al 23 de septiembre de 2026. Las fichas consultadas reportan estas normas vigentes; la aplicabilidad institucional permanece sujeta al levantamiento. Abrir la ficha para acceder a publicación, historial y texto. Revisar modificaciones y transitorios antes de cerrar cada obligación.
+p01144 ID
+p01145 Norma y fuente
+p01146 Materia resumida
+p01147 Alcance por validar
+p01148 N21
+p01149 NOM-220-SSA1-2016Ficha oficial
+p01150 Farmacovigilancia
+p01151 Según funciones del prestador y modificaciones
+p01152 N22
+p01153 NOM-017-SSA2-2012Ficha oficial
+p01154 Vigilancia epidemiológica
+p01155 Atención y notificación según evento
+p01156 N23
+p01157 NOM-007-SSA3-2011Ficha oficial
+p01158 Organización y operación de laboratorios clínicos
+p01159 Según pruebas y establecimiento real
+p01160 N24
+p01161 NOM-006-SSA3-2011Ficha oficial
+p01162 Práctica de anestesiología
+p01163 Si se realizan actos de su campo
+p01164 N25
+p01165 NOM-026-SSA3-2012Ficha oficial
+p01166 Cirugía mayor ambulatoria
+p01167 Si se incorpora esa actividad
+p01168 N26
+p01169 NOM-012-SSA3-2012Ficha oficial
+p01170 Investigación en salud con seres humanos
+p01171 Proyectos de investigación comprendidos
+p01172 N27
+p01173 NOM-240-SSA1-2012Ficha oficial
+p01174 Tecnovigilancia
+p01175 Según funciones relacionadas con dispositivos
+p01176 N28
+p01177 NOM-245-SSA1-2010Ficha oficial
+p01178 Condiciones sanitarias y agua de albercas
+p01179 Cuando la instalación encuadra en su campo
+p01180 N29
+p01181 NOM-251-SSA1-2009Ficha oficial
+p01182 Higiene en procesos de alimentos y bebidas
+p01183 Preparación o proceso; no sólo consulta
+p01184 N30
+p01185 NOM-014-SSA3-2013Ficha oficial
+p01186 Asistencia social alimentaria a grupos de riesgo
+p01187 Si existe esa modalidad de asistencia
+p01189 Para cada norma aplicable se abrirán obligaciones por numeral y se adjuntará la evidencia correspondiente. Las recomendaciones operativas del plan no sustituyen el texto normativo. No se presume que una ficha de catálogo incorpore por sí sola todas las reformas publicadas.
+p01191 C19 Registro de NOM 31 a 40
+p01192 Consulta del catálogo oficial al 23 de septiembre de 2026. Las fichas consultadas reportan estas normas vigentes; la aplicabilidad institucional permanece sujeta al levantamiento. Abrir la ficha para acceder a publicación, historial y texto. Revisar modificaciones y transitorios antes de cerrar cada obligación.
+p01193 ID
+p01194 Norma y fuente
+p01195 Materia resumida
+p01196 Alcance por validar
+p01197 N31
+p01198 NOM-035-SSA3-2012Ficha oficial
+p01199 Información en salud
+p01200 Obligaciones del prestador y reportes aplicables
+p01201 N32
+p01202 NOM-052-SEMARNAT-2005Ficha oficial
+p01203 Identificación y clasificación de residuos peligrosos
+p01204 Residuos químicos y otros peligrosos
+p01205 N33
+p01206 NOM-009-SSA2-2013Ficha oficial
+p01207 Promoción de salud escolar
+p01208 Intervenciones escolares de su ámbito
+p01209 N34
+p01210 NOM-010-SSA-2023Ficha oficial
+p01211 Prevención y control de infección por VIH
+p01212 Según prevención, pruebas y atención
+p01213 N35
+p01214 NOM-007-SSA2-2016Ficha oficial
+p01215 Atención en embarazo parto puerperio y recién nacido
+p01216 Sólo actos comprendidos que realmente se ofrecen
+p01217 N36
+p01218 NOM-009-SSA3-2013Ficha oficial
+p01219 Campos clínicos de servicio social de medicina y estomatología
+p01220 No generalizar a todas las carreras
+p01221 N37
+p01222 NOM-001-STPS-2008Ficha oficial
+p01223 Seguridad de edificios y áreas de trabajo
+p01224 Centro de trabajo
+p01225 N38
+p01226 NOM-002-STPS-2010Ficha oficial
+p01227 Prevención y protección contra incendios
+p01228 Centro de trabajo según riesgo
+p01229 N39
+p01230 NOM-019-STPS-2011Ficha oficial
+p01231 Comisiones de seguridad e higiene
+p01232 Centro de trabajo
+p01233 N40
+p01234 NOM-030-STPS-2009Ficha oficial
+p01235 Servicios preventivos de seguridad y salud laboral
+p01236 Centro de trabajo y servicio contratado
+p01238 Para cada norma aplicable se abrirán obligaciones por numeral y se adjuntará la evidencia correspondiente. Las recomendaciones operativas del plan no sustituyen el texto normativo. No se presume que una ficha de catálogo incorpore por sí sola todas las reformas publicadas.
+p01240 C19 Registro de NOM 41 a 50
+p01241 Consulta del catálogo oficial al 23 de septiembre de 2026. Las fichas consultadas reportan estas normas vigentes; la aplicabilidad institucional permanece sujeta al levantamiento. Abrir la ficha para acceder a publicación, historial y texto. Revisar modificaciones y transitorios antes de cerrar cada obligación.
+p01242 ID
+p01243 Norma y fuente
+p01244 Materia resumida
+p01245 Alcance por validar
+p01246 N41
+p01247 NOM-035-STPS-2018Ficha oficial
+p01248 Prevención de factores psicosociales laborales
+p01249 Según tamaño del centro de trabajo
+p01250 N42
+p01251 NOM-017-STPS-2024Ficha oficial
+p01252 Selección uso y manejo del EPP
+p01253 Según riesgos; sustituye versión 2008
+p01254 N43
+p01255 NOM-012-STPS-2012Ficha oficial
+p01256 Seguridad ante radiación ionizante
+p01257 Cuando se manejan fuentes comprendidas
+p01258 N44
+p01259 NOM-013-STPS-1993Ficha oficial
+p01260 Seguridad ante radiación no ionizante
+p01261 Según fuentes y exposición
+p01262 N45
+p01263 NOM-018-STPS-2015Ficha oficial
+p01264 Comunicación de peligros de sustancias químicas
+p01265 Sustancias comprendidas en su campo
+p01266 N46
+p01267 NOM-020-STPS-2011Ficha oficial
+p01268 Seguridad de recipientes a presión y generadores de vapor
+p01269 Clasificar equipo y revisar exclusiones
+p01270 N47
+p01271 NOM-025-STPS-2008Ficha oficial
+p01272 Iluminación en centros de trabajo
+p01273 Áreas y tareas del centro
+p01274 N48
+p01275 NOM-026-STPS-2008Ficha oficial
+p01276 Señales colores e identificación de tuberías
+p01277 Instalaciones del centro
+p01278 N49
+p01279 NOM-029-STPS-2011Ficha oficial
+p01280 Seguridad en mantenimiento eléctrico
+p01281 Trabajos eléctricos propios o contratados
+p01282 N50
+p01283 NOM-003-SSPC-2011Ficha oficial
+p01284 Señales de protección civil
+p01285 Denominación antes SEGOB; ver F12
+p01287 Para cada norma aplicable se abrirán obligaciones por numeral y se adjuntará la evidencia correspondiente. Las recomendaciones operativas del plan no sustituyen el texto normativo. No se presume que una ficha de catálogo incorpore por sí sola todas las reformas publicadas.
+p01289 C19 Registro de NOM 51 a 60
+p01290 Consulta del catálogo oficial al 23 de septiembre de 2026. Las fichas consultadas reportan estas normas vigentes; la aplicabilidad institucional permanece sujeta al levantamiento. Abrir la ficha para acceder a publicación, historial y texto. Revisar modificaciones y transitorios antes de cerrar cada obligación.
+p01291 ID
+p01292 Norma y fuente
+p01293 Materia resumida
+p01294 Alcance por validar
+p01295 N51
+p01296 NOM-008-SSPC-2015Ficha oficial
+p01297 Protección civil y personas con discapacidad
+p01298 Denominación antes SEGOB; ver F12
+p01299 N52
+p01300 NOM-151-SCFI-2016Ficha oficial
+p01301 Conservación de mensajes y digitalización documental
+p01302 Revisar ámbito mercantil y mecanismo requerido
+p01303 N53
+p01304 NOM-127-SSA1-2021Ficha oficial
+p01305 Calidad de agua para uso y consumo humano
+p01306 Identificar suministro y papel del operador
+p01307 N54
+p01308 NOM-002-SEMARNAT-1996Ficha oficial
+p01309 Descargas a alcantarillado urbano o municipal
+p01310 Según destino real de descarga
+p01311 N55
+p01312 NOM-001-SEMARNAT-2021Ficha oficial
+p01313 Descargas a cuerpos receptores nacionales
+p01314 Según descarga y permisos
+p01315 N56
+p01316 NOM-036-1-STPS-2018Ficha oficial
+p01317 Ergonomía en manejo manual de cargas
+p01318 Según tareas dentro de su campo
+p01319 N57
+p01320 NOM-037-STPS-2023Ficha oficial
+p01321 Seguridad y salud en teletrabajo
+p01322 Sólo modalidad legal de teletrabajo
+p01323 N58
+p01324 NOM-001-SEDE-2012Ficha oficial
+p01325 Instalaciones eléctricas
+p01326 Instalación y verificación que corresponda
+p01327 N59
+p01328 NOM-005-STPS-1998Ficha oficial
+p01329 Seguridad con sustancias químicas peligrosas
+p01330 Según manejo almacenamiento y transporte
+p01331 N60
+p01332 NOM-010-STPS-2014Ficha oficial
+p01333 Agentes químicos en el ambiente laboral
+p01334 Reconocimiento evaluación y control según exposición
+p01336 Para cada norma aplicable se abrirán obligaciones por numeral y se adjuntará la evidencia correspondiente. Las recomendaciones operativas del plan no sustituyen el texto normativo. No se presume que una ficha de catálogo incorpore por sí sola todas las reformas publicadas.
+p01338 C20 Fuentes complementarias clínicas y legales
+p01339 Fuentes oficiales consultadas para la ampliación. Los vínculos permiten recuperar el documento o la orientación institucional. El responsable conservará una copia fechada de la versión utilizada al aprobar cada obligación.
+p01340 F01 Texto de NOM-013-SSA2-2015
+p01341 Capítulos 5, 8 y 9; expediente, esterilización y consentimiento. Consultar fuente oficial
+p01342 F02 Texto de NOM-004-SSA3-2012
+p01343 Numerales 5.4, 5.10 y capítulos de notas y consentimiento. Consultar fuente oficial
+p01344 F03 Texto de NOM-024-SSA3-2012
+p01345 Numerales 5 y 6 y procedimiento del capítulo 7. Consultar fuente oficial
+p01346 F04 COFEPRIS sobre radiación para diagnóstico
+p01347 Orientación de licencia y responsable para panorámica y tomografía dental. Consultar fuente oficial
+p01348 F05 Modificación de NOM-046 publicada en 2016
+p01349 Consultar junto al texto base de violencia familiar y sexual. Consultar fuente oficial
+p01350 F06 Ley Federal de Protección de Datos Personales en Posesión de los Particulares
+p01351 Texto vigente; datos sensibles, derechos, seguridad y bases del tratamiento. Consultar fuente oficial
+p01352 F07 Ley General de Salud
+p01353 Marco sanitario y ejercicio profesional; artículos 79 y 83. Consultar fuente oficial
+p01354 F08 Reglamento de atención médica de la Ley General de Salud
+p01355 Clasificación y operación de establecimientos de atención médica. Consultar fuente oficial
+p01356 F09 Ley General de los Derechos de Niñas Niños y Adolescentes
+p01357 Protección de derechos y revisión de representación. Consultar fuente oficial
+p01359 C20 Fuentes complementarias institucionales
+p01360 Fuentes oficiales consultadas para la ampliación. Los vínculos permiten recuperar el documento o la orientación institucional. El responsable conservará una copia fechada de la versión utilizada al aprobar cada obligación.
+p01361 F10 Protección Civil de Yucatán
+p01362 Repositorio de ley, reglamento y estructura de programas internos. Consultar fuente oficial
+p01363 F11 Ley General para la Prevención y Gestión Integral de los Residuos
+p01364 Obligaciones de generadores y gestión de residuos según clasificación. Consultar fuente oficial
+p01365 F12 Declaratoria de denominaciones SSPC de 2024
+p01366 Correspondencia de normas antes identificadas con SEGOB. Consultar fuente oficial
+p01367 F13 Ley de Aguas Nacionales
+p01368 Revisión de extracción, descargas y títulos cuando corresponda. Consultar fuente oficial
+p01369 F14 COFEPRIS avisos de funcionamiento y responsable
+p01370 Clasificar el trámite según establecimiento y actividad. Consultar fuente oficial
+p01371 F15 Acciones Esenciales para la Seguridad del Paciente
+p01372 Actualización del anexo obligatorio publicada el 16 de junio de 2023. Consultar fuente oficial
+p01373 F16 Reglamento de la Ley General de Salud en materia de Publicidad
+p01374 Complementar con clasificación COFEPRIS de permiso o aviso publicitario. Consultar fuente oficial
+p01375 F17 SAT artículo 15 de la Ley del IVA
+p01376 Revisar fracción XIV por prestador y servicio; no generalizar exención. Consultar fuente oficial
+p01377 Orientación adicional de COFEPRIS: Autorización publicitaria
+p01378 El registro debe ampliarse con disposiciones estatales y municipales del domicilio real y requisitos de cada servicio confirmado. Ante discrepancias entre catálogo y publicación, resolver con el texto oficial, sus reformas y transitorios, dejando constancia de la decisión.
+p01380 C21 Meta del 15 de diciembre de 2026
+p01381 Proponemos completar la aplicación integrada para los servicios confirmados de Mérida y La Casita el 15 de diciembre de 2026. Todos los trabajos comienzan el 1 de octubre, incluida preparación, entrevistas, cumplimiento y desarrollo. La ejecución continúa hasta el 11 de diciembre, con cierre el 14 y 15. Codex apoya entregas breves y las unidades documentan y validan simultáneamente.
+p01382 Qué significa cumplir la meta
+p01383 Todos los servicios confirmados tienen catálogo, responsable, proceso validado y operación en la misma aplicación. La aceptación comprende identidad y agenda comunes; formularios y expedientes autorizados por especialidad; referencias; cobro y conciliación básicos; supervisión docente; recursos; evidencias de cumplimiento y reportes definidos. La landing y el portal utilizan información institucional aprobada.
+p01384 Cada servicio debe haber completado su recorrido normal y sus excepciones, capacitación y autorización de uso. El expediente clínico oficial requiere resolver previamente los criterios C15 y C18. La aceptación final registra versión, alcance habilitado, pruebas y responsables. Una pantalla terminada o una demostración no constituyen una unidad operativa.
+p01385 Cómo reducimos el plazo
+p01386 Cambio de ejecución
+p01387 Efecto en el calendario
+p01388 Levantamiento simultáneo
+p01389 Cada unidad prepara sus formularios y evidencia desde el 1 de octubre; Gonzalo concentra entrevistas y decisiones comunes.
+p01390 Núcleo reutilizable
+p01391 Una identidad, agenda, gestión documental, permisos y auditoría sirven a todas las especialidades.
+p01392 Paquetes de código de 2 a 4 horas
+p01393 Codex implementa tareas acotadas; revisión e integración tienen tiempo y responsable propios.
+p01394 Validación continua
+p01395 Dos demostraciones semanales y revisión por unidad evitan acumular correcciones para diciembre.
+p01396 Cumplimiento desde el arranque
+p01397 Se identifica temprano cualquier trámite, adecuación o condición que limite la operación.
+p01398 Alcance y decisiones
+p01399 Se mantiene el alcance funcional del plan. Las actividades condicionadas sólo se incorporan cuando existan realmente y queden confirmadas al 9 de octubre. Valladolid y Chetumal mantienen su incorporación posterior al levantamiento local. La captura histórica masiva, reemplazar contabilidad o nómina y generar indicaciones clínicas con IA conservan sus exclusiones originales.
+p01400 Dirección confirma responsables, disponibilidad y presupuesto el 1 y 2 de octubre. La fecha final depende de esos compromisos. C22 a C27 permiten medir viabilidad, resolver dudas con IA y corregir desviaciones; programar rápido no elimina las esperas de decisiones institucionales.
+p01402 C22 Trabajo simultáneo por unidad
+p01403 Todas las unidades entregan formatos, catálogo, volúmenes y evidencia inicial al 7 de octubre. Validan procesos críticos al 9 y excepciones al 16. Cada dueño nombra un suplente. Gonzalo coordina entregas de código escalonadas y los responsables preparan información y realizan pruebas en paralelo desde el 1 de octubre.
+p01404 Unidad y responsable funcional
+p01405 Decisiones que deben quedar listas
+p01406 Ventana de módulo y piloto
+p01407 OdontologíaCoordinación clínica
+p01408 Odontograma, plan y presupuesto, supervisión, esterilización y recursos; clasificación de imágenes.
+p01409 Módulo 12 a 23 oct.Piloto 26 oct a 6 nov.
+p01410 FisioterapiaCoordinación de rehabilitación
+p01411 Escalas, objetivos, sesiones, capacidad, paquetes y equipos.
+p01412 Módulo 12 a 23 oct.Piloto 26 oct a 6 nov.
+p01413 NutriciónResponsables de ambas sedes
+p01414 Fórmulas, unidades, planes, cuotas y seguimiento.
+p01415 Módulo 19 a 30 oct.Piloto 2 a 13 nov.
+p01416 PsicologíaCoordinación y privacidad
+p01417 Casos y participantes, acceso, representación, consentimiento y crisis.
+p01418 Módulo 19 a 30 oct.Piloto 2 a 13 nov.
+p01419 Deporte y readaptaciónResponsable del laboratorio
+p01420 Pruebas reales, variables, informes, recursos y referencias.
+p01421 Módulo 26 oct a 6 nov.Piloto 9 a 20 nov.
+p01422 UAPS y prevenciónResponsable sanitario
+p01423 Actos autorizados, notas, derivación y notificación según actividad.
+p01424 Módulo 26 oct a 6 nov.Piloto 9 a 20 nov.
+p01425 Comunidad laboral y educativaVinculación y La Casita
+p01426 Convenios, jornadas, sedes, cuotas, participantes y datos autorizados.
+p01427 Módulo 26 oct a 6 nov.Piloto 9 a 20 nov.
+p01428 JurídicoResponsable del despacho
+p01429 Confirmar inclusión, conflicto de intereses, facultades, plazos y archivos separados.
+p01430 Módulo 26 oct a 6 nov.Piloto 9 a 20 nov.
+p01431 Administración docencia y recursosEnlaces de cada área
+p01432 Tarifas, saldos, proveedor fiscal, rotaciones, inventario y mantenimiento.
+p01433 Núcleo 1 a 9 oct; integración 19 oct a 13 nov. Pilotos 26 oct a 20 nov.
+p01434 Regla de salida de cada piloto
+p01435 El responsable ejecuta un caso normal y dos excepciones, comprueba documentos, permisos y saldos que le correspondan y registra resultados. Puede comenzar antes de concluir otras unidades si dispone del núcleo común y cumple C18. Usar un entorno de prueba con datos anonimizados; la atención real requiere autorización expresa del servicio.
+p01436 La fecha común del 20 de noviembre reserva tiempo para integrar referencias entre unidades. Una unidad aprobada conserva su acta; los cambios posteriores que afecten sus reglas obligan a repetir las pruebas afectadas. El 27 de noviembre se cierra la aceptación funcional consolidada.
+p01438 C23 Hitos dependencias y ruta crítica
+p01439 El avance se mide por entregas aceptadas. Las fechas son de 2026 y no presuponen trabajo en fines de semana. La disponibilidad institucional, días no laborables y ausencias se confirman en el arranque y se absorben dentro de la capacidad o se reasignan antes de comprometer citas de validación.
+p01440 Fecha límite
+p01441 Entregable verificable
+p01442 Responsable y dependencia
+p01443 2 oct
+p01444 Alcance, enlaces, suplentes y tiempo reservado
+p01445 Dirección. Habilita entrevistas y decisiones.
+p01446 7 oct
+p01447 Formatos de todas las unidades e inventario de dependencias
+p01448 Unidades, TI y Jurídico. Incluye proveedores, permisos y equipos.
+p01449 9 oct
+p01450 Procesos críticos, modelo común y ruta de expediente y firma
+p01451 Gonzalo y validadores. Primera medición real de capacidad.
+p01452 16 oct
+p01453 Matriz normativa inicial y excepciones aprobadas
+p01454 Sanitario, Jurídico y unidades. Requisitos listos para pilotos.
+p01455 23 oct
+p01456 Núcleo probado y autorización de primeros pilotos
+p01457 TI, recepción y unidades. Permisos y contingencia verificados.
+p01458 6 nov
+p01459 Funciones especializadas disponibles para todas las unidades
+p01460 Gonzalo. Casos y reglas previamente aprobados.
+p01461 13 nov
+p01462 Integraciones operativas y ensayo de migración de muestra
+p01463 TI y Finanzas. Proveedores y datos preparados.
+p01464 20 nov
+p01465 Todos los servicios integrados y pilotos concluidos
+p01466 Cada unidad y Gonzalo. Referencias y permisos cruzados probados.
+p01467 27 nov
+p01468 Aceptación funcional y congelación de nuevas funciones
+p01469 Dirección y unidades. Cero defectos críticos pendientes.
+p01470 4 dic
+p01471 Carga final ensayada, restauración y capacitación acreditadas
+p01472 TI y enlaces. Decisión documentada de salida.
+p01473 7 a 11 dic
+p01474 Operación gradual y estabilización
+p01475 Operación y soporte. Se conserva contingencia y registro oficial.
+p01476 15 dic
+p01477 Acta final, soporte asignado y pendientes menores calendarizados
+p01478 Dirección y responsables. Evidencia completa de aceptación.
+p01479 Dependencias que fijan la fecha
+p01480 Reglas de identidad y acceso → núcleo común → módulos por especialidad → pruebas entre unidades → ensayo de carga y restauración → operación. La ruta normativa corre en paralelo antes del uso clínico oficial. Finanzas y TI confirman disponibilidad de proveedores al 7 de octubre; el gestor de C27 apoya el levantamiento desde la primera semana.
+p01481 Cada dependencia externa tendrá dueño, evidencia solicitada, fecha estimada del tercero y alternativa operativa autorizada. Al 9 de octubre se documentará si cabe dentro del calendario. Si se necesita una evaluación o trámite sin fecha compatible, se reporta inmediatamente el impacto sobre la meta integral.
+p01483 C24 Capacidad y bloques de trabajo con Codex
+p01484 Capacidad provisional de Gonzalo: 16 horas el 1 y 2 de octubre; 32 semanales durante diez semanas del 5 de octubre al 11 de diciembre, equivalentes a 320; y 18 el 14 y 15 de diciembre. Total: 354 horas. No hay actividades previas al 1 de octubre. Confirmar disponibilidad y ausencias; reestimar el alcance adicional de IA el 9 de octubre.
+p01485 Actividad de Gonzalo
+p01486 Horas base
+p01487 Resultado esperado
+p01488 Análisis, reuniones y decisiones de cumplimiento
+p01489 60
+p01490 Procesos, alcance, datos y requisitos aceptados.
+p01491 Programación y configuración con Codex
+p01492 80
+p01493 Núcleo y especialidades; reestimar gestor e IA el 9 de octubre.
+p01494 Revisión de código, integración y seguridad
+p01495 65
+p01496 Versiones integradas, permisos y configuración revisados.
+p01497 Pruebas funcionales y correcciones con usuarios
+p01498 45
+p01499 Evidencias de R01 a R12 y C18; defectos resueltos.
+p01500 Migración y capacitación de enlaces
+p01501 25
+p01502 Carga conciliada y enlaces capaces de operar.
+p01503 Despliegue, documentación y acompañamiento
+p01504 20
+p01505 Arranque, guías y transferencia al responsable de operación.
+p01506 Total base
+p01507 295
+p01508 Trabajo previsto, sujeto a medición al 9 de octubre.
+p01509 Reserva del 20 por ciento sobre la base
+p01510 59
+p01511 Retrabajo, ausencias y contingencias técnicas.
+p01512 Capacidad total propuesta
+p01513 354
+p01514 La reserva está incluida; no se suma por segunda vez.
+p01515 Qué significa programar en pocas horas
+p01516 Cada paquete listo para Codex tendrá una regla aprobada, entradas y salidas, permisos, ejemplo y criterio de aceptación. Se fija un bloque objetivo de 2 a 4 horas de programación. Las 80 horas permiten aproximadamente 20 a 40 bloques; un bloque puede producir componentes reutilizables para varios servicios. Si la tarea rebasa el bloque, se divide o reestima y se registra el motivo.
+p01517 Revisión, pruebas, integración y autorización se contabilizan aparte. El mismo desarrollador no atiende simultáneamente todas las tareas: mantiene un paquete en integración y como máximo otro preparado. Las unidades avanzan en documentación y pruebas mientras se implementa el siguiente. Codex recibirá formatos vacíos, datos anonimizados y requisitos, sin secretos ni expedientes identificables no autorizados.
+p01518 Capacidad institucional separada
+p01519 Cada enlace reserva 2 horas de arranque el 1 y 2 de octubre, 3 semanales durante cuatro semanas desde el 5 de octubre y 2 durante las seis siguientes: 26 horas por enlace. Nueve frentes suman 234 horas, aparte de Gonzalo. Reservar además su participación en el cierre del 14 y 15. Quien atienda varias áreas necesita apoyo. Estimar esfuerzo adicional jurídico, sanitario, TI y Finanzas al 7 de octubre.
+p01520 El presupuesto técnico se calcula con la tarifa acordada y las horas autorizadas. Asesoría especializada, trámites, evaluaciones externas, adecuaciones y captura masiva se cotizan por separado. La velocidad propuesta se comprobará con los primeros paquetes; no representa una garantía de que toda función pueda concluirse en horas.
+p01522 C25 Coordinación automatización y seguimiento
+p01523 El gestor del plan tendrá roles, formularios guiados, evidencias y dashboard por servicio. Su primera entrega se prevé al 5 de octubre; el arranque del 1 y 2 usará las fichas existentes y se importará con trazabilidad. Cada tarea registra unidad, proceso, obligación, dueño y suplente, dependencia, fecha, criterio, evidencia y versión. C27 desarrolla la asistencia de IA.
+p01524 Ritmo semanal propuesto
+p01525 Momento
+p01526 Actividad
+p01527 Salida
+p01528 Lunes 30 minutos
+p01529 Revisar dependencias y capacidad con enlaces
+p01530 Compromisos de la semana y bloqueos escalados.
+p01531 Martes y jueves
+p01532 Demostraciones de 30 minutos con unidades convocadas
+p01533 Observaciones concretas y aceptación o corrección.
+p01534 Cada día de trabajo
+p01535 Actualizar tareas y revisar avisos de bloqueo
+p01536 Un responsable atiende cada bloqueo; sin reunión diaria obligatoria.
+p01537 Viernes
+p01538 Consolidar avance y decisiones del dueño del proyecto
+p01539 Resumen de entregas aceptadas, reserva y riesgos de fecha.
+p01540 Automatizaciones a implementar
+p01541 1. Formularios de levantamiento por unidad: crear tareas desde respuestas incompletas y vincular formato o evidencia. El responsable valida el proceso descrito antes de convertirlo en requisito.
+p01542 2. Avisos internos y por canales autorizados: recordar vencimientos, avisar al suplente tras dos días hábiles sin respuesta y escalar al tercero. Usar calendario institucional. Son acuerdos internos, no plazos legales. El trabajador bajo systemd ejecuta las tareas; n8n es un conector opcional.
+p01543 3. Preparación de paquetes para Codex: generar un borrador de especificación a partir de requisitos aprobados, con casos de prueba y permisos. Gonzalo revisa el contenido y autoriza su implementación.
+p01544 4. Verificación de entregas: ejecutar pruebas automatizadas de permisos, agenda concurrente, saldos, formularios críticos y regresiones afectadas. Conservar resultado y versión. Publicar en producción requiere la validación correspondiente.
+p01545 5. Informe semanal: calcular avance con tareas aceptadas, incidencias, espera de decisiones y horas reales. Preparar un resumen para Dirección; su distribución se configura con destinatarios y autorización institucional.
+p01546 Indicadores que permiten corregir el plan
+p01547 Medir porcentaje de procesos críticos aprobados por unidad; requisitos aceptados frente al alcance congelado; edad de bloqueos; tiempo desde paquete listo hasta aceptado; defectos críticos abiertos; consumo de horas y reserva; y unidades autorizadas sobre unidades confirmadas. El denominador conserva los pendientes para evitar aparentar avance.
+p01548 Las automatizaciones transportan identificadores, fechas y enlaces protegidos. La IA explica, prepara borradores y detecta faltantes con información autorizada. La aprobación normativa, clínica y financiera sigue en el responsable competente. La aceptación exige evidencia; n8n puede conectarse sin ser obligatorio ni fuente de verdad.
+p01550 C26 Contingencias y aceptación de la meta
+p01551 Controles para proteger el 15 de diciembre
+p01552 El 9 de octubre se comparan primeras entregas, capacidad C24 y trabajo restante, incluyendo gestor, ayuda por pregunta, integración de IA y evaluación C27. Si excede la capacidad, Dirección libera tiempo, añade apoyo o aprueba cambios con impacto explícito. Las 80 horas de código son una hipótesis por revisar; no garantizan absorber el nuevo alcance.
+p01553 Señal de desviación
+p01554 Acción propuesta
+p01555 Responsable
+p01556 Respuesta pendiente por más de dos días hábiles
+p01557 Avisar al suplente; escalar al tercer día y reordenar trabajo listo.
+p01558 Enlace y dueño del proyecto
+p01559 Tarea de código supera el bloque previsto
+p01560 Dividir, registrar horas y actualizar carga; reutilizar componentes verificados.
+p01561 Gonzalo
+p01562 No hay fecha de trámite o evaluación compatible al 9 oct
+p01563 Obtener compromiso o alternativa válida; informar el servicio afectado.
+p01564 Jurídico y sanitario
+p01565 Más de la mitad de la reserva consumida antes del 6 nov
+p01566 Revisar capacidad y causa; aprobar refuerzo o cambio con impacto explícito.
+p01567 Dirección y Gonzalo
+p01568 Defecto crítico o incumplimiento bloqueante
+p01569 Suspender el uso afectado, corregir y repetir pruebas antes de habilitar.
+p01570 Responsable del área y TI
+p01571 Función nueva después del 27 nov
+p01572 Calendarizar después del cierre salvo corrección indispensable aprobada.
+p01573 Dueño del proyecto
+p01574 Reserva y arranque
+p01575 Las 59 horas de reserva están distribuidas dentro de la capacidad hasta el 15 de diciembre. El periodo del 7 al 11 se protege para estabilización; no es una semana adicional a la reserva. El 4 de diciembre se autoriza el arranque por unidad; del 7 al 11 se atienden turnos limitados y se amplían conforme al resultado. El 14 se concilian registros y el 15 se formaliza la entrega.
+p01576 Lista de aceptación del 15 de diciembre
+p01577 • Todos los servicios confirmados tienen alcance, proceso, dueño y acta de aceptación; se identifican expresamente las funciones habilitadas.• R01 a R12 y las pruebas adicionales C18 cuentan con evidencia aprobada; no quedan defectos críticos ni bloqueos de cumplimiento para el alcance operativo.• Datos y saldos del corte conciliados; restauración y contingencia comprobadas; credenciales y accesos revisados.• Usuarios capacitados, guías disponibles, soporte y mantenimiento asignados; pendientes menores con dueño y fecha.• Landing y comunicaciones autorizadas; expediente oficial y firma habilitados sólo al satisfacer sus condiciones de conformidad.
+p01578 Si un servicio no puede habilitarse
+p01579 Se entrega evidencia del bloqueo, actividad pendiente, responsable y nueva fecha estimada. Los servicios autorizados pueden operar si son independientes, preservando las referencias y la continuidad. Dirección registra el cierre como parcial y la desviación frente a la meta integral; no se elimina el servicio del denominador para declarar cumplimiento total.
+p01581 C27 Gestor del plan con asistencia de IA
+p01582 Desde el 1 de octubre, el proyecto incorpora una aplicación para automatizar el levantamiento, la documentación y el seguimiento del plan. Dirección y responsables de servicio serán sus usuarios principales. El gestor se integra en Salud Modelo y conserva los criterios de aceptación de los módulos asistenciales.
+p01583 Formularios que explican cómo contestar
+p01584 Cada pregunta original conserva su código, sección y versión. Incluye significado, finalidad, pasos para responder, responsable que conoce el dato, evidencia requerida, ejemplo ficticio identificado y criterio de suficiencia. Las opciones No lo sé, No existe y Por confirmar generan pendientes. No aplica requiere justificación y revisión competente.
+p01585 La IA entrevista, extrae propuestas de documentos autorizados, muestra fuentes y detecta contradicciones. El usuario acepta o corrige cada borrador; su aceptación no equivale a aprobación del proceso ni a cumplimiento normativo. La ayuda revisada permanece disponible sin conexión con los proveedores de IA.
+p01586 Roles y validación
+p01587 Dirección consulta avance global y decide prioridades; el coordinador distribuye trabajo; cada directivo responde y valida la operación de sus servicios. Los colaboradores capturan. Compliance, Jurídico y responsables sanitarios revisan dentro de su competencia. Desarrollador y TI tienen permisos técnicos acotados. El servidor controla servicio, sede, asignación y finalidad, también en documentos y consultas de IA.
+p01588 Dashboard y automatizaciones
+p01589 Mostrar por separado preguntas respondidas y validadas, procesos aprobados, tareas aceptadas, aplicabilidad normativa resuelta y conformidad con evidencia vigente. Cada indicador conserva numerador, denominador y pendientes. Una evidencia vencida no sostiene cumplimiento. Los avisos, suplencias, revisiones y resúmenes semanales se generan desde eventos reales y reglas aprobadas.
+p01590 Las brechas producen tareas con dueño y plazo. Un proceso validado permite preparar requisitos y pruebas para Codex. Los cambios de reglas crean revisión de dependencias, sin sobrescribir aprobaciones anteriores. Todas las acciones y versiones conservan trazabilidad.
+p01592 C27 Implementación y aceptación de la asistencia
+p01593 La especificación ejecutable se entrega en Prompt_Maestro_Salud_Modelo_IA.md. Debe utilizarse junto con esta versión 3.1 del plan y los formatos institucionales, conciliando todas las preguntas importadas, incluidas las de cierre. El prompt detalla modelos, permisos, formularios, API, pruebas y despliegue.
+p01594 Entregas tempranas
+p01595 El 1 y 2 de octubre se inicia el gestor y se confirman responsables. El 5 se propone habilitar acceso, captura, ayuda inicial, tareas y tablero básico. Al 7 se integran formatos y asistencia de IA conforme a política autorizada. Al 9 se revisa capacidad con resultados; al 16 deben estar revisadas las fichas de ayuda y operativo el flujo de validación. Se mantienen pilotos de C22 y cierre el 15 de diciembre.
+p01596 Integración y tratamiento de información
+p01597 Next.js y TypeScript se conectan con Django y Django REST Framework sobre PostgreSQL. Gunicorn, Nginx, systemd y Certbot cubren despliegue y servicios. Una cola persistente procesa documentos y llamadas de IA. OpenAI y DeepSeek usan adaptadores de servidor, modelos configurables, validación estructurada, límites de gasto y seguimiento de errores. El cambio de proveedor sólo ocurre si la política permite enviarle esa categoría de datos.
+p01598 La recuperación documental respeta permisos antes de buscar y responder. No enviar por defecto expedientes identificables ni secretos. Las propuestas citan documento, versión y ubicación verificable; la falta de información se muestra como pendiente. No se delegan aprobaciones, diagnósticos ni determinaciones jurídicas a los modelos.
+p01599 Criterios adicionales de aceptación
+p01600 Todas las preguntas publicadas tienen ayuda completa y revisada; las sugerencias conservan fuentes; las respuestas no se pierden ante caída de IA; el acceso cruzado indebido se rechaza; los porcentajes concilian con registros; se prueban contradicciones y documentos con instrucciones maliciosas. Cada servicio ensaya un caso normal y dos excepciones. Las dudas persistentes se corrigen en la ayuda y se vuelven a probar.
+p01601 La capacidad de 354 horas y las 80 de código siguen siendo provisionales. El alcance añadido de automatización se incluye expresamente en la revisión del 9 de octubre. Si supera la capacidad, se presenta la brecha y una decisión de recursos o alcance; no se declara completado el plan por terminar sólo el gestor.

@@ -1,0 +1,20 @@
+# Template only. Review paths and isolation before authorized installation.
+[Unit]
+Description=Salud Modelo local operational observations
+After=network.target
+[Service]
+Type=oneshot
+User=salud-modelo
+Group=salud-modelo
+WorkingDirectory=/opt/salud-modelo/backend
+EnvironmentFile=/etc/salud-modelo.env
+# Configure this project's URLs, certificate and backup explicitly after isolation review.
+ExecStart=/opt/salud-modelo/backend/.venv/bin/python manage.py monitor_health --state-dir /var/lib/salud-modelo/monitoring
+TimeoutStartSec=2min
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/salud-modelo/monitoring
+# Exit 1/2 intentionally remain failures so an authorized supervisor can detect alerts.

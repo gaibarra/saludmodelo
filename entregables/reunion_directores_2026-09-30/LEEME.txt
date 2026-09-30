@@ -1,0 +1,19 @@
+MATERIAL PARA REUNIÓN CON DIRECCIONES — 30/09/2026
+
+Paneles: tres imágenes PNG y un PDF para presentar las mismas vistas.
+Las cifras académicas son ficticias. Se utilizó la interfaz actual con respuestas simuladas en el navegador; no se cargaron registros ni se modificó producción. Para centrar la presentación, se ocultaron los accesos secundarios y el directorio en estas capturas.
+Salud administra su escuela y consulta la información académica compartida de Odontología. Odontología tiene administración independiente. La vista institucional reúne ambas escuelas.
+Estas cifras representan un ejemplo de uso posterior: registrar colaboradores por sí solo no genera alumnos, prácticas, evaluaciones ni informes.
+
+EXCEL PARA RECOPILAR COLABORADORES REALES
+1. Entregar una copia a cada Escuela y nombrar un responsable de recopilación.
+2. Leer la primera pestaña y escribir la fecha de reunión; la fecha propuesta de entrega se calcula siete días después.
+3. Completar Registro: una fila por colaborador y servicio. Repetir el mismo correo si colabora en varios servicios. Hay 200 filas preparadas.
+4. Dirección revisa nombres, correos, adscripción, participación y vigencia antes de entregar la copia consolidada.
+5. Los ejemplos están separados y son ficticios; no deben integrarse al registro real.
+6. Consolidar las copias y revisar duplicados antes de importar.
+
+La plantilla contiene listas desplegables, revisión de campos y una guía de correspondencia con la aplicación. Las validaciones ayudan, pero no sustituyen la revisión institucional. No se importan datos ni se crean cuentas automáticamente; la carga posterior requiere preparar y validar el importador. Los cargos propuestos en Excel no conceden permisos por sí solos.
+
+Acuerdo sugerido para la reunión:
+“Cada Escuela designará un responsable y entregará, en siete días, la relación revisada de sus colaboradores, servicios y funciones, mediante la aplicación o esta plantilla Excel.”

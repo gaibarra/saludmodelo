@@ -1,0 +1,391 @@
+{
+  "mode": "synthetic_test_double",
+  "corpus_sha256": "89b848e52546c72c34a6557c403a38e3c436260ad7ab3666ec3094fad1ffc6b0",
+  "submission_sha256": "2bd4c7d35f970de5c9f8913536c78a800f73446be0a6a179ff852733d7764c8f",
+  "cases": 54,
+  "contract_valid": 45,
+  "human_reviews_completed": 0,
+  "model_calls_performed": 0,
+  "semantic_quality": "not_evaluated",
+  "institutional_acceptance": "pending",
+  "results": [
+    {
+      "case_id": "OD01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "OD01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "OD01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "OD01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "OD01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "OD01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "FI01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "FI01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "FI01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "FI01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "FI01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "FI01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "NU01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "NU01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "NU01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "NU01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "NU01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "NU01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "PS01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "PS01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "PS01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "PS01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "PS01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "PS01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "DE01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "DE01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "DE01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "DE01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "DE01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "DE01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "AP01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "AP01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "AP01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "AP01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "AP01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "AP01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "SC01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "SC01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "SC01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "SC01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "SC01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "SC01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "JU01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "JU01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "JU01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "JU01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "JU01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "JU01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    },
+    {
+      "case_id": "TR01-missing",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "TR01-partial",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "TR01-conflict",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "TR01-injection",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "TR01-bad_citation",
+      "contract_valid": false,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": false
+    },
+    {
+      "case_id": "TR01-false_claim",
+      "contract_valid": true,
+      "human_review": "pending",
+      "fixture_expectation_met": true,
+      "known_semantic_failure": true
+    }
+  ]
+}

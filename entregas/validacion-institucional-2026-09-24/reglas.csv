@@ -1,0 +1,12 @@
+﻿tema,decision_por_confirmar,referencia_prompt,anexos_orientativos,alcance,propuesta_institucional,autor,revisor_competente,fundamento,evidencia_o_acta,fecha,version,estado
+Alcance y sedes,"Confirmar oferta real, exclusiones, sedes y vinculación jurídica; justificar selecciones por servicio.",1 Fuentes y alcance,C03–C11,,,,,,,,,pendiente
+Responsables y separación de funciones,"Confirmar nombramientos, competencias, suplencias, vigencias y aprobador distinto del autor.",3 Roles y permisos,C27,,,,,,,,,pendiente
+Fichas y suficiencia,"Adaptar diez apartados, alternativas de evidencia y condiciones de aplicabilidad por servicio.",4 Experiencia de formularios sin ambigüedad,C27,,,,,,,,,pendiente
+Evidencia y privacidad,"Confirmar clasificación, acceso, vigencia, retención y cotejo de documentos; usar casos anonimizados.",6 Automatización de documentos y respuestas,"C13,C15,C16",,,,,,,,,pendiente
+Revisión y cambios,"Confirmar competencias para revisar, devolver y aceptar; conservar historial e invalidar decisiones afectadas.",7 Flujo de trabajo y decisiones,"C18,C27",,,,,,,,,pendiente
+Aplicabilidad normativa,"Asignar revisión competente de numeral, versión, fuente oficial y supuestos reales. Una norma listada no implica aplicación.",8 Compliance integrado,C01–C20,,,,,,,,,pendiente
+Uso de IA,"Decidir proveedores, política de salida, autorizaciones, cuotas y corpus de evaluación antes de habilitar llamadas.",9 Integración OpenAI y DeepSeek,"C25,C27",,,,,,,,,pendiente
+Capacidad e indicadores,"Confirmar denominadores, criterios de aceptación y distribución de 295 h base más 59 h de reserva, aún provisionales.",10 Dashboard y métricas comprobables,C21–C26,,,,,,,,,pendiente
+Calendario y avisos,"Confirmar días laborables, ausencias, suplentes, coordinadores y avisos internos a dos/tres días hábiles.",11 Automatizaciones de seguimiento,"C22,C26",,,,,,,,,pendiente
+Seguridad y recuperación,"Acordar responsables, MFA, retención, respaldos, restauración y criterios operativos antes de producción.",14 Seguridad y despliegue en VPS,"C15,C18",,,,,,,,,pendiente
+Usabilidad y aceptación,Observar un caso normal y dos excepciones con directivos de cada servicio; corregir dudas y repetir.,16 Pruebas y criterios de aceptación,"C18,C27",,,,,,,,,pendiente

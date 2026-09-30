@@ -1,0 +1,9 @@
+[Unit]
+Description=Procesar avisos internos de Salud Modelo
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=60s
+Persistent=true
+Unit=salud-worker.service
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,15 @@
+{
+  "drafts": 177,
+  "original": 120,
+  "compliance": 54,
+  "additional_paragraphs": 3,
+  "complete_fields_per_draft": 10,
+  "institutionally_reviewed": 0,
+  "institutionally_published": 0,
+  "source_sha256": "72108682be8b63f71c15d70d8d43fa370a033f04fd8af4526b4acf10b0e236be",
+  "notes": [
+    "Cobertura de propuestas, no de ayudas institucionalmente aprobadas.",
+    "Redacción editorial específica; sin llamadas a OpenAI o DeepSeek.",
+    "La propuesta sólo se ofrece si coincide texto y hash de fuente importada."
+  ]
+}

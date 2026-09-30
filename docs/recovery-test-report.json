@@ -1,0 +1,29 @@
+{
+  "format": 1,
+  "status": "isolated_restore_verified",
+  "verified_at": "2026-09-24T19:26:37.674862+00:00",
+  "snapshot_at": "2026-09-24T19:26:34.528273+00:00",
+  "encrypted_sha256": "cbbc9e80cf10c4a81ffffd4bc0afd101d459793ff2879b5be26c1c3ef61bb310",
+  "duration_seconds": 2.562,
+  "table_count": 60,
+  "row_count": 345,
+  "document_count": 1,
+  "tcp_enabled": false,
+  "workers_started": false,
+  "offsite_verified": false,
+  "production_rpo_rto_demonstrated": false,
+  "notice": "Ensayo local; cl\u00faster y copias descifradas retirados. Sin promoci\u00f3n ni reenv\u00edo de eventos.",
+  "fixture": "synthetic_only",
+  "application_checks": [
+    "answer_history",
+    "help_reviews",
+    "document_bytes",
+    "authorized_download",
+    "foreign_service_denied",
+    "technical_superuser_denied",
+    "pending_outbox_preserved",
+    "next_id_allocation",
+    "mfa_restored_with_separate_key",
+    "interview_memory_and_history"
+  ]
+}

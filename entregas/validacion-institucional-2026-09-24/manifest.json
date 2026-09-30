@@ -1,0 +1,64 @@
+{
+  "author": "Generador técnico Salud Modelo; sin firma institucional",
+  "catalog_version": "editorial-1",
+  "counts": {
+    "compliance": 54,
+    "compound": 3,
+    "original": 120,
+    "total": 177,
+    "unit_references": 9,
+    "usability_template_cases": 27
+  },
+  "files": {
+    "LEEME.md": {
+      "bytes": 7893,
+      "sha256": "aad3411c31810aae9f54fd3f60d33a408ef2b05c27f80b271bf7c19230d4feb2"
+    },
+    "acta_modelo.md": {
+      "bytes": 2464,
+      "sha256": "c42df4e0d801f6de15eaffb0132b2ab5971b6552184c870313c4544ff7612e93"
+    },
+    "fichas.html": {
+      "bytes": 720614,
+      "sha256": "344e59982af04f60c7e74618433fc96b2026d2ff6aec8c262f70e873cde2535f"
+    },
+    "fichas.json": {
+      "bytes": 792769,
+      "sha256": "f91b739877424fac8a8c4063a3a67afa4d7b09d779fa43892753deb691f9f5bb"
+    },
+    "reglas.csv": {
+      "bytes": 2312,
+      "sha256": "a5e09e976525af172aa4d683f7644e0343da31bd576a0ed43e510b3060250fbc"
+    },
+    "reglas_fuente.json": {
+      "bytes": 28141,
+      "sha256": "a7192e8ab25b8e2d1d940479d1ec0ee87e5caea5f67f2a0a066b11114dfb4621"
+    },
+    "responsables.csv": {
+      "bytes": 231,
+      "sha256": "3c44c1d1e4f13236899cb5099a45d3e89d5858622c5c0d63fb41b3561efd7728"
+    },
+    "revision_fichas.csv": {
+      "bytes": 39765,
+      "sha256": "6e2ab09ede158070926ebd92427f8197e3804619ea9346f009a4473cadeb61c7"
+    },
+    "servicios.csv": {
+      "bytes": 3757,
+      "sha256": "c5e4d8c09a8c9ec090ca75825e9d5d7c9c6cc097fdaeb2c4bec16bbc73de452c"
+    },
+    "usabilidad.csv": {
+      "bytes": 3063,
+      "sha256": "1e8614310f32d16681d83df03c08a2a9c710e523993eba84170d857363828775"
+    }
+  },
+  "format_version": 1,
+  "notice": "Las huellas permiten cotejar integridad, no acreditan firma, identidad, aprobación ni estado actual del gestor.",
+  "prepared_at": "2026-09-24T18:29:07.100621+00:00",
+  "scope": "Fuentes editoriales; sin consulta de datos institucionales",
+  "sources": {
+    "Plan_Trabajo_Escuela_Salud_Modelo.docx": "72108682be8b63f71c15d70d8d43fa370a033f04fd8af4526b4acf10b0e236be",
+    "Prompt_Maestro_Salud_Modelo_IA (1).md": "5d24b46114443a9654e19fc8e679d3449efd13bbd73e6c7fc84f47986d421926",
+    "imports/help-drafts-v1.json": "4e01d29fbb9a493d53cb17d41287d7488d64e0241f356f5f3dba043735718869"
+  },
+  "status": "preparacion_sin_aprobaciones"
+}

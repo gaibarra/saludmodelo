@@ -1,0 +1,19 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.next/
+private/
+.test-pg/
+frontend/test-results/
+frontend/playwright-report/
+*.tsbuildinfo
+
+backend/vendor/ocr/runtime/
+backend/vendor/ocr/packages/
+
+# Isolated demonstration: secrets and separate build
+deploy/demo/runtime/
+deploy/demo/acme/.well-known/acme-challenge/*
+.next-demo/

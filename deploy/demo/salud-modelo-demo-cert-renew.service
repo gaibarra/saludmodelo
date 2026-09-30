@@ -1,0 +1,5 @@
+[Unit]
+Description=Renovar únicamente el certificado de la demostración Salud Modelo
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot renew --quiet --config-dir /etc/letsencrypt-salud-modelo-demo --work-dir /var/lib/letsencrypt-salud-modelo-demo --logs-dir /var/log/letsencrypt-salud-modelo-demo --deploy-hook "/usr/sbin/nginx -t && /usr/bin/systemctl reload nginx"

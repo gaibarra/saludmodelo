@@ -1,0 +1,759 @@
+{
+  "source_sha256": "72108682be8b63f71c15d70d8d43fa370a033f04fd8af4526b4acf10b0e236be",
+  "review_status": "por verificar",
+  "entries": [
+    {
+      "code": "N01",
+      "title": "NOM-004-SSA3-2012Ficha oficial",
+      "subject": "Expediente clínico",
+      "scope_text": "Atención clínica en las unidades",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-004-ssa3-2012/"
+      ]
+    },
+    {
+      "code": "N02",
+      "title": "NOM-013-SSA2-2015Ficha oficial",
+      "subject": "Prevención y control de enfermedades bucales",
+      "scope_text": "Odontología",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-013-ssa2-2015/"
+      ]
+    },
+    {
+      "code": "N03",
+      "title": "NOM-005-SSA3-2018Ficha oficial",
+      "subject": "Infraestructura y equipo para atención ambulatoria",
+      "scope_text": "Consultorios no especializados según tipo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-005-ssa3-2018/"
+      ]
+    },
+    {
+      "code": "N04",
+      "title": "NOM-016-SSA3-2012Ficha oficial",
+      "subject": "Infraestructura de hospitales y consultorios especializados",
+      "scope_text": "Clasificación del establecimiento",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-016-ssa3-2012/"
+      ]
+    },
+    {
+      "code": "N05",
+      "title": "NOM-024-SSA3-2012Ficha oficial",
+      "subject": "Sistemas de registro electrónico e intercambio en salud",
+      "scope_text": "Aplicación con SIRES",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-024-ssa3-2012/"
+      ]
+    },
+    {
+      "code": "N06",
+      "title": "NOM-030-SSA3-2013Ficha oficial",
+      "subject": "Accesibilidad arquitectónica de establecimientos de salud",
+      "scope_text": "Instalaciones de atención médica",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-030-ssa3-2013/"
+      ]
+    },
+    {
+      "code": "N07",
+      "title": "NOM-087-SEMARNAT-SSA1-2002Ficha oficial",
+      "subject": "Clasificación y manejo de RPBI",
+      "scope_text": "Actividades que generan RPBI",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-087-semarnat-ssa1-2002/"
+      ]
+    },
+    {
+      "code": "N08",
+      "title": "NOM-229-SSA1-2002Ficha oficial",
+      "subject": "Instalaciones y protección para diagnóstico con rayos X",
+      "scope_text": "Según equipo; revisar modificaciones y exclusiones",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-229-ssa1-2002/"
+      ]
+    },
+    {
+      "code": "N09",
+      "title": "NOM-015-SSA-2023Ficha oficial",
+      "subject": "Atención médica integral a personas con discapacidad",
+      "scope_text": "Fisioterapia y demás atención comprendida",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-015-ssa-2023/"
+      ]
+    },
+    {
+      "code": "N10",
+      "title": "NOM-039-SSA-2023Ficha oficial",
+      "subject": "Certificación de discapacidad",
+      "scope_text": "Sólo actividad de certificación comprendida",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-039-ssa-2023/"
+      ]
+    },
+    {
+      "code": "N11",
+      "title": "NOM-043-SSA2-2012Ficha oficial",
+      "subject": "Orientación y educación alimentaria",
+      "scope_text": "Nutrición y actividades educativas",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-043-ssa2-2012/"
+      ]
+    },
+    {
+      "code": "N12",
+      "title": "NOM-008-SSA3-2017Ficha oficial",
+      "subject": "Tratamiento integral de sobrepeso y obesidad",
+      "scope_text": "Cuando se ofrece ese tratamiento",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-008-ssa3-2017/"
+      ]
+    },
+    {
+      "code": "N13",
+      "title": "NOM-015-SSA2-2010Ficha oficial",
+      "subject": "Prevención y control de diabetes mellitus",
+      "scope_text": "Según intervención en el paciente",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-015-ssa2-2010/"
+      ]
+    },
+    {
+      "code": "N14",
+      "title": "NOM-030-SSA2-2009Ficha oficial",
+      "subject": "Prevención y control de hipertensión arterial",
+      "scope_text": "Según intervención en el paciente",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-030-ssa2-2009/"
+      ]
+    },
+    {
+      "code": "N15",
+      "title": "NOM-037-SSA2-2012Ficha oficial",
+      "subject": "Prevención y control de dislipidemias",
+      "scope_text": "Según intervención en el paciente",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-037-ssa2-2012/"
+      ]
+    },
+    {
+      "code": "N16",
+      "title": "NOM-046-SSA2-2005Ficha oficial",
+      "subject": "Prevención y atención de violencia familiar y sexual",
+      "scope_text": "Atención de salud; modificación de 2016",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-046-ssa2-2005/"
+      ]
+    },
+    {
+      "code": "N17",
+      "title": "NOM-028-SSA2-2009Ficha oficial",
+      "subject": "Prevención y tratamiento de adicciones",
+      "scope_text": "Según actividades de prevención o atención",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-028-ssa2-2009/"
+      ]
+    },
+    {
+      "code": "N18",
+      "title": "NOM-025-SSA2-2014Ficha oficial",
+      "subject": "Atención integral hospitalaria médico psiquiátrica",
+      "scope_text": "No asignar a consulta ambulatoria sin encuadre",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-025-ssa2-2014/"
+      ]
+    },
+    {
+      "code": "N19",
+      "title": "NOM-019-SSA3-2013Ficha oficial",
+      "subject": "Ejercicio de enfermería en el sistema de salud",
+      "scope_text": "Si se ofrecen cuidados de enfermería",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-019-ssa3-2013/"
+      ]
+    },
+    {
+      "code": "N20",
+      "title": "NOM-036-SSA2-2012Ficha oficial",
+      "subject": "Aplicación de vacunas y otros biológicos",
+      "scope_text": "Si se administran productos de su ámbito",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-036-ssa2-2012/"
+      ]
+    },
+    {
+      "code": "N21",
+      "title": "NOM-220-SSA1-2016Ficha oficial",
+      "subject": "Farmacovigilancia",
+      "scope_text": "Según funciones del prestador y modificaciones",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-220-ssa1-2016/"
+      ]
+    },
+    {
+      "code": "N22",
+      "title": "NOM-017-SSA2-2012Ficha oficial",
+      "subject": "Vigilancia epidemiológica",
+      "scope_text": "Atención y notificación según evento",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-017-ssa2-2012/"
+      ]
+    },
+    {
+      "code": "N23",
+      "title": "NOM-007-SSA3-2011Ficha oficial",
+      "subject": "Organización y operación de laboratorios clínicos",
+      "scope_text": "Según pruebas y establecimiento real",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-007-ssa3-2011/"
+      ]
+    },
+    {
+      "code": "N24",
+      "title": "NOM-006-SSA3-2011Ficha oficial",
+      "subject": "Práctica de anestesiología",
+      "scope_text": "Si se realizan actos de su campo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-006-ssa3-2011/"
+      ]
+    },
+    {
+      "code": "N25",
+      "title": "NOM-026-SSA3-2012Ficha oficial",
+      "subject": "Cirugía mayor ambulatoria",
+      "scope_text": "Si se incorpora esa actividad",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-026-ssa3-2012/"
+      ]
+    },
+    {
+      "code": "N26",
+      "title": "NOM-012-SSA3-2012Ficha oficial",
+      "subject": "Investigación en salud con seres humanos",
+      "scope_text": "Proyectos de investigación comprendidos",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-012-ssa3-2012/"
+      ]
+    },
+    {
+      "code": "N27",
+      "title": "NOM-240-SSA1-2012Ficha oficial",
+      "subject": "Tecnovigilancia",
+      "scope_text": "Según funciones relacionadas con dispositivos",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-240-ssa1-2012/"
+      ]
+    },
+    {
+      "code": "N28",
+      "title": "NOM-245-SSA1-2010Ficha oficial",
+      "subject": "Condiciones sanitarias y agua de albercas",
+      "scope_text": "Cuando la instalación encuadra en su campo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-245-ssa1-2010/"
+      ]
+    },
+    {
+      "code": "N29",
+      "title": "NOM-251-SSA1-2009Ficha oficial",
+      "subject": "Higiene en procesos de alimentos y bebidas",
+      "scope_text": "Preparación o proceso; no sólo consulta",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-251-ssa1-2009/"
+      ]
+    },
+    {
+      "code": "N30",
+      "title": "NOM-014-SSA3-2013Ficha oficial",
+      "subject": "Asistencia social alimentaria a grupos de riesgo",
+      "scope_text": "Si existe esa modalidad de asistencia",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-014-ssa3-2013/"
+      ]
+    },
+    {
+      "code": "N31",
+      "title": "NOM-035-SSA3-2012Ficha oficial",
+      "subject": "Información en salud",
+      "scope_text": "Obligaciones del prestador y reportes aplicables",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-035-ssa3-2012/"
+      ]
+    },
+    {
+      "code": "N32",
+      "title": "NOM-052-SEMARNAT-2005Ficha oficial",
+      "subject": "Identificación y clasificación de residuos peligrosos",
+      "scope_text": "Residuos químicos y otros peligrosos",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-052-semarnat-2005/"
+      ]
+    },
+    {
+      "code": "N33",
+      "title": "NOM-009-SSA2-2013Ficha oficial",
+      "subject": "Promoción de salud escolar",
+      "scope_text": "Intervenciones escolares de su ámbito",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-009-ssa2-2013/"
+      ]
+    },
+    {
+      "code": "N34",
+      "title": "NOM-010-SSA-2023Ficha oficial",
+      "subject": "Prevención y control de infección por VIH",
+      "scope_text": "Según prevención, pruebas y atención",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-010-ssa-2023/"
+      ]
+    },
+    {
+      "code": "N35",
+      "title": "NOM-007-SSA2-2016Ficha oficial",
+      "subject": "Atención en embarazo parto puerperio y recién nacido",
+      "scope_text": "Sólo actos comprendidos que realmente se ofrecen",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-007-ssa2-2016/"
+      ]
+    },
+    {
+      "code": "N36",
+      "title": "NOM-009-SSA3-2013Ficha oficial",
+      "subject": "Campos clínicos de servicio social de medicina y estomatología",
+      "scope_text": "No generalizar a todas las carreras",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-009-ssa3-2013/"
+      ]
+    },
+    {
+      "code": "N37",
+      "title": "NOM-001-STPS-2008Ficha oficial",
+      "subject": "Seguridad de edificios y áreas de trabajo",
+      "scope_text": "Centro de trabajo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-001-stps-2008/"
+      ]
+    },
+    {
+      "code": "N38",
+      "title": "NOM-002-STPS-2010Ficha oficial",
+      "subject": "Prevención y protección contra incendios",
+      "scope_text": "Centro de trabajo según riesgo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-002-stps-2010/"
+      ]
+    },
+    {
+      "code": "N39",
+      "title": "NOM-019-STPS-2011Ficha oficial",
+      "subject": "Comisiones de seguridad e higiene",
+      "scope_text": "Centro de trabajo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-019-stps-2011/"
+      ]
+    },
+    {
+      "code": "N40",
+      "title": "NOM-030-STPS-2009Ficha oficial",
+      "subject": "Servicios preventivos de seguridad y salud laboral",
+      "scope_text": "Centro de trabajo y servicio contratado",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-030-stps-2009/"
+      ]
+    },
+    {
+      "code": "N41",
+      "title": "NOM-035-STPS-2018Ficha oficial",
+      "subject": "Prevención de factores psicosociales laborales",
+      "scope_text": "Según tamaño del centro de trabajo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-035-stps-2018/"
+      ]
+    },
+    {
+      "code": "N42",
+      "title": "NOM-017-STPS-2024Ficha oficial",
+      "subject": "Selección uso y manejo del EPP",
+      "scope_text": "Según riesgos; sustituye versión 2008",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-017-stps-2024/"
+      ]
+    },
+    {
+      "code": "N43",
+      "title": "NOM-012-STPS-2012Ficha oficial",
+      "subject": "Seguridad ante radiación ionizante",
+      "scope_text": "Cuando se manejan fuentes comprendidas",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-012-stps-2012/"
+      ]
+    },
+    {
+      "code": "N44",
+      "title": "NOM-013-STPS-1993Ficha oficial",
+      "subject": "Seguridad ante radiación no ionizante",
+      "scope_text": "Según fuentes y exposición",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-013-stps-1993/"
+      ]
+    },
+    {
+      "code": "N45",
+      "title": "NOM-018-STPS-2015Ficha oficial",
+      "subject": "Comunicación de peligros de sustancias químicas",
+      "scope_text": "Sustancias comprendidas en su campo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-018-stps-2015/"
+      ]
+    },
+    {
+      "code": "N46",
+      "title": "NOM-020-STPS-2011Ficha oficial",
+      "subject": "Seguridad de recipientes a presión y generadores de vapor",
+      "scope_text": "Clasificar equipo y revisar exclusiones",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-020-stps-2011/"
+      ]
+    },
+    {
+      "code": "N47",
+      "title": "NOM-025-STPS-2008Ficha oficial",
+      "subject": "Iluminación en centros de trabajo",
+      "scope_text": "Áreas y tareas del centro",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-025-stps-2008/"
+      ]
+    },
+    {
+      "code": "N48",
+      "title": "NOM-026-STPS-2008Ficha oficial",
+      "subject": "Señales colores e identificación de tuberías",
+      "scope_text": "Instalaciones del centro",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-026-stps-2008/"
+      ]
+    },
+    {
+      "code": "N49",
+      "title": "NOM-029-STPS-2011Ficha oficial",
+      "subject": "Seguridad en mantenimiento eléctrico",
+      "scope_text": "Trabajos eléctricos propios o contratados",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-029-stps-2011/"
+      ]
+    },
+    {
+      "code": "N50",
+      "title": "NOM-003-SSPC-2011Ficha oficial",
+      "subject": "Señales de protección civil",
+      "scope_text": "Denominación antes SEGOB; ver F12",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-003-sspc-2011/"
+      ]
+    },
+    {
+      "code": "N51",
+      "title": "NOM-008-SSPC-2015Ficha oficial",
+      "subject": "Protección civil y personas con discapacidad",
+      "scope_text": "Denominación antes SEGOB; ver F12",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-008-sspc-2015/"
+      ]
+    },
+    {
+      "code": "N52",
+      "title": "NOM-151-SCFI-2016Ficha oficial",
+      "subject": "Conservación de mensajes y digitalización documental",
+      "scope_text": "Revisar ámbito mercantil y mecanismo requerido",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-151-scfi-2016/"
+      ]
+    },
+    {
+      "code": "N53",
+      "title": "NOM-127-SSA1-2021Ficha oficial",
+      "subject": "Calidad de agua para uso y consumo humano",
+      "scope_text": "Identificar suministro y papel del operador",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-127-ssa1-2021/"
+      ]
+    },
+    {
+      "code": "N54",
+      "title": "NOM-002-SEMARNAT-1996Ficha oficial",
+      "subject": "Descargas a alcantarillado urbano o municipal",
+      "scope_text": "Según destino real de descarga",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-002-semarnat-1996/"
+      ]
+    },
+    {
+      "code": "N55",
+      "title": "NOM-001-SEMARNAT-2021Ficha oficial",
+      "subject": "Descargas a cuerpos receptores nacionales",
+      "scope_text": "Según descarga y permisos",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-001-semarnat-2021/"
+      ]
+    },
+    {
+      "code": "N56",
+      "title": "NOM-036-1-STPS-2018Ficha oficial",
+      "subject": "Ergonomía en manejo manual de cargas",
+      "scope_text": "Según tareas dentro de su campo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-036-1-stps-2018/"
+      ]
+    },
+    {
+      "code": "N57",
+      "title": "NOM-037-STPS-2023Ficha oficial",
+      "subject": "Seguridad y salud en teletrabajo",
+      "scope_text": "Sólo modalidad legal de teletrabajo",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-037-stps-2023/"
+      ]
+    },
+    {
+      "code": "N58",
+      "title": "NOM-001-SEDE-2012Ficha oficial",
+      "subject": "Instalaciones eléctricas",
+      "scope_text": "Instalación y verificación que corresponda",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-001-sede-2012/"
+      ]
+    },
+    {
+      "code": "N59",
+      "title": "NOM-005-STPS-1998Ficha oficial",
+      "subject": "Seguridad con sustancias químicas peligrosas",
+      "scope_text": "Según manejo almacenamiento y transporte",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-005-stps-1998/"
+      ]
+    },
+    {
+      "code": "N60",
+      "title": "NOM-010-STPS-2014Ficha oficial",
+      "subject": "Agentes químicos en el ambiente laboral",
+      "scope_text": "Reconocimiento evaluación y control según exposición",
+      "links": [
+        "https://platiica.economia.gob.mx/normalizacion/nom-010-stps-2014/"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "stable_id": "p00615",
+      "locator": "word/document.xml paragraph 615",
+      "text": "C01 Alcance del cumplimiento integral",
+      "section": "C01 Alcance del cumplimiento integral / C01 Alcance del cumplimiento integral",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00645",
+      "locator": "word/document.xml paragraph 645",
+      "text": "C02 Mapa normativo por servicio",
+      "section": "C02 Mapa normativo por servicio / C02 Mapa normativo por servicio",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00685",
+      "locator": "word/document.xml paragraph 685",
+      "text": "C03 Odontología",
+      "section": "C03 Odontología / C03 Odontología",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00703",
+      "locator": "word/document.xml paragraph 703",
+      "text": "C04 Fisioterapia y rehabilitación",
+      "section": "C04 Fisioterapia y rehabilitación / C04 Fisioterapia y rehabilitación",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00722",
+      "locator": "word/document.xml paragraph 722",
+      "text": "C05 Nutrición",
+      "section": "C05 Nutrición / C05 Nutrición",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00740",
+      "locator": "word/document.xml paragraph 740",
+      "text": "C06 Psicología clínica",
+      "section": "C06 Psicología clínica / C06 Psicología clínica",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00758",
+      "locator": "word/document.xml paragraph 758",
+      "text": "C07 Ciencias del deporte y readaptación",
+      "section": "C07 Ciencias del deporte y readaptación / C07 Ciencias del deporte y readaptación",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00776",
+      "locator": "word/document.xml paragraph 776",
+      "text": "C08 Atención y prevención de la salud",
+      "section": "C08 Atención y prevención de la salud / C08 Atención y prevención de la salud",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00794",
+      "locator": "word/document.xml paragraph 794",
+      "text": "C09 Servicios comunitarios laborales y educativos",
+      "section": "C09 Servicios comunitarios laborales y educativos / C09 Servicios comunitarios laborales y educativos",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00812",
+      "locator": "word/document.xml paragraph 812",
+      "text": "C10 Vinculación jurídica y protección de derechos",
+      "section": "C10 Vinculación jurídica y protección de derechos / C10 Vinculación jurídica y protección de derechos",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00830",
+      "locator": "word/document.xml paragraph 830",
+      "text": "C11 Recepción administración docencia y recursos",
+      "section": "C11 Recepción administración docencia y recursos / C11 Recepción administración docencia y recursos",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00848",
+      "locator": "word/document.xml paragraph 848",
+      "text": "C12 Seguridad laboral y protección civil",
+      "section": "C12 Seguridad laboral y protección civil / C12 Seguridad laboral y protección civil",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00889",
+      "locator": "word/document.xml paragraph 889",
+      "text": "C13 Bioseguridad ambiente y vigilancia",
+      "section": "C13 Bioseguridad ambiente y vigilancia / C13 Bioseguridad ambiente y vigilancia",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00902",
+      "locator": "word/document.xml paragraph 902",
+      "text": "C14 Permisos ética publicidad y finanzas",
+      "section": "C14 Permisos ética publicidad y finanzas / C14 Permisos ética publicidad y finanzas",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00917",
+      "locator": "word/document.xml paragraph 917",
+      "text": "C15 Expediente digital privacidad y datos",
+      "section": "C15 Expediente digital privacidad y datos / C15 Expediente digital privacidad y datos",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00934",
+      "locator": "word/document.xml paragraph 934",
+      "text": "C16 Módulo de cumplimiento y automatizaciones",
+      "section": "C16 Módulo de cumplimiento y automatizaciones / C16 Módulo de cumplimiento y automatizaciones",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p00968",
+      "locator": "word/document.xml paragraph 968",
+      "text": "C17 Plan de ejecución de cumplimiento",
+      "section": "C17 Plan de ejecución de cumplimiento / C17 Plan de ejecución de cumplimiento",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01005",
+      "locator": "word/document.xml paragraph 1005",
+      "text": "C18 Aceptación auditoría y cierre de brechas",
+      "section": "C18 Aceptación auditoría y cierre de brechas / C18 Aceptación auditoría y cierre de brechas",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01044",
+      "locator": "word/document.xml paragraph 1044",
+      "text": "C19 Registro de NOM 1 a 10",
+      "section": "C19 Registro de NOM 1 a 10 / C19 Registro de NOM 1 a 10",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01093",
+      "locator": "word/document.xml paragraph 1093",
+      "text": "C19 Registro de NOM 11 a 20",
+      "section": "C19 Registro de NOM 11 a 20 / C19 Registro de NOM 11 a 20",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01142",
+      "locator": "word/document.xml paragraph 1142",
+      "text": "C19 Registro de NOM 21 a 30",
+      "section": "C19 Registro de NOM 21 a 30 / C19 Registro de NOM 21 a 30",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01191",
+      "locator": "word/document.xml paragraph 1191",
+      "text": "C19 Registro de NOM 31 a 40",
+      "section": "C19 Registro de NOM 31 a 40 / C19 Registro de NOM 31 a 40",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01240",
+      "locator": "word/document.xml paragraph 1240",
+      "text": "C19 Registro de NOM 41 a 50",
+      "section": "C19 Registro de NOM 41 a 50 / C19 Registro de NOM 41 a 50",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01289",
+      "locator": "word/document.xml paragraph 1289",
+      "text": "C19 Registro de NOM 51 a 60",
+      "section": "C19 Registro de NOM 51 a 60 / C19 Registro de NOM 51 a 60",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01338",
+      "locator": "word/document.xml paragraph 1338",
+      "text": "C20 Fuentes complementarias clínicas y legales",
+      "section": "C20 Fuentes complementarias clínicas y legales / C20 Fuentes complementarias clínicas y legales",
+      "kind": "annex",
+      "links": []
+    },
+    {
+      "stable_id": "p01359",
+      "locator": "word/document.xml paragraph 1359",
+      "text": "C20 Fuentes complementarias institucionales",
+      "section": "C20 Fuentes complementarias institucionales / C20 Fuentes complementarias institucionales",
+      "kind": "annex",
+      "links": []
+    }
+  ],
+  "notes": [
+    "Textos y enlaces literales del plan. No constituye verificación de vigencia, aplicabilidad o cumplimiento."
+  ]
+}

@@ -1,0 +1,19 @@
+[Unit]
+Description=Salud Modelo frontend
+After=network.target
+[Service]
+Type=simple
+User=salud-modelo
+Group=salud-modelo
+WorkingDirectory=/opt/salud-modelo/frontend
+EnvironmentFile=/etc/salud-modelo.env
+ExecStart=/usr/bin/npm run start
+Restart=on-failure
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/salud-modelo /opt/salud-modelo/frontend/.next
+[Install]
+WantedBy=multi-user.target

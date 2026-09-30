@@ -1,0 +1,4612 @@
+openapi: 3.0.3
+info:
+  title: Salud Modelo
+  version: 0.24.0
+paths:
+  /api/v1/administration/assignments/:
+    get:
+      operationId: administration_assignments_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - administration
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAssignmentList'
+          description: ''
+    post:
+      operationId: administration_assignments_create
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignmentInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AssignmentInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AssignmentInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assignment'
+          description: ''
+  /api/v1/administration/assignments/{id}/:
+    get:
+      operationId: administration_assignments_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este role assignment.
+        required: true
+      tags:
+      - administration
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assignment'
+          description: ''
+  /api/v1/administration/assignments/{id}/revoke/:
+    post:
+      operationId: administration_assignments_revoke_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este role assignment.
+        required: true
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReasonInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ReasonInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ReasonInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assignment'
+          description: ''
+  /api/v1/administration/campuses/:
+    post:
+      operationId: administration_campuses_create
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CampusInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CampusInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CampusInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/administration/catalog/:
+    get:
+      operationId: administration_catalog_retrieve
+      tags:
+      - administration
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/administration/services/:
+    get:
+      operationId: administration_services_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - administration
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedServiceAdminList'
+          description: ''
+    post:
+      operationId: administration_services_create
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ServiceInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ServiceInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAdmin'
+          description: ''
+  /api/v1/administration/services/{id}/:
+    get:
+      operationId: administration_services_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este service.
+        required: true
+      tags:
+      - administration
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAdmin'
+          description: ''
+  /api/v1/administration/services/{id}/confirm/:
+    post:
+      operationId: administration_services_confirm_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este service.
+        required: true
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ConfirmInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ConfirmInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAdmin'
+          description: ''
+  /api/v1/administration/setup/:
+    get:
+      operationId: administration_setup_retrieve
+      tags:
+      - administration
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/administration/sites/:
+    post:
+      operationId: administration_sites_create
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SiteInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SiteInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SiteInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/administration/users/:
+    post:
+      operationId: administration_users_create
+      tags:
+      - administration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/answer-releases/{instance}/:
+    get:
+      operationId: ai_answer_releases_retrieve
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: ai_answer_releases_create
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerReleaseInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AnswerReleaseInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AnswerReleaseInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/answer-releases/{id}/revoke/:
+    post:
+      operationId: ai_answer_releases_revoke_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/policies/{service}/:
+    get:
+      operationId: ai_policies_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: ai_policies_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AIPolicyInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AIPolicyInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AIPolicyInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/questions/{instance}/:
+    get:
+      operationId: ai_questions_retrieve
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: ai_questions_create
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AIRequestInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AIRequestInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AIRequestInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/releases/{instance}/:
+    post:
+      operationId: ai_releases_create
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AIReleaseInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AIReleaseInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AIReleaseInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/releases/{id}/revoke/:
+    post:
+      operationId: ai_releases_revoke_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/ai/requests/{id}/:
+    get:
+      operationId: ai_requests_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: ai_requests_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/ai/requests/{id}/decision/:
+    post:
+      operationId: ai_requests_decision_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ai
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AIDecisionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AIDecisionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AIDecisionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/answers/:
+    get:
+      operationId: answers_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - answers
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAnswerList'
+          description: ''
+  /api/v1/answers/{id}/:
+    get:
+      operationId: answers_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este answer.
+        required: true
+      tags:
+      - answers
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/answers/{id}/evidence/:
+    post:
+      operationId: answers_evidence_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este answer.
+        required: true
+      tags:
+      - answers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Upload'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/answers/{id}/save/:
+    post:
+      operationId: answers_save_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este answer.
+        required: true
+      tags:
+      - answers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Save'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Save'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Save'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/answers/{id}/transition/:
+    post:
+      operationId: answers_transition_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este answer.
+        required: true
+      tags:
+      - answers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transition'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Transition'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Transition'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/capacity/changes/{id}/review/:
+    post:
+      operationId: capacity_changes_review_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - capacity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CapacityReviewInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CapacityReviewInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CapacityReviewInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/capacity/institutions/:
+    get:
+      operationId: capacity_managed_institutions
+      tags:
+      - capacity
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/capacity/institutions/{institution}/:
+    get:
+      operationId: capacity_weekly_board
+      parameters:
+      - in: path
+        name: institution
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: start
+        schema:
+          type: string
+          format: date
+      tags:
+      - capacity
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: capacity_institutions_create
+      parameters:
+      - in: path
+        name: institution
+        schema:
+          type: integer
+        required: true
+      tags:
+      - capacity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CapacityInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CapacityInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CapacityInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/compliance/records/{id}/:
+    get:
+      operationId: compliance_records_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: compliance_records_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComplianceInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ComplianceInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ComplianceInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/compliance/records/{id}/review/:
+    post:
+      operationId: compliance_records_review_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComplianceReviewInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ComplianceReviewInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ComplianceReviewInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/compliance/records/{id}/test/:
+    post:
+      operationId: compliance_records_test_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComplianceCheckInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ComplianceCheckInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ComplianceCheckInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/compliance/services/{service}/:
+    get:
+      operationId: compliance_services_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: compliance_services_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComplianceInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ComplianceInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ComplianceInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/compliance/services/{service}/export/:
+    get:
+      operationId: compliance_services_export_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/compliance/services/{service}/options/:
+    get:
+      operationId: compliance_services_options_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - compliance
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/consultations/:
+    get:
+      operationId: consultations_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - consultations
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedRequestList'
+          description: ''
+    post:
+      operationId: consultations_create
+      tags:
+      - consultations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RequestInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RequestInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+          description: ''
+  /api/v1/consultations/{id}/:
+    get:
+      operationId: consultations_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este clarification request.
+        required: true
+      tags:
+      - consultations
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+          description: ''
+  /api/v1/consultations/{id}/message/:
+    post:
+      operationId: consultations_message_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este clarification request.
+        required: true
+      tags:
+      - consultations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MessageInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+          description: ''
+  /api/v1/consultations/{id}/resolve/:
+    post:
+      operationId: consultations_resolve_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este clarification request.
+        required: true
+      tags:
+      - consultations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResolutionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ResolutionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ResolutionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+          description: ''
+  /api/v1/consultations/recipients/:
+    get:
+      operationId: consultations_recipients_retrieve
+      tags:
+      - consultations
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/dashboard/:
+    get:
+      operationId: dashboard_retrieve
+      tags:
+      - dashboard
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+          description: ''
+  /api/v1/decisions/{id}/:
+    get:
+      operationId: decisions_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - decisions
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: decisions_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - decisions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecisionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DecisionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DecisionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/decisions/{id}/acknowledge/:
+    post:
+      operationId: decisions_acknowledge_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - decisions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecisionNoticeInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DecisionNoticeInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DecisionNoticeInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/decisions/services/{service}/:
+    get:
+      operationId: decisions_services_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - decisions
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: decisions_services_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - decisions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewDecision'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewDecision'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewDecision'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/evidence/{id}/:
+    get:
+      operationId: evidence_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - evidence
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: evidence_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - evidence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ReviewInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ReviewInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/evidence/{id}/download/:
+    get:
+      operationId: evidence_download_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - evidence
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v1/evidence/{id}/fragments/:
+    get:
+      operationId: evidence_fragments_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - evidence
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/evidence/{id}/retry/:
+    post:
+      operationId: evidence_retry_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - evidence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RetryInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RetryInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RetryInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/interviews/{instance}/:
+    get:
+      operationId: interviews_retrieve
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - interviews
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: interviews_create
+      parameters:
+      - in: path
+        name: instance
+        schema:
+          type: integer
+        required: true
+      tags:
+      - interviews
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InterviewInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/InterviewInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InterviewInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/mfa/:
+    get:
+      operationId: mfa_retrieve
+      tags:
+      - mfa
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: mfa_create
+      tags:
+      - mfa
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MFAInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MFAInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MFAInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/questionnaires/:
+    get:
+      operationId: questionnaires_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - questionnaires
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedQuestionnaireList'
+          description: ''
+  /api/v1/questionnaires/{id}/:
+    get:
+      operationId: questionnaires_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este questionnaire instance.
+        required: true
+      tags:
+      - questionnaires
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Questionnaire'
+          description: ''
+  /api/v1/questionnaires/{id}/draft/:
+    get:
+      operationId: questionnaires_draft_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este questionnaire instance.
+        required: true
+      tags:
+      - questionnaires
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/questionnaires/{id}/help/:
+    post:
+      operationId: questionnaires_help_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este questionnaire instance.
+        required: true
+      tags:
+      - questionnaires
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HelpInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/HelpInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/HelpInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Questionnaire'
+          description: ''
+  /api/v1/questionnaires/{id}/publish/:
+    post:
+      operationId: questionnaires_publish_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este questionnaire instance.
+        required: true
+      tags:
+      - questionnaires
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VersionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/VersionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VersionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Questionnaire'
+          description: ''
+  /api/v1/questionnaires/{id}/review/:
+    post:
+      operationId: questionnaires_review_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este questionnaire instance.
+        required: true
+      tags:
+      - questionnaires
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HelpReviewInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/HelpReviewInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/HelpReviewInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Questionnaire'
+          description: ''
+  /api/v1/questionnaires/select/:
+    post:
+      operationId: questionnaires_select_create
+      tags:
+      - questionnaires
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SelectionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SelectionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SelectionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/deliveries/{id}/acknowledge/:
+    post:
+      operationId: reports_deliveries_acknowledge_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportReceiptInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ReportReceiptInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ReportReceiptInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/inbox/:
+    get:
+      operationId: reports_inbox_retrieve
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/saved/{id}/:
+    get:
+      operationId: reports_saved_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: reports_saved_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SavedReportReviewInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SavedReportReviewInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SavedReportReviewInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/saved/{id}/disposition/:
+    post:
+      operationId: reports_saved_disposition_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportDispositionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ReportDispositionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ReportDispositionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/saved/{id}/distribution/:
+    get:
+      operationId: reports_saved_distribution_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: reports_saved_distribution_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportDistributionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ReportDistributionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ReportDistributionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/services/{service}/backfill/:
+    post:
+      operationId: reports_services_backfill_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BackfillInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BackfillInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BackfillInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/services/{service}/saved/:
+    get:
+      operationId: reports_services_saved_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: reports_services_saved_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveReportInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SaveReportInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SaveReportInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/services/{service}/schedule/:
+    get:
+      operationId: reports_services_schedule_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: reports_services_schedule_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - reports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduleInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ScheduleInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ScheduleInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/services/{service}/weekly/:
+    get:
+      operationId: reports_services_weekly_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: start
+        schema:
+          type: string
+          format: date
+        description: Inicio de un intervalo de siete días; por defecto lunes de la
+          semana actual.
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/reports/services/{service}/weekly/export/:
+    get:
+      operationId: reports_services_weekly_export_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      - in: query
+        name: start
+        schema:
+          type: string
+          format: date
+        description: Inicio de un intervalo de siete días; por defecto lunes de la
+          semana actual.
+      tags:
+      - reports
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema
+      security:
+      - mfaCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/services/:
+    get:
+      operationId: services_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - services
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedServiceList'
+          description: ''
+  /api/v1/services/{id}/:
+    get:
+      operationId: services_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este service.
+        required: true
+      tags:
+      - services
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+  /api/v1/session/:
+    get:
+      operationId: session_retrieve
+      tags:
+      - session
+      security:
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+          description: ''
+    post:
+      operationId: session_create
+      tags:
+      - session
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Login'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Login'
+        required: true
+      security:
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+          description: ''
+    delete:
+      operationId: session_destroy
+      tags:
+      - session
+      security:
+      - cookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/v1/tasks/:
+    get:
+      operationId: tasks_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Un número de página dentro del conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - tasks
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTaskList'
+          description: ''
+  /api/v1/tasks/{id}/:
+    get:
+      operationId: tasks_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este task.
+        required: true
+      tags:
+      - tasks
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+  /api/v1/tracking/changes/{id}/decision/:
+    post:
+      operationId: tracking_changes_decision_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BaselineDecisionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BaselineDecisionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BaselineDecisionInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/services/{service}/:
+    get:
+      operationId: tracking_services_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+    post:
+      operationId: tracking_services_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskFields'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskFields'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskFields'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/services/{service}/calendar/:
+    post:
+      operationId: tracking_services_calendar_create
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalendarInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CalendarInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CalendarInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/services/{service}/source/:
+    get:
+      operationId: tracking_services_source_retrieve
+      parameters:
+      - in: path
+        name: service
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/tasks/{id}/:
+    get:
+      operationId: tracking_tasks_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/tasks/{id}/change/:
+    post:
+      operationId: tracking_tasks_change_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ChangeInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChangeInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/tasks/{id}/state/:
+    post:
+      operationId: tracking_tasks_state_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskStateInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskStateInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskStateInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/tracking/tasks/{id}/time/:
+    post:
+      operationId: tracking_tasks_time_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - tracking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TimeInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TimeInput'
+        required: true
+      security:
+      - mfaCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+components:
+  schemas:
+    AIActionEnum:
+      enum:
+      - report
+      - contradictions
+      - review
+      - suggest
+      - explain
+      - interview
+      - extract
+      type: string
+      description: |-
+        * `report` - report
+        * `contradictions` - contradictions
+        * `review` - review
+        * `suggest` - suggest
+        * `explain` - explain
+        * `interview` - interview
+        * `extract` - extract
+    AIDecisionInput:
+      type: object
+      properties:
+        decision:
+          $ref: '#/components/schemas/AIDecisionInputDecisionEnum'
+      required:
+      - decision
+    AIDecisionInputDecisionEnum:
+      enum:
+      - cancel
+      - reject
+      type: string
+      description: |-
+        * `cancel` - cancel
+        * `reject` - reject
+    AIPolicyInput:
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/AIActionEnum'
+          maxItems: 7
+        version:
+          type: integer
+          minimum: 0
+        enabled:
+          type: boolean
+        providers:
+          type: array
+          items:
+            $ref: '#/components/schemas/AIProviderEnum'
+          maxItems: 2
+        monthly_user_calls:
+          type: integer
+          maximum: 10000
+          minimum: 0
+        monthly_calls:
+          type: integer
+          maximum: 10000
+          minimum: 0
+        monthly_tokens:
+          type: integer
+          maximum: 100000000
+          minimum: 0
+        monthly_cost_limit:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,6}(?:\.\d{0,6})?$
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - enabled
+      - monthly_calls
+      - monthly_cost_limit
+      - monthly_tokens
+      - monthly_user_calls
+      - providers
+      - rationale
+      - version
+    AIProviderEnum:
+      enum:
+      - openai
+      - deepseek
+      type: string
+      description: |-
+        * `openai` - openai
+        * `deepseek` - deepseek
+    AIReleaseInput:
+      type: object
+      properties:
+        fragment_ids:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+          maxItems: 8
+          minItems: 1
+        provider:
+          $ref: '#/components/schemas/AIProviderEnum'
+        classification:
+          $ref: '#/components/schemas/ClassificationEnum'
+        expires:
+          type: string
+          format: date
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - classification
+      - expires
+      - fragment_ids
+      - provider
+      - rationale
+    AIRequestInput:
+      type: object
+      properties:
+        answer_release_id:
+          type: integer
+          minimum: 1
+        confirm_answer_send:
+          type: boolean
+          default: false
+        action:
+          allOf:
+          - $ref: '#/components/schemas/AIActionEnum'
+          default: suggest
+        provider:
+          $ref: '#/components/schemas/AIProviderEnum'
+        fragment_ids:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+          maxItems: 8
+          minItems: 0
+        version:
+          type: integer
+          minimum: 0
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - client_key
+      - fragment_ids
+      - provider
+      - version
+    AllocationInput:
+      type: object
+      properties:
+        service:
+          type: integer
+          minimum: 1
+        minutes:
+          type: integer
+          maximum: 1440
+          minimum: 1
+      required:
+      - minutes
+      - service
+    Answer:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        upload_formats:
+          type: array
+          items:
+            type: string
+          readOnly: true
+        questionnaire:
+          type: integer
+        can_ai:
+          type: boolean
+          readOnly: true
+        can_consult:
+          type: boolean
+          readOnly: true
+        version:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        etag:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        state:
+          type: string
+          maxLength: 30
+        original:
+          type: string
+        source:
+          type: string
+        question_version:
+          type: integer
+        service:
+          type: integer
+        help: {}
+        revisions:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          readOnly: true
+        evidence:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          readOnly: true
+      required:
+      - can_ai
+      - can_consult
+      - evidence
+      - help
+      - id
+      - original
+      - question_version
+      - questionnaire
+      - revisions
+      - service
+      - source
+      - upload_formats
+    AnswerReleaseInput:
+      type: object
+      properties:
+        purpose:
+          allOf:
+          - $ref: '#/components/schemas/PurposeEnum'
+          default: review
+        version:
+          type: integer
+          minimum: 0
+        provider:
+          $ref: '#/components/schemas/AIProviderEnum'
+        classification:
+          $ref: '#/components/schemas/ClassificationEnum'
+        expires:
+          type: string
+          format: date
+        rationale:
+          type: string
+          maxLength: 5000
+        checked:
+          type: boolean
+      required:
+      - checked
+      - classification
+      - expires
+      - provider
+      - rationale
+      - version
+    ApplicabilityEnum:
+      enum:
+      - pending
+      - applies
+      - not_applies
+      type: string
+      description: |-
+        * `pending` - pending
+        * `applies` - applies
+        * `not_applies` - not_applies
+    Assignment:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: integer
+        username:
+          type: string
+        service:
+          type: integer
+        role:
+          $ref: '#/components/schemas/RoleEnum'
+        starts:
+          type: string
+          format: date
+        ends:
+          type: string
+          format: date
+        approved_by_name:
+          type: string
+        rationale:
+          type: string
+        revoked_at:
+          type: string
+          format: date-time
+          nullable: true
+        revocation_reason:
+          type: string
+        substitutes:
+          type: integer
+          nullable: true
+      required:
+      - approved_by_name
+      - ends
+      - id
+      - role
+      - service
+      - starts
+      - user
+      - username
+    AssignmentInput:
+      type: object
+      properties:
+        substitutes:
+          type: integer
+          minimum: 1
+          nullable: true
+        user:
+          type: integer
+          minimum: 1
+        service:
+          type: integer
+          minimum: 1
+        role:
+          $ref: '#/components/schemas/RoleEnum'
+        starts:
+          type: string
+          format: date
+        ends:
+          type: string
+          format: date
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - ends
+      - rationale
+      - role
+      - service
+      - starts
+      - user
+    BackfillInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 1
+        period:
+          type: string
+          format: date
+        rationale:
+          type: string
+          maxLength: 3000
+      required:
+      - period
+      - rationale
+      - version
+    BaselineDecisionInput:
+      type: object
+      properties:
+        approve:
+          type: boolean
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - approve
+      - rationale
+    CalendarInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        weekdays:
+          type: array
+          items:
+            type: integer
+            maximum: 6
+            minimum: 0
+          maxItems: 7
+          minItems: 1
+        holidays:
+          type: array
+          items:
+            type: string
+            format: date
+          maxItems: 1000
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - holidays
+      - rationale
+      - version
+      - weekdays
+    CampusInput:
+      type: object
+      properties:
+        institution:
+          type: integer
+          minimum: 1
+        name:
+          type: string
+          maxLength: 120
+      required:
+      - institution
+      - name
+    CapacityInput:
+      type: object
+      properties:
+        person:
+          type: integer
+          minimum: 1
+        day:
+          type: string
+          format: date
+        version:
+          type: integer
+          minimum: 0
+        minutes:
+          type: integer
+          maximum: 1440
+          minimum: 0
+        unavailable_minutes:
+          type: integer
+          maximum: 1440
+          minimum: 0
+        allocations:
+          type: array
+          items:
+            $ref: '#/components/schemas/AllocationInput'
+        rationale:
+          type: string
+          maxLength: 3000
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - allocations
+      - client_key
+      - day
+      - minutes
+      - person
+      - rationale
+      - unavailable_minutes
+      - version
+    CapacityReviewInput:
+      type: object
+      properties:
+        approve:
+          type: boolean
+        rationale:
+          type: string
+          maxLength: 3000
+      required:
+      - approve
+      - rationale
+    ChangeInput:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 250
+        owner:
+          type: integer
+          minimum: 1
+        substitute:
+          type: integer
+          minimum: 1
+          nullable: true
+        coordinator:
+          type: integer
+          minimum: 1
+          nullable: true
+        starts:
+          type: string
+          format: date
+        due:
+          type: string
+          format: date
+        priority:
+          $ref: '#/components/schemas/PriorityEnum'
+        estimated_minutes:
+          type: integer
+          maximum: 1000000
+          minimum: 0
+        acceptance_criteria:
+          type: string
+          maxLength: 5000
+        predecessors:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+          maxItems: 50
+        version:
+          type: integer
+          minimum: 0
+        rationale:
+          type: string
+          maxLength: 5000
+        cancel:
+          type: boolean
+          default: false
+      required:
+      - acceptance_criteria
+      - coordinator
+      - due
+      - estimated_minutes
+      - owner
+      - predecessors
+      - priority
+      - rationale
+      - starts
+      - substitute
+      - title
+      - version
+    ClassificationEnum:
+      enum:
+      - public
+      - reviewed_anonymized
+      type: string
+      description: |-
+        * `public` - public
+        * `reviewed_anonymized` - reviewed_anonymized
+    ComplianceCheckInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        procedure:
+          type: string
+          maxLength: 5000
+        expected:
+          type: string
+          maxLength: 5000
+        observed:
+          type: string
+          maxLength: 5000
+        result:
+          $ref: '#/components/schemas/ResultEnum'
+      required:
+      - expected
+      - observed
+      - procedure
+      - result
+      - version
+    ComplianceDecisionEnum:
+      enum:
+      - approved
+      - returned
+      type: string
+      description: |-
+        * `approved` - approved
+        * `returned` - returned
+    ComplianceInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        norm:
+          type: integer
+          minimum: 1
+        control:
+          type: integer
+          minimum: 1
+        process_name:
+          type: string
+          maxLength: 200
+        question:
+          type: integer
+          minimum: 1
+        owner:
+          type: integer
+          minimum: 1
+        evidence:
+          type: array
+          items:
+            type: string
+            format: uuid
+          maxItems: 20
+        nature:
+          $ref: '#/components/schemas/NatureEnum'
+        numeral:
+          type: string
+          maxLength: 160
+        consulted_version:
+          type: string
+          maxLength: 200
+        official_url:
+          oneOf:
+          - type: string
+            format: uri
+            maxLength: 1000
+          - type: string
+            maxLength: 0
+        consulted_on:
+          type: string
+          format: date
+          nullable: true
+        validity:
+          $ref: '#/components/schemas/ValidityEnum'
+        applicability:
+          $ref: '#/components/schemas/ApplicabilityEnum'
+        applicability_reason:
+          type: string
+          maxLength: 5000
+        obligation:
+          type: string
+          maxLength: 10000
+        link_reason:
+          type: string
+          maxLength: 5000
+        next_review:
+          type: string
+          format: date
+          nullable: true
+      required:
+      - applicability
+      - applicability_reason
+      - consulted_on
+      - consulted_version
+      - control
+      - evidence
+      - link_reason
+      - nature
+      - next_review
+      - norm
+      - numeral
+      - obligation
+      - official_url
+      - owner
+      - process_name
+      - question
+      - validity
+      - version
+    ComplianceReviewInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        decision:
+          $ref: '#/components/schemas/ComplianceDecisionEnum'
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - decision
+      - rationale
+      - version
+    ConfirmInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - rationale
+      - version
+    Dashboard:
+      type: object
+      properties:
+        validated:
+          $ref: '#/components/schemas/Metric'
+        tasks_pending:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+        clinical_scope:
+          type: string
+      required:
+      - clinical_scope
+      - tasks_pending
+      - updated_at
+      - validated
+    DecisionInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 1
+        action:
+          $ref: '#/components/schemas/DecisionInputActionEnum'
+        note:
+          type: string
+          maxLength: 5000
+        task_version:
+          type: integer
+          minimum: 0
+          nullable: true
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - action
+      - client_key
+      - note
+      - version
+    DecisionInputActionEnum:
+      enum:
+      - resolve
+      - dismiss
+      - withdraw
+      - reopen
+      type: string
+      description: |-
+        * `resolve` - resolve
+        * `dismiss` - dismiss
+        * `withdraw` - withdraw
+        * `reopen` - reopen
+    DecisionNoticeInput:
+      type: object
+      properties:
+        decision_version:
+          type: integer
+          minimum: 1
+        calendar_version:
+          type: integer
+          minimum: 0
+        stage:
+          $ref: '#/components/schemas/StageEnum'
+      required:
+      - calendar_version
+      - decision_version
+      - stage
+    ExpectedStateEnum:
+      enum:
+      - pending
+      - approved
+      - rejected
+      type: string
+      description: |-
+        * `pending` - pending
+        * `approved` - approved
+        * `rejected` - rejected
+    HelpContent:
+      type: object
+      properties:
+        plain_explanation:
+          type: string
+          maxLength: 5000
+        purpose:
+          type: string
+          maxLength: 5000
+        knower:
+          type: string
+          maxLength: 5000
+        where_to_find:
+          type: string
+          maxLength: 5000
+        steps:
+          type: string
+          maxLength: 5000
+        fictional_example:
+          type: string
+          maxLength: 5000
+        evidence:
+          type: string
+          maxLength: 5000
+        sufficiency:
+          type: string
+          maxLength: 5000
+        applicability:
+          type: string
+          maxLength: 5000
+        escalation:
+          type: string
+          maxLength: 5000
+      required:
+      - applicability
+      - escalation
+      - evidence
+      - fictional_example
+      - knower
+      - plain_explanation
+      - purpose
+      - steps
+      - sufficiency
+      - where_to_find
+    HelpInput:
+      type: object
+      properties:
+        proposal_digest:
+          oneOf:
+          - type: string
+            default: ''
+            pattern: ^[a-f0-9]{64}$
+          - type: string
+            maxLength: 0
+        version:
+          type: integer
+          minimum: 0
+        content:
+          $ref: '#/components/schemas/HelpContent'
+      required:
+      - content
+      - version
+    HelpReviewInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        rationale:
+          type: string
+          maxLength: 5000
+        decision:
+          $ref: '#/components/schemas/ComplianceDecisionEnum'
+      required:
+      - decision
+      - rationale
+      - version
+    InterviewInput:
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/InterviewInputActionEnum'
+        version:
+          type: integer
+          minimum: 0
+        answer_version:
+          type: integer
+          minimum: 0
+        client_key:
+          type: string
+          format: uuid
+        item_id:
+          type: string
+          maxLength: 64
+        reply:
+          type: string
+          maxLength: 2000
+        knowledge:
+          $ref: '#/components/schemas/KnowledgeEnum'
+        request_id:
+          type: integer
+          minimum: 1
+      required:
+      - action
+      - answer_version
+      - client_key
+      - version
+    InterviewInputActionEnum:
+      enum:
+      - open
+      - reply
+      - add_ai
+      - rebase
+      - apply
+      type: string
+      description: |-
+        * `open` - open
+        * `reply` - reply
+        * `add_ai` - add_ai
+        * `rebase` - rebase
+        * `apply` - apply
+    KindEnum:
+      enum:
+      - service
+      - administration
+      type: string
+      description: |-
+        * `service` - service
+        * `administration` - administration
+    KnowledgeEnum:
+      enum:
+      - known
+      - unknown
+      - absent
+      - unconfirmed
+      - not_applicable
+      type: string
+      description: |-
+        * `known` - known
+        * `unknown` - unknown
+        * `absent` - absent
+        * `unconfirmed` - unconfirmed
+        * `not_applicable` - not_applicable
+    Login:
+      type: object
+      properties:
+        username:
+          type: string
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 256
+      required:
+      - password
+      - username
+    MFAInput:
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/MFAInputActionEnum'
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 1024
+        code:
+          type: string
+          writeOnly: true
+          maxLength: 80
+      required:
+      - action
+    MFAInputActionEnum:
+      enum:
+      - begin
+      - confirm
+      - verify
+      - codes
+      type: string
+      description: |-
+        * `begin` - begin
+        * `confirm` - confirm
+        * `verify` - verify
+        * `codes` - codes
+    MessageInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        body:
+          type: string
+          maxLength: 5000
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - body
+      - client_key
+      - version
+    Metric:
+      type: object
+      properties:
+        numerator:
+          type: integer
+        denominator:
+          type: integer
+        pending:
+          type: integer
+        label:
+          type: string
+        records_url:
+          type: string
+      required:
+      - denominator
+      - label
+      - numerator
+      - pending
+      - records_url
+    NatureEnum:
+      enum:
+      - legal_obligation
+      - recommended_improvement
+      type: string
+      description: |-
+        * `legal_obligation` - legal_obligation
+        * `recommended_improvement` - recommended_improvement
+    NewDecision:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 250
+        question:
+          type: string
+          maxLength: 5000
+        alternatives:
+          type: string
+          maxLength: 5000
+        due:
+          type: string
+          format: date
+        task:
+          type: integer
+          minimum: 1
+          nullable: true
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - alternatives
+      - client_key
+      - due
+      - question
+      - title
+    PaginatedAnswerList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+    PaginatedAssignmentList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Assignment'
+    PaginatedQuestionnaireList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Questionnaire'
+    PaginatedRequestList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Request'
+    PaginatedServiceAdminList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceAdmin'
+    PaginatedServiceList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+    PaginatedTaskList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+    PriorityEnum:
+      enum:
+      - low
+      - normal
+      - high
+      - critical
+      type: string
+      description: |-
+        * `low` - low
+        * `normal` - normal
+        * `high` - high
+        * `critical` - critical
+    PurposeEnum:
+      enum:
+      - review
+      - interview
+      type: string
+      description: |-
+        * `review` - review
+        * `interview` - interview
+    Questionnaire:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        service:
+          type: integer
+        etag:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        published:
+          type: boolean
+        published_help:
+          type: integer
+          nullable: true
+        question_version_number:
+          type: integer
+        original:
+          type: string
+        section:
+          type: string
+        locator:
+          type: string
+        code:
+          type: string
+        revisions:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          readOnly: true
+        can_edit:
+          type: boolean
+          readOnly: true
+        can_review:
+          type: boolean
+          readOnly: true
+        draft_available:
+          type: boolean
+          readOnly: true
+        can_consult:
+          type: boolean
+          readOnly: true
+      required:
+      - can_consult
+      - can_edit
+      - can_review
+      - code
+      - draft_available
+      - id
+      - locator
+      - original
+      - question_version_number
+      - revisions
+      - section
+      - service
+    ReasonInput:
+      type: object
+      properties:
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - rationale
+    ReportDispositionInput:
+      type: object
+      properties:
+        content_hash:
+          type: string
+          maxLength: 64
+          minLength: 64
+        expected_state:
+          $ref: '#/components/schemas/ExpectedStateEnum'
+        replacement:
+          type: integer
+          minimum: 1
+          nullable: true
+        replacement_hash:
+          type: string
+          nullable: true
+          maxLength: 64
+          minLength: 64
+        rationale:
+          type: string
+          maxLength: 3000
+      required:
+      - content_hash
+      - expected_state
+      - rationale
+      - replacement
+      - replacement_hash
+    ReportDistributionInput:
+      type: object
+      properties:
+        content_hash:
+          type: string
+          maxLength: 64
+          minLength: 64
+        recipients:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+          maxItems: 100
+          minItems: 1
+        rationale:
+          type: string
+          maxLength: 3000
+      required:
+      - content_hash
+      - rationale
+      - recipients
+    ReportReceiptInput:
+      type: object
+      properties:
+        content_hash:
+          type: string
+          maxLength: 64
+          minLength: 64
+      required:
+      - content_hash
+    Request:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        instance:
+          type: integer
+        original:
+          type: string
+        service_name:
+          type: string
+        opened_by_name:
+          type: string
+        assigned_to_name:
+          type: string
+        question:
+          type: string
+        due:
+          type: string
+          format: date
+        state:
+          type: string
+          maxLength: 20
+        etag:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        resolution:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        help_version:
+          type: integer
+          nullable: true
+        answer_version:
+          type: integer
+          nullable: true
+        messages:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          readOnly: true
+        can_reply:
+          type: boolean
+          readOnly: true
+        can_resolve:
+          type: boolean
+          readOnly: true
+      required:
+      - assigned_to_name
+      - can_reply
+      - can_resolve
+      - created_at
+      - due
+      - id
+      - instance
+      - messages
+      - opened_by_name
+      - original
+      - question
+      - service_name
+      - updated_at
+    RequestInput:
+      type: object
+      properties:
+        instance:
+          type: integer
+          minimum: 1
+        assigned_to:
+          type: integer
+          minimum: 1
+        question:
+          type: string
+          maxLength: 5000
+        due:
+          type: string
+          format: date
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - assigned_to
+      - client_key
+      - due
+      - instance
+      - question
+    ResolutionInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - rationale
+      - version
+    ResultEnum:
+      enum:
+      - passed
+      - failed
+      type: string
+      description: |-
+        * `passed` - passed
+        * `failed` - failed
+    RetryInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+      required:
+      - version
+    ReviewInput:
+      type: object
+      properties:
+        ocr_checked:
+          type: boolean
+          default: false
+        version:
+          type: integer
+          minimum: 0
+        decision:
+          $ref: '#/components/schemas/ReviewInputDecisionEnum'
+        rationale:
+          type: string
+          maxLength: 5000
+        valid_until:
+          type: string
+          format: date
+          nullable: true
+      required:
+      - decision
+      - rationale
+      - version
+    ReviewInputDecisionEnum:
+      enum:
+      - accepted
+      - returned
+      type: string
+      description: |-
+        * `accepted` - accepted
+        * `returned` - returned
+    RoleEnum:
+      enum:
+      - director
+      - coordinator
+      - manager
+      - contributor
+      - compliance
+      - clinical
+      - developer
+      - technical
+      - auditor
+      type: string
+      description: |-
+        * `director` - director
+        * `coordinator` - coordinator
+        * `manager` - manager
+        * `contributor` - contributor
+        * `compliance` - compliance
+        * `clinical` - clinical
+        * `developer` - developer
+        * `technical` - technical
+        * `auditor` - auditor
+    Save:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        content:
+          type: string
+          maxLength: 20000
+        knowledge:
+          $ref: '#/components/schemas/KnowledgeEnum'
+      required:
+      - content
+      - knowledge
+      - version
+    SaveReportInput:
+      type: object
+      properties:
+        start:
+          type: string
+          format: date
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - client_key
+      - start
+    SavedReportReviewInput:
+      type: object
+      properties:
+        approve:
+          type: boolean
+        content_hash:
+          type: string
+          maxLength: 64
+          minLength: 64
+        rationale:
+          type: string
+          maxLength: 3000
+      required:
+      - approve
+      - content_hash
+      - rationale
+    ScheduleInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        enabled:
+          type: boolean
+        rationale:
+          type: string
+          maxLength: 3000
+      required:
+      - enabled
+      - rationale
+      - version
+    SelectionInput:
+      type: object
+      properties:
+        service:
+          type: integer
+          minimum: 1
+        question_versions:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+          maxItems: 200
+          minItems: 1
+        rationale:
+          type: string
+          maxLength: 5000
+      required:
+      - question_versions
+      - rationale
+      - service
+    Service:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 160
+        site_name:
+          type: string
+          readOnly: true
+        kind:
+          type: string
+          maxLength: 30
+        confirmed:
+          type: boolean
+      required:
+      - id
+      - name
+      - site_name
+    ServiceAdmin:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 160
+        site:
+          type: integer
+        site_name:
+          type: string
+        institution:
+          type: integer
+        kind:
+          type: string
+          maxLength: 30
+        confirmed:
+          type: boolean
+        etag:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+      required:
+      - id
+      - institution
+      - name
+      - site
+      - site_name
+    ServiceInput:
+      type: object
+      properties:
+        site:
+          type: integer
+          minimum: 1
+        name:
+          type: string
+          maxLength: 160
+        kind:
+          allOf:
+          - $ref: '#/components/schemas/KindEnum'
+          default: service
+      required:
+      - name
+      - site
+    Session:
+      type: object
+      properties:
+        mfa_required:
+          type: boolean
+        mfa_enabled:
+          type: boolean
+        mfa_verified:
+          type: boolean
+        mfa_configured:
+          type: boolean
+        recovery_remaining:
+          type: integer
+        csrf:
+          type: string
+        authenticated:
+          type: boolean
+        username:
+          type: string
+      required:
+      - authenticated
+      - csrf
+      - mfa_enabled
+      - mfa_required
+      - mfa_verified
+      - username
+    SiteInput:
+      type: object
+      properties:
+        campus:
+          type: integer
+          minimum: 1
+        name:
+          type: string
+          maxLength: 120
+        timezone:
+          type: string
+          default: America/Merida
+          maxLength: 60
+      required:
+      - campus
+      - name
+    StageEnum:
+      enum:
+      - 0
+      - 2
+      - 3
+      type: integer
+      description: |-
+        * `0` - 0
+        * `2` - 2
+        * `3` - 3
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        service:
+          type: integer
+        answer:
+          type: integer
+          nullable: true
+        title:
+          type: string
+          maxLength: 250
+        owner:
+          type: integer
+        starts:
+          type: string
+          format: date
+        due:
+          type: string
+          format: date
+        state:
+          type: string
+          maxLength: 30
+      required:
+      - id
+      - owner
+      - service
+      - title
+    TaskFields:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 250
+        owner:
+          type: integer
+          minimum: 1
+        substitute:
+          type: integer
+          minimum: 1
+          nullable: true
+        coordinator:
+          type: integer
+          minimum: 1
+          nullable: true
+        starts:
+          type: string
+          format: date
+        due:
+          type: string
+          format: date
+        priority:
+          $ref: '#/components/schemas/PriorityEnum'
+        estimated_minutes:
+          type: integer
+          maximum: 1000000
+          minimum: 0
+        acceptance_criteria:
+          type: string
+          maxLength: 5000
+        predecessors:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+          maxItems: 50
+      required:
+      - acceptance_criteria
+      - coordinator
+      - due
+      - estimated_minutes
+      - owner
+      - predecessors
+      - priority
+      - starts
+      - substitute
+      - title
+    TaskStateInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        target:
+          $ref: '#/components/schemas/TaskStateInputTargetEnum'
+        note:
+          type: string
+          maxLength: 5000
+      required:
+      - note
+      - target
+      - version
+    TaskStateInputTargetEnum:
+      enum:
+      - in_progress
+      - blocked
+      - submitted
+      - accepted
+      - returned
+      type: string
+      description: |-
+        * `in_progress` - in_progress
+        * `blocked` - blocked
+        * `submitted` - submitted
+        * `accepted` - accepted
+        * `returned` - returned
+    TimeInput:
+      type: object
+      properties:
+        day:
+          type: string
+          format: date
+        minutes:
+          type: integer
+          maximum: 1440
+          minimum: 1
+        note:
+          type: string
+          maxLength: 2000
+        client_key:
+          type: string
+          format: uuid
+      required:
+      - client_key
+      - day
+      - minutes
+      - note
+    Transition:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 1
+        target:
+          $ref: '#/components/schemas/TransitionTargetEnum'
+        rationale:
+          type: string
+          default: ''
+          maxLength: 5000
+      required:
+      - target
+      - version
+    TransitionTargetEnum:
+      enum:
+      - submitted
+      - validated
+      - returned
+      type: string
+      description: |-
+        * `submitted` - submitted
+        * `validated` - validated
+        * `returned` - returned
+    Upload:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+        file:
+          type: string
+          format: uri
+      required:
+      - file
+      - version
+    UserInput:
+      type: object
+      properties:
+        institution:
+          type: integer
+          minimum: 1
+        username:
+          type: string
+          maxLength: 150
+          pattern: ^[a-zA-Z0-9_.@+-]+$
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          default: ''
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 256
+          minLength: 12
+      required:
+      - first_name
+      - institution
+      - password
+      - username
+    ValidityEnum:
+      enum:
+      - pending
+      - verified
+      - obsolete
+      type: string
+      description: |-
+        * `pending` - pending
+        * `verified` - verified
+        * `obsolete` - obsolete
+    VersionInput:
+      type: object
+      properties:
+        version:
+          type: integer
+          minimum: 0
+      required:
+      - version
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    mfaCookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

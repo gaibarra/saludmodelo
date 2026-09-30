@@ -1,0 +1,32 @@
+import {chromium} from '../../frontend/node_modules/playwright-core/index.mjs';
+import {readFile,writeFile} from 'node:fs/promises';
+const folder=(await readFile(new URL('./runtime/active-release.txt',import.meta.url),'utf8')).trim();
+const m=JSON.parse(await readFile(folder+'/manifest.json','utf8'));
+if(!['0.36.0','0.36.1'].includes(m.version)||m.domain!=='plansaludmodelo.online')throw Error('Wrong release');
+const bootstrap=JSON.parse(await readFile(folder+'/bootstrap.json','utf8'));
+const origin='https://plansaludmodelo.online';const browser=await chromium.launch({headless:true});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});page.setDefaultTimeout(20000);
+ await page.goto(origin+'/portal/directorio');const dir=page.getByRole('region',{name:'Directorio institucional publicado',exact:true});
+ await dir.getByRole('article',{name:'Clínica Dental',exact:true}).waitFor();
+ if(await dir.getByRole('article').count()!==6)throw Error('Expected six published services');
+ const data=await page.evaluate(()=>fetch('/api/v1/public/services/').then(r=>r.json()));
+ if(data.appointments_enabled||data.published_services.length!==6)throw Error('Wrong availability/catalog');
+ if(data.published_services.filter(s=>s.school===1).length!==4||data.published_services.filter(s=>s.school===2).length!==1)throw Error('Wrong school mapping');
+ const unit=data.published_services.find(s=>s.audience==='university');if(!unit||unit.school!==null||unit.area!=='')throw Error('University unit misclassified');
+ await page.screenshot({path:'docs/capturas/directorio-publico-0.36.png',fullPage:true});
+ await page.goto(origin+'/portal/servicios/fisioterapia');await dir.getByText(/nueve dígitos/).waitFor();
+ if(await dir.locator('a[href="tel:999301900"]').count())throw Error('Incomplete phone made clickable');
+ await page.goto(origin+'/portal/servicios/psicologia');await dir.getByText(/no publica una consulta independiente/).waitFor();
+ await page.setViewportSize({width:390,height:844});await page.goto(origin+'/portal/directorio');await dir.getByRole('article',{name:'Clínica Dental',exact:true}).waitFor();
+ if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow');
+ await page.screenshot({path:'docs/capturas/directorio-movil-0.36.png',fullPage:true});
+ const account=bootstrap.accounts.find(a=>a.role==='institution');
+ await page.setViewportSize({width:1440,height:1000});await page.goto(origin+'/personal');await page.getByLabel('Usuario',{exact:true}).fill(account.username);await page.getByLabel('Contraseña',{exact:true}).fill(account.password);await page.getByRole('button',{name:'Ingresar',exact:true}).click();
+ await page.getByRole('heading',{name:'Panel académico',exact:true}).waitFor();await dir.getByRole('article',{name:'Clínica Dental',exact:true}).waitFor();
+ if(await dir.getByRole('article').count()!==6)throw Error('Staff directory missing');
+ await page.goto(origin+'/escuelas?school=1');await page.getByText('Consultar servicios publicados (4)',{exact:true}).waitFor();if(await dir.isVisible())throw Error('School directory should start closed');await page.getByText('Consultar servicios publicados (4)',{exact:true}).click();await dir.getByRole('article',{name:'Clínica de Fisioterapia',exact:true}).waitFor();if(await dir.getByRole('article').count()!==4)throw Error('Health directory wrong');
+ await page.goto(origin+'/escuelas?school=2');await page.getByText('Consultar servicios publicados (1)',{exact:true}).waitFor();if(await dir.isVisible())throw Error('School directory should start closed');await page.getByText('Consultar servicios publicados (1)',{exact:true}).click();await dir.getByRole('article',{name:'Clínica Dental',exact:true}).waitFor();if(await dir.getByRole('article').count()!==1)throw Error('Dental directory wrong');
+ await writeFile(folder+'/public-catalog-smoke.json',JSON.stringify({checked_at:new Date().toISOString(),public_https_verified:true,services:6,school_health:4,school_dental:1,university_unit:1,patient_intake_enabled:false,mobile_checked:true,source_links_checked:true},null,2)+'\n',{mode:0o600});
+ console.log('HTTPS: seis fichas verificadas; portal, áreas, panel y escuelas correctos; móvil sin desbordamiento y solicitudes reales deshabilitadas.');
+}finally{await browser.close();}

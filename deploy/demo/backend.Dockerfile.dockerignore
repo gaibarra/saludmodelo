@@ -1,0 +1,15 @@
+**
+!backend
+!backend/requirements.lock
+!backend/manage.py
+!backend/config
+!backend/config/**
+!backend/core
+!backend/core/**
+!imports
+!imports/**
+!Plan_Trabajo_Escuela_Salud_Modelo.docx
+!deploy
+!deploy/demo
+!deploy/demo/seed.py
+**/__pycache__

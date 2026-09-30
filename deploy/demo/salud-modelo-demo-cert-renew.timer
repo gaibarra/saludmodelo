@@ -1,0 +1,8 @@
+[Unit]
+Description=Revisar renovación del certificado propio de Salud Modelo
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=3600
+Persistent=true
+[Install]
+WantedBy=timers.target

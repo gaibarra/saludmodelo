@@ -1,0 +1,9 @@
+# Template only; not installed or enabled.
+[Unit]
+Description=Observe Salud Modelo every five minutes
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Unit=salud-monitor.service
+[Install]
+WantedBy=timers.target

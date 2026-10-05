@@ -1,4 +1,5 @@
 "use client";
+import InstitutionalLogo from "./InstitutionalLogo";
 import "../app/personal/personal.css";
 import StaffDashboard from "./StaffDashboard";
 import { useEffect, useState, FormEvent } from "react";
@@ -142,7 +143,7 @@ export default function StaffWorkspace({ planning = false }: { planning?: boolea
     <div className="staff-space">
       <header className="staff-header">
         <Link href="/" className="staff-brand" aria-label="Salud y Odontología · Universidad Modelo">
-          <span className="staff-mark" aria-hidden>✳</span>
+          <InstitutionalLogo />
           <span><strong>Salud y Odontología</strong><small>UNIVERSIDAD MODELO</small></span>
         </Link>
         <Link href="/" className="staff-return">← Portal de servicios</Link>

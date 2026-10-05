@@ -1,0 +1,167 @@
+{
+  "version": "2026-10-01.1",
+  "source_url": "https://www.unimodelo.edu.mx/servicios",
+  "source_checked_on": "2026-09-30",
+  "source_sha256": "74686df83cfa8f3b48a4b9b2c92725320d1d23489bc0c88ea033826bad969f4e",
+  "location_note": "Confirma la ubicación exacta con el servicio; la ficha consultada no publica dirección.",
+  "classification_basis": "Áreas de la aplicación definidas con el usuario. El directorio no especifica la adscripción escolar. La unidad universitaria queda sin escuela asignada.",
+  "services": [
+    {
+      "code": "modelo-clinica-dental",
+      "name": "Clínica Dental",
+      "area": "odontologia",
+      "school": "odontologia",
+      "description": "Servicio odontológico publicado para atención al público.",
+      "audience": "general",
+      "schedule": [
+        "Lunes a viernes: 7:00–14:00 y 15:00–20:00.",
+        "Sábados: 8:00–13:00."
+      ],
+      "contacts": [
+        {
+          "label": "999 930 1900",
+          "href": "tel:9999301900"
+        }
+      ],
+      "notes": "El directorio consultado no indica extensión dental ni catálogo de tratamientos."
+    },
+    {
+      "code": "modelo-clinica-fisioterapia",
+      "name": "Clínica de Fisioterapia",
+      "area": "fisioterapia",
+      "school": "salud",
+      "description": "Clínica de fisioterapia abierta al público.",
+      "audience": "general",
+      "schedule": [
+        "Lunes a viernes: 8:00–13:00 y 16:00–20:00."
+      ],
+      "contacts": [
+        {
+          "label": "999301900 · extensión 2217 (número publicado incompleto)",
+          "href": ""
+        },
+        {
+          "label": "Conmutador general de Mérida: 999 930 1900",
+          "href": "tel:9999301900"
+        }
+      ],
+      "notes": "La ficha publica un teléfono de nueve dígitos. No se corrigió por inferencia. Confirma el contacto y la extensión 2217 mediante el conmutador general publicado en el pie del sitio."
+    },
+    {
+      "code": "modelo-consultorio-nutricion",
+      "name": "Consultorio de Nutrición",
+      "area": "nutricion",
+      "school": "salud",
+      "description": "Consultorio de nutrición disponible para el público.",
+      "audience": "general",
+      "schedule": [
+        "Lunes a viernes: 7:00–20:00.",
+        "Sábados: 8:00–13:00."
+      ],
+      "contacts": [
+        {
+          "label": "WhatsApp: 999 649 1058",
+          "href": "https://wa.me/529996491058"
+        },
+        {
+          "label": "999 930 1900 · extensión 2210",
+          "href": "tel:9999301900"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "code": "modelo-readaptacion-deportiva",
+      "name": "Readaptación Deportiva",
+      "area": "ciencias-del-deporte",
+      "school": "salud",
+      "description": "Servicio de readaptación deportiva para el público.",
+      "audience": "general",
+      "schedule": [
+        "Lunes y miércoles: 8:00–13:00."
+      ],
+      "contacts": [
+        {
+          "label": "999 930 1900 · extensión 2203",
+          "href": "tel:9999301900"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "code": "modelo-usc-casita",
+      "name": "Psicología · USC Casita",
+      "area": "psicologia",
+      "school": "salud",
+      "description": "Atención psicológica al público general en la Unidad de Servicios Comunitarios La Casita, incorporada a la Escuela de Salud.",
+      "audience": "general",
+      "schedule": [
+        "Lunes, miércoles y viernes: 8:00–12:00.",
+        "Lunes a jueves: 15:00–19:00."
+      ],
+      "contacts": [
+        {
+          "label": "WhatsApp: 999 927 9160",
+          "href": "https://wa.me/529999279160"
+        }
+      ],
+      "notes": "El directorio estatal de 2024 documenta el servicio psicológico. Los horarios y contacto mostrados son generales de USC Casita; confirmar disponibilidad, modalidades y responsables de Psicología. Comparte sede con Atención Comunitaria; son servicios administrativos separados.",
+      "previous_operational_name": "USC Casita",
+      "additional_areas": [],
+      "additional_sources": [
+        {
+          "label": "Gobierno de Yucatán · directorio 2024, página 48",
+          "url": "https://www.yucatan.gob.mx/docs/air/AIR_1699_2.pdf",
+          "checked_on": "2026-10-01",
+          "sha256": "5bc1d514b8faad3d0253e865884f9702658f9f56db937fa84329d0926b1364db"
+        }
+      ],
+      "classification_basis": "Psicología pertenece a Salud por instrucción del usuario. El usuario confirma el 01/10/2026 que Psicología y Atención Comunitaria son servicios separados en la sede La Casita. Se conserva el identificador previo de Psicología y sus relaciones.",
+      "site_name": "La Casita",
+      "location_note": "Sede La Casita, confirmada por el usuario el 01/10/2026. Confirmar dirección exacta y condiciones de acceso con el servicio."
+    },
+    {
+      "code": "modelo-atencion-comunitaria-casita",
+      "name": "Atención Comunitaria · La Casita",
+      "area": "atencion-comunitaria",
+      "school": "salud",
+      "description": "Servicio de Atención Comunitaria de la Escuela de Salud en la sede La Casita.",
+      "audience": "general",
+      "schedule": [
+        "Lunes, miércoles y viernes: 8:00–12:00.",
+        "Lunes a jueves: 15:00–19:00."
+      ],
+      "contacts": [
+        {
+          "label": "WhatsApp: 999 927 9160",
+          "href": "https://wa.me/529999279160"
+        }
+      ],
+      "notes": "Sede y separación de Psicología confirmadas por el usuario. Los horarios y contacto son generales de USC Casita; confirmar actividades, responsables y disponibilidad específica de Atención Comunitaria.",
+      "additional_areas": [],
+      "additional_sources": [],
+      "classification_basis": "Psicología pertenece a Salud por instrucción del usuario. El usuario confirma el 01/10/2026 que Psicología y Atención Comunitaria son servicios separados en la sede La Casita. Se conserva el identificador previo de Psicología y sus relaciones.",
+      "site_name": "La Casita",
+      "location_note": "Sede La Casita, confirmada por el usuario el 01/10/2026. Confirmar dirección exacta y condiciones de acceso con el servicio."
+    },
+    {
+      "code": "modelo-atencion-prevencion-salud",
+      "name": "Unidad de Atención y Prevención de la Salud",
+      "area": "",
+      "school": null,
+      "description": "Unidad de atención y prevención dirigida a la comunidad universitaria.",
+      "audience": "university",
+      "schedule": [
+        "Lunes a viernes: 8:00–20:00.",
+        "Sábados: 8:00–13:00."
+      ],
+      "contacts": [
+        {
+          "label": "999 930 1900 · extensión 2203",
+          "href": "tel:9999301900"
+        }
+      ],
+      "notes": "La fuente no precisa adscripción escolar ni especialidades. No se presenta como consultorio público de Psicología."
+    }
+  ]
+}

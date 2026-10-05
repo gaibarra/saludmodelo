@@ -45,12 +45,11 @@ class SchoolTests(TestCase):
         self.assertEqual(c.get(f'/api/v1/schools/{self.dent.pk}/management/').status_code,404)
         self.assertEqual(c.get(f'/api/v1/tracking/services/{self.dental.pk}/').status_code,404)
         self.assertEqual(c.post(f'/api/v1/administration/services/{self.dental.pk}/confirm/',{'version':0,'rationale':'Prueba'},format='json').status_code,404)
-    def test_read_grant_covers_progress_and_reports_not_writes(self):
+    def test_historical_grant_never_allows_read_or_write(self):
         c=self.client_for(self.health_director)
-        self.assertEqual(c.get(f'/api/v1/schools/{self.dent.pk}/').data['states'][0]['minutes'],60)
-        ps=c.get('/api/v1/academic/placements/').data['results'];self.assertEqual(len(ps),1);self.assertFalse(ps[0]['can_manage'])
-        r=c.get(f'/api/v1/academic/reports/{self.report.pk}/');self.assertEqual(r.status_code,200,r.data)
-        self.assertFalse(r.data['can_close']);self.assertFalse(r.data['can_reopen']);self.assertEqual(r.data['kind'],'consolidated')
+        self.assertEqual(c.get(f'/api/v1/schools/{self.dent.pk}/').status_code,404)
+        self.assertEqual(c.get('/api/v1/academic/placements/').data['count'],0)
+        self.assertEqual(c.get(f'/api/v1/academic/reports/{self.report.pk}/').status_code,404)
         for path,payload in [(f'placements/{self.placement.pk}/revoke/',{'rationale':'Intento ajeno'}),(f'practices/{self.practice.pk}/review/',{'version':1,'action':'void','rationale':'Intento ajeno'}),(f'reports/{self.report.pk}/close/',{'rationale':'Intento ajeno','accept_pending':True}),(f'cycles/{self.cycle.pk}/reopen/',{'rationale':'Intento ajeno','report':self.report.pk}),(f'cycles/{self.cycle.pk}/reports/',{'client_key':str(uuid.uuid4())})]:
             result=c.post('/api/v1/academic/'+path,payload,format='json');self.assertIn(result.status_code,(403,404),(path,result.data))
     def test_revocation_removes_direct_lookup_and_listing_immediately(self):
@@ -122,3 +121,16 @@ class SchoolTests(TestCase):
             path=Path(folder)/'plan.json';path.write_text(json.dumps(plan))
             with self.assertRaises(CommandError):call_command('configure_schools',plan=str(path),apply=True,stdout=io.StringIO())
         self.dental.refresh_from_db();self.assertIsNone(self.dental.school_id)
+
+    def test_no_school_can_enable_sharing(self):
+        for user,school,target in [(self.director,self.dent,self.health),(self.health_director,self.health,self.dent)]:
+            c=self.client_for(user)
+            self.assertEqual([r['id'] for r in c.get('/api/v1/schools/').data['results']],[school.pk])
+            url=f'/api/v1/schools/{school.pk}/academic-grants/'
+            self.assertEqual(c.get(url).data,{'schools':[],'grants':[],'sharing_enabled':False})
+            self.assertEqual(c.post(url,{'reader_school':target.pk,'starts':str(self.start),'ends':str(self.end),'rationale':'No permitido'},format='json').status_code,403)
+
+    def test_institutional_administrator_keeps_both_schools(self):
+        admin=get_user_model().objects.create_superuser('institution-admin','admin@example.test','test-only')
+        InstitutionMandate.objects.create(institution=self.inst,user=admin,approved_by=self.approver,starts=self.start,ends=self.end,rationale='Institutional administration')
+        self.assertEqual({r['id'] for r in self.client_for(admin).get('/api/v1/schools/').data['results']},{self.health.pk,self.dent.pk})

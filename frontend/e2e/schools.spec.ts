@@ -11,7 +11,7 @@ async function login(page: Page, user: string) {
   ).toBeVisible();
   await page.getByRole("link", { name: "Escuelas", exact: true }).click();
 }
-test("escuelas independientes: administración dental, consulta de Salud y revocación", async ({
+test("escuelas independientes: sin consulta cruzada", async ({
   browser,
 }) => {
   const dentalContext = await browser.newContext(),
@@ -52,78 +52,13 @@ test("escuelas independientes: administración dental, consulta de Salud y revoc
       .filter({ hasText: "Clínica adicional escolar" }),
   ).toBeVisible();
   await login(health, "e2e_health_director");
-  await health
-    .getByRole("button", { name: /Escuela de Odontología de prueba/ })
-    .click();
-  await expect(
-    health.getByText(
-      "Consulta académica autorizada · Sin permiso para modificar registros",
-      { exact: true },
-    ),
-  ).toBeVisible();
-  await expect(
-    health.getByRole("heading", {
-      name: /Administración de Escuela de Odontología/,
-    }),
-  ).toHaveCount(0);
-  await expect(
-    health.getByText("Validadas: 1 participaciones · 1.5 horas", {
-      exact: true,
-    }),
-  ).toBeVisible();
-  await health
-    .getByRole("link", { name: "Consultar prácticas de esta escuela" })
-    .click();
-  await expect(health.getByLabel("Escuela", { exact: true })).toHaveValue(
-    /\d+/,
-  );
-  await expect(
-    health.getByText("Práctica dental supervisada de prueba", { exact: true }),
-  ).toBeVisible();
-  await health.goto("/academico/evaluaciones");
-  await health
-    .getByLabel("Ciclo académico", { exact: true })
-    .selectOption({
-      label: "Escuela de Odontología de prueba · Ciclo dental de prueba",
-    });
-  await health
-    .getByRole("button", { name: "Informes de cierre", exact: true })
-    .click();
-  await health
-    .getByRole("link", { name: /Abrir informe/ })
-    .first()
-    .click();
-  await expect(
-    health.getByText("Bitácora sintética dental", { exact: false }).first(),
-  ).toBeVisible();
-  await expect(
-    health.getByRole("button", { name: /Cerrar ciclo/ }),
-  ).toHaveCount(0);
-  const reportUrl = health.url();
-  await health.setViewportSize({ width: 390, height: 844 });
-  expect(
-    await health.evaluate(
-      () => document.documentElement.scrollWidth <= window.innerWidth + 1,
-    ),
-  ).toBeTruthy();
-  await dental.goto("/escuelas");
-  const revoke = dental
-    .locator("form")
-    .filter({
-      has: dental.getByRole("button", {
-        name: "Revocar consulta",
-        exact: true,
-      }),
-    });
-  await revoke
-    .getByLabel("Motivo de revocación")
-    .fill("Finalizó la consulta de prueba");
-  await revoke
-    .getByRole("button", { name: "Revocar consulta", exact: true })
-    .click();
-  await expect(dental.getByText(/Revocada/)).toBeVisible();
-  await health.goto(reportUrl);
-  await expect(health.getByRole("alert")).toBeVisible();
+  await expect(health.getByRole("button", { name: /Escuela de Odontología de prueba/ })).toHaveCount(0);
+  await expect(health.getByRole("heading", { name: "Administración de Escuela de Salud de prueba" })).toBeVisible();
+  for (const page of [dental, health]) {
+    await expect(page.getByRole("heading", { name: "Compartir información académica" })).toHaveCount(0);
+    await page.goto("/academico");
+  }
+  await expect(health.getByText("Práctica dental supervisada de prueba", {exact:true})).toHaveCount(0);
   await dentalContext.close();
   await healthContext.close();
 });

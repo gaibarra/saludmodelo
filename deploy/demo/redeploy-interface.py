@@ -44,13 +44,15 @@ def main():
             override['services']['frontend']['image']=image
             shared.write(folder/'release.compose.json',override)
             # Keep private login verification data; never run account bootstrap in this patch.
-            shutil.copyfile(previous/'bootstrap.json',folder/'bootstrap.json');(folder/'bootstrap.json').chmod(0o600)
-            manifest={'version':version,'project':shared.PROJECT,'domain':'plansaludmodelo.online','kind':'frontend-only','previous_release':str(previous),'runner':'redeploy-interface.py','runner_sha256':shared.sha(Path(__file__)),'compose_sha256':shared.sha(shared.BASE),'gateway_sha256':shared.sha(shared.ROOT/'deploy/demo/gateway.conf'),'before':current,'images':{'frontend':image,'backend':own['backend']['image']},'release_hashes':{name:shared.sha(folder/name) for name in ['release.compose.json','rollback.compose.json','bootstrap.json']},'config_hashes':{name:shared.sha(RUNTIME/name) for name in ['backend.env','database.env']}}
+            if (previous/'bootstrap.json').exists():
+                shutil.copyfile(previous/'bootstrap.json',folder/'bootstrap.json');(folder/'bootstrap.json').chmod(0o600)
+            manifest={'version':version,'project':shared.PROJECT,'domain':'plansaludmodelo.online','kind':'frontend-only','previous_release':str(previous),'runner':'redeploy-interface.py','runner_sha256':shared.sha(Path(__file__)),'compose_sha256':shared.sha(shared.BASE),'gateway_sha256':shared.sha(shared.ROOT/'deploy/demo/gateway.conf'),'before':current,'images':{'frontend':image,'backend':own['backend']['image']},'release_hashes':{name:shared.sha(folder/name) for name in ['release.compose.json','rollback.compose.json','bootstrap.json'] if (folder/name).exists()},'config_hashes':{name:shared.sha(RUNTIME/name) for name in ['backend.env','database.env']}}
             shared.write(folder/'manifest.json',manifest)
             shared.run(shared.compose(folder/'release.compose.json')+['config','--quiet'])
             print(folder);return
         folder=Path(args.target).resolve()
         if not folder.is_relative_to(RUNTIME/'releases'):raise RuntimeError('Invalid release path')
+        if args.mode=='activate' and (folder/'superseded.json').exists():raise RuntimeError('Release superseded; use the final reviewed package')
         m=json.loads((folder/'manifest.json').read_text())
         if m['kind']!='frontend-only' or m['project']!=shared.PROJECT:raise RuntimeError('Wrong release kind')
         if m['runner_sha256']!=shared.sha(Path(__file__)) or m['compose_sha256']!=shared.sha(shared.BASE) or m['gateway_sha256']!=shared.sha(shared.ROOT/'deploy/demo/gateway.conf'):raise RuntimeError('Deployment inputs changed')

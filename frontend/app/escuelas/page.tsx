@@ -1,6 +1,7 @@
 "use client";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import SchoolAccounts from "../../components/SchoolAccounts";
 import InstitutionalDirectory, { PublishedService } from "../../components/InstitutionalDirectory";
 import { api, listApi, setCsrf } from "../../lib/api";
 import "../academico/academic.css";
@@ -23,17 +24,6 @@ type Management = {
   sites: { id: number; name: string }[];
   services: { id: number; name: string; confirmed: boolean; etag: number }[];
 };
-type Grants = {
-  schools: { id: number; name: string }[];
-  grants: {
-    id: number;
-    reader_school_id: number;
-    starts: string;
-    ends: string;
-    rationale: string;
-    revoked_at: string | null;
-  }[];
-};
 const stateNames: Record<string, string> = {
   submitted: "Por revisar",
   returned: "Por corregir",
@@ -43,31 +33,26 @@ const stateNames: Record<string, string> = {
 export default function SchoolsPage() {
   const [schools, setSchools] = useState<School[]>([]),
     [board, setBoard] = useState<Board>(),
-    [management, setManagement] = useState<Management>(),
-    [grants, setGrants] = useState<Grants>();
+    [management, setManagement] = useState<Management>();
   const [error, setError] = useState(""),
     [message, setMessage] = useState(""),
     [busy, setBusy] = useState(false);
   const revision = useRef(0);
+  const selectedSchool = useRef<number|undefined>(undefined);
+  const [accountRevision,setAccountRevision]=useState(0);
   async function open(id: number) {
     const token = ++revision.current;
+    selectedSchool.current=id;
     setBoard(undefined);
     setManagement(undefined);
-    setGrants(undefined);
     setError("");
     setMessage("");
     try {
       const b = await api<Board>(`schools/${id}/`);
-      let m: Management | undefined, g: Grants | undefined;
-      if (b.can_manage)
-        [m, g] = await Promise.all([
-          api<Management>(`schools/${id}/management/`),
-          api<Grants>(`schools/${id}/academic-grants/`),
-        ]);
+      const m = b.can_manage ? await api<Management>(`schools/${id}/management/`) : undefined;
       if (token !== revision.current) return;
       setBoard(b);
       setManagement(m);
-      setGrants(g);
     } catch (e) {
       if (token === revision.current) setError(String(e));
     }
@@ -118,9 +103,8 @@ export default function SchoolsPage() {
         path = "administration/assignments/";
         payload = { ...v, user: Number(v.user), service: Number(v.service) };
       }
-      if (kind === "academic-grants")
-        payload = { ...v, reader_school: Number(v.reader_school) };
       await api(path, "POST", payload);
+      if(kind === "users") setAccountRevision(n=>n+1);
       form.reset();
       await open(owner);
       setMessage("Cambio guardado en la escuela seleccionada.");
@@ -146,27 +130,12 @@ export default function SchoolsPage() {
       setBusy(false);
     }
   }
-  async function revoke(e: FormEvent<HTMLFormElement>, id: number) {
-    e.preventDefault();
-    if (!board) return;
-    setBusy(true);
-    setError("");
-    try {
-      await api(`schools/${board.id}/academic-grants/${id}/revoke/`, "POST", {
-        rationale: new FormData(e.currentTarget).get("rationale"),
-      });
-      await open(board.id);
-    } catch (e) {
-      setError(String(e));
-    } finally {
-      setBusy(false);
-    }
-  }
   return (
     <>
       <header className="topbar">
         <Link href="/personal">Salud Modelo</Link>
         <h1>Escuelas</h1>
+        <Link href="/caja">Caja por servicio</Link>
         <Link href="/academico">Prácticas académicas</Link>
       </header>
       <main
@@ -174,8 +143,8 @@ export default function SchoolsPage() {
         style={{ maxWidth: 1200, margin: "auto", padding: 24 }}
       >
         <p>
-          Cada escuela tiene su propia dirección y administración. Los accesos
-          de consulta académica no conceden autoridad sobre otra escuela.
+          Cada escuela tiene su propia dirección y administración. Salud y Odontología
+          no tienen acceso a la información interna de la otra escuela.
         </p>
         <nav
           aria-label="Escuelas autorizadas"
@@ -246,38 +215,8 @@ export default function SchoolsPage() {
             {board.can_manage && management && (
               <>
                 <h2>Administración de {board.name}</h2>
+                <SchoolAccounts key={board.id} school={board.id} institution={board.institution} refreshToken={accountRevision} onChanged={async()=>{const m=await api<Management>(`schools/${board.id}/management/`);if(selectedSchool.current===board.id)setManagement(m)}} />
                 <div className="academic-two">
-                  <form className="panel" onSubmit={(e) => save(e, "users")}>
-                    <h3>Registrar cuenta de alumno o colaborador</h3>
-                    <label>
-                      Usuario
-                      <input name="username" required maxLength={150} />
-                    </label>
-                    <label>
-                      Nombre
-                      <input name="first_name" required maxLength={150} />
-                    </label>
-                    <label>
-                      Apellidos
-                      <input name="last_name" maxLength={150} />
-                    </label>
-                    <label>
-                      Contraseña inicial
-                      <input
-                        name="password"
-                        type="password"
-                        minLength={12}
-                        maxLength={256}
-                        autoComplete="new-password"
-                        required
-                      />
-                    </label>
-                    <p>
-                      La cuenta queda vinculada sólo a esta escuela. Después
-                      registra al alumno o asigna su función.
-                    </p>
-                    <button disabled={busy}>Crear cuenta</button>
-                  </form>
                   <form className="panel" onSubmit={(e) => save(e, "services")}>
                     <h3>Registrar servicio</h3>
                     <label>
@@ -371,87 +310,7 @@ export default function SchoolsPage() {
                       </Link>
                     </p>
                   </form>
-                  {grants && (
-                    <form
-                      className="panel"
-                      onSubmit={(e) => save(e, "academic-grants")}
-                    >
-                      <h3>Compartir información académica</h3>
-                      <p>
-                        Autoriza a la dirección de otra escuela a consultar
-                        prácticas e informes de ésta. No permite editar, cerrar
-                        ciclos ni consultar expedientes clínicos.
-                      </p>
-                      <label>
-                        Escuela que consultará
-                        <select
-                          aria-label="Escuela que consultará"
-                          name="reader_school"
-                          required
-                        >
-                          <option value="">Seleccionar</option>
-                          {grants.schools.map((s) => (
-                            <option key={s.id} value={s.id}>
-                              {s.name}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                      <label>
-                        Desde
-                        <input type="date" name="starts" required />
-                      </label>
-                      <label>
-                        Hasta
-                        <input type="date" name="ends" required />
-                      </label>
-                      <label>
-                        Motivo
-                        <input
-                          name="rationale"
-                          minLength={5}
-                          maxLength={2000}
-                          required
-                        />
-                      </label>
-                      <button disabled={busy}>Autorizar consulta</button>
-                    </form>
-                  )}
                 </div>
-                {grants && (
-                  <section>
-                    <h3>Autorizaciones de consulta concedidas</h3>
-                    {grants.grants.map((g) => (
-                      <article className="panel" key={g.id}>
-                        <p>
-                          {
-                            grants.schools.find(
-                              (s) => s.id === g.reader_school_id,
-                            )?.name
-                          }{" "}
-                          · {g.starts} a {g.ends} ·{" "}
-                          {g.revoked_at
-                            ? "Revocada"
-                            : "Vigencia sujeta a fechas"}
-                        </p>
-                        <p>{g.rationale}</p>
-                        {!g.revoked_at && (
-                          <form onSubmit={(e) => revoke(e, g.id)}>
-                            <label>
-                              Motivo de revocación
-                              <input
-                                name="rationale"
-                                required
-                                maxLength={2000}
-                              />
-                            </label>
-                            <button disabled={busy}>Revocar consulta</button>
-                          </form>
-                        )}
-                      </article>
-                    ))}
-                  </section>
-                )}
               </>
             )}
           </section>

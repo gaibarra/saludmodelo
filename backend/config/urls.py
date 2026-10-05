@@ -76,3 +76,23 @@ urlpatterns += [
     path('api/v1/schools/<int:pk>/academic-grants/',SchoolGrants.as_view()),
     path('api/v1/schools/<int:pk>/academic-grants/<int:grant>/revoke/',SchoolGrantRevoke.as_view()),
 ]
+
+from core.school_users import SchoolAccounts,SchoolAccountDetail,SchoolAccountReactivate
+urlpatterns += [
+    path('api/v1/schools/<int:pk>/accounts/',SchoolAccounts.as_view()),
+    path('api/v1/schools/<int:pk>/accounts/<int:user>/',SchoolAccountDetail.as_view()),
+    path('api/v1/schools/<int:pk>/accounts/<int:user>/reactivate/',SchoolAccountReactivate.as_view()),
+]
+
+from core.cash import CashServices,CashCandidates,CashShifts,CashDetail,CashMovements,CashSummary
+urlpatterns += [
+    path('api/v1/cash/services/',CashServices.as_view()),
+    path('api/v1/cash/services/<int:pk>/responsibles/',CashCandidates.as_view()),
+    path('api/v1/cash/shifts/',CashShifts.as_view()),
+    path('api/v1/cash/shifts/<int:pk>/',CashDetail.as_view()),
+    path('api/v1/cash/shifts/<int:pk>/movements/',CashMovements.as_view()),
+    path('api/v1/cash/summary/',CashSummary.as_view()),
+]
+
+from core.school_users import SchoolAccountName
+urlpatterns += [path("api/v1/schools/<int:pk>/accounts/<int:user>/name/",SchoolAccountName.as_view())]

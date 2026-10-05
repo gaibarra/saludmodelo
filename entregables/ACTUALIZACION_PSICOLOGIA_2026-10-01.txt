@@ -1,0 +1,11 @@
+PSICOLOGÍA — INCORPORACIÓN A LOS ENTREGABLES
+
+Psicología se incorpora al alcance de la Escuela de Salud por instrucción del usuario, vinculada a la Unidad de Servicios Comunitarios La Casita. El directorio SEGEY/CPREVI 2024 documenta servicio psicológico al público general.
+Fuente: https://educacion.yucatan.gob.mx/prevencion/assets/archivos/DIRECTORIO_INSTANCIAS_CPREVI_2024.pdf
+Fuente adicional: https://www.yucatan.gob.mx/docs/air/AIR_1699_2.pdf (página 48).
+
+La documentación respalda la existencia del servicio, no garantiza horarios, responsables o modalidades actuales. Estos datos quedan para validación institucional. La relación con USC Casita debe conservarse para evitar duplicar personas, servicios y prácticas.
+
+Actualizados: presentación y guion vigentes, expediente de Salud (Word/HTML/PDF), plantilla Excel y paquetes ZIP. Las versiones históricas se conservan identificadas. Los paneles son ilustraciones con cifras ficticias; el conteo de fichas publicadas no es un inventario de especialidades y no se incrementa por una atención dentro de La Casita.
+
+Este cambio es documental. No modifica la aplicación, sus permisos ni la base de datos.

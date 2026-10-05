@@ -1,4 +1,5 @@
 import Link from "next/link";
+import InstitutionalLogo from "../../components/InstitutionalLogo";
 import { services } from "./data";
 import "./portal.css";
 export default function PortalLayout({
@@ -10,7 +11,7 @@ export default function PortalLayout({
     <div className="salud-portal">
       <header className="portal-header">
         <Link href="/" className="portal-brand">
-          <span className="portal-brand-mark">✳</span>
+          <InstitutionalLogo />
           <span>
             <strong>Salud y Odontología</strong>
             <small>Universidad Modelo</small>
@@ -33,12 +34,13 @@ export default function PortalLayout({
       </nav>
       {children}
       <footer className="portal-footer">
-        <div>
-          <strong>Escuelas de Salud y Odontología · Universidad Modelo</strong>
+        <div className="institutional-footer-brand">
+          <InstitutionalLogo size="compact" />
+          <div><strong>Escuelas de Salud y Odontología · Universidad Modelo</strong>
           <p>
             Explora nuestros servicios y consulta el estado de tus solicitudes
             desde tu cuenta.
-          </p>
+          </p></div>
         </div>
         <div>
           <Link href="/portal/directorio">Directorio</Link>

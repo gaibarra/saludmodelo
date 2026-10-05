@@ -10,7 +10,7 @@ if settings.DATABASES['default']['NAME'] not in {'salud_modelo_demo','salud_cata
     raise RuntimeError('Unexpected database target')
 cfg=json.load(sys.stdin)['institutional_import']
 from core import institutional_services
-path=Path(institutional_services.__file__).parent/'data/institutional_services_20260930.json'
+path=Path(institutional_services.__file__).parent/'data/institutional_services_20261001_1.json'
 if hashlib.sha256(path.read_bytes()).hexdigest()!=cfg['dataset_sha256']:raise RuntimeError('Dataset changed')
 out=io.StringIO()
 call_command('import_institutional_services',institution=cfg['institution'],actor=cfg['actor'],apply=True,stdout=out)

@@ -1,0 +1,24 @@
+import {test,expect} from '@playwright/test';
+test('caja: asignar abrir cobrar devolver y cerrar con diferencia',async({page})=>{
+ page.setDefaultTimeout(15000);
+ await page.goto('/personal');await page.getByLabel('Usuario',{exact:true}).fill('e2e_dental_director');await page.getByLabel('Contraseña',{exact:true}).fill(process.env.E2E_PASSWORD!);await page.getByRole('button',{name:'Ingresar',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Panel académico',exact:true})).toBeVisible();await page.getByRole('link',{name:'Caja',exact:true}).click();
+ await page.getByLabel('Servicio',{exact:true}).selectOption({label:'Escuela de Odontología de prueba · Clínica Dental de prueba'});
+ await page.getByText('Asignar turno y responsable',{exact:true}).click();
+ const assign=page.locator('form').filter({has:page.getByRole('button',{name:'Asignar turno',exact:true})});
+ await assign.getByLabel('Nombre del turno').fill('Matutino de prueba');
+ await assign.getByLabel('Responsable',{exact:true}).selectOption({label:'Dirección Odontología prueba · e2e_dental_director'});
+ const stamp=(n:number)=>{const d=new Date(Date.now()+n*60000);return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,16);};
+ await assign.getByLabel('Inicio',{exact:true}).fill(stamp(-5));await assign.getByLabel('Fin',{exact:true}).fill(stamp(120));await assign.getByRole('button',{name:'Asignar turno',exact:true}).click();
+ await expect(page.getByText('Registro guardado. El historial de caja se conserva.',{exact:true})).toBeVisible();
+ await page.getByRole('button',{name:/Abrir turno \d+/}).click();
+ await page.getByLabel('Fondo inicial contado').fill('100');await page.getByRole('button',{name:'Abrir caja',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Registrar movimiento',exact:true})).toBeVisible();
+ await page.getByLabel('Importe neto en efectivo').fill('200');await page.getByLabel('Concepto / motivo').fill('Atención de prueba');await page.getByRole('button',{name:'Guardar movimiento',exact:true}).click();
+ const row=page.getByRole('row').filter({hasText:'Atención de prueba'});await expect(row).toBeVisible();const folio=(await row.innerText()).match(/CAJ-(\d+)/)![1];
+ await page.getByLabel('Tipo',{exact:true}).selectOption('refund');await page.getByLabel('Importe neto en efectivo').fill('20');await page.getByLabel('Concepto / motivo').fill('Devolución parcial de prueba');await page.getByLabel('Número del cobro original (parte numérica de CAJ)').fill(String(Number(folio)));await page.getByRole('button',{name:'Guardar movimiento',exact:true}).click();
+ await expect(page.getByRole('row').filter({hasText:'Devolución parcial de prueba'})).toBeVisible();
+ await page.getByText('Cerrar turno y realizar arqueo',{exact:true}).click();await page.getByLabel('Efectivo contado al cierre').fill('275');await page.getByLabel('Observaciones / explicación de diferencias').fill('Faltante sintético de 5 pesos');await page.getByRole('button',{name:'Cerrar turno definitivamente',exact:true}).click();
+ await expect(page.getByText(/Arqueo:.*275.*Esperado al cierre:.*280.*Diferencia:.*5/)).toBeVisible();await expect(page.getByRole('heading',{name:'Registrar movimiento',exact:true})).toHaveCount(0);
+ await page.screenshot({path:'../docs/capturas/caja-0.39-ensayo.png',fullPage:true});await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

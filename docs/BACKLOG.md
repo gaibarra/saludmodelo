@@ -94,3 +94,45 @@ Actualización publicada 0.35.2: acceso del personal alineado visualmente con la
 0.36 — Incorporados a la base y publicados en las interfaces seis servicios del directorio institucional, con horarios, contactos, destinatarios y procedencia. Migración 0043 y carga idempotente aplicadas; pruebas y respaldo/restauración aprobados. **Pendientes de contenido/operación:** confirmar teléfono de Fisioterapia, ubicación física y responsables de cada servicio; adscripción de la Unidad de Atención y Prevención; oferta/contacto independiente de Psicología; confirmación operativa de las seis nuevas filas antes de asignar prácticas o habilitar citas. No se alteran historial DEMO ni permisos, no se habilitan solicitudes reales. Los pendientes académicos/clínicos/MFA previos se conservan. Ver `deploy/demo/REDEPLOY_0_36.md` y `docs/SERVICIOS_INSTITUCIONALES_0_36.md`.
 
 0.36.1 — Cerrado el ajuste de prioridad a captura en Escuelas: directorio institucional plegado al entrar, desplegable a demanda. Sin cambios de datos, permisos o migraciones; permanecen los pendientes de 0.36.
+
+0.37.0 — Psicología incorporada en código/dataset a la ficha existente de La Casita bajo Salud, con área adicional Atención Comunitaria y fuente estatal. Migración 0044, importador idempotente y UI probados; sin duplicación de servicios ni cambios de permisos. **Pendiente: autorización explícita y activación del paquete `0.37.0-20261001T163004Z`; control automático rechazó despliegue, por lo que producción conserva 0.36.1/0043.** Horarios, responsables y modalidades específicos aún requieren validación institucional. La existencia documental del servicio deja de ser pendiente; no se declara lista la captura clínica ni las citas reales. Ver PSICOLOGIA_0_37.md.
+
+0.37.0 publicada el 01/10/2026: cerrados autorización, despliegue, migración 0044 e incorporación en la base publicada de Psicología / USC Casita bajo Salud. Ficha compartida entre áreas sin duplicados, HTTPS/móvil y ausencia de migraciones pendientes comprobados. Once aplicaciones ajenas intactas. Persisten validación de responsables/horarios/modalidades, habilitación operativa según acuerdos y los pendientes clínicos/seguridad anteriores.
+
+0.37.1 preparada — Atención Comunitaria separada de Psicología, ambas en La Casita. Resuelve la ausencia en la lista para confirmación: nuevo servicio pendiente, sin copiar confirmación ni asignaciones; Psicología conserva historial. Código, imágenes, respaldo y ensayo aprobados. **Pendiente autorización explícita y activación** del paquete `0.37.1-20261001T164502Z`; control automático rechazó publicación por autorización anterior específica de 0.37.0. Sin nuevas migraciones. Ver deploy/demo/REDEPLOY_0_37_1.md.
+
+0.37.1 publicada el 01/10/2026 — Cerrados autorización y despliegue correctivo. Atención Comunitaria independiente ya disponible en Salud para confirmar; Psicología conserva identidad/confirmación e historial. Sede La Casita compartida, servicios separados. No hay migraciones pendientes. Pendiente institucional: revisar y confirmar operación del nuevo servicio y asignar responsables, sin habilitar solicitudes reales por este incremento.
+
+0.38.0 preparada — Cerrado desarrollo y ensayo del directorio CRUD de cuentas por escuela, con búsqueda y bajas reversibles que preservan prácticas. Falta autorización/publicación y comprobación de lectura en HTTPS. Paquete `0.38.0-20261001T181715Z`; sin migraciones nuevas ni modificación automática de cuentas. Ver CUENTAS_ESCOLARES_0_38.md y deploy/demo/REDEPLOY_0_38.md. Producción conserva 0.37.1.
+
+## Actualización 01/10/2026 — 0.38.1 publicada
+
+Separación completa de permisos internos Salud/Odontología implementada y publicada. Sin consultas académicas cruzadas ni posibilidad de autorizarlas; migración 0045 revoca concesiones históricas. El superusuario institucional mantiene ambas escuelas. CRUD/búsqueda de cuentas de 0.38.0 incorporados en esta publicación; ya no pendiente de publicar. Véase docs/SEPARACION_ESCUELAS_0_38_1.md.
+
+## Caja por servicio — 0.39.0 preparada
+
+Implementados turnos/responsables, efectivo MXN, cobros/ingresos/retiros/devoluciones, arqueos con diferencias, cierre, auditoría y monitoreo institucional/escolar sin accesos cruzados. 45 pruebas backend (incluida concurrencia), navegador y build aprobados. Migración 0046 ensayada preservando registros existentes. **Pendiente autorización explícita y publicación 0.39.0**: revisión automática rechazó activar, producción conserva 0.38.1. Otros medios de pago para fase posterior. Operación: asignar responsables/turnos por servicio; definir procedimiento excepcional de sustitución en caja abierta, tarifas y conciliación institucional fuera de este incremento. Ver docs/CAJA_0_39.md.
+
+## Caja 0.39.0 publicada — 01/10/2026
+
+Cerrados autorización, publicación y migración 0046. HTTPS /caja, permisos institucionales/escolares y ausencia de migraciones pendientes verificados; cero datos monetarios ficticios y once contenedores ajenos intactos. Pendiente operativo: asignar responsables/turnos por servicio y realizar aperturas con fondo contado. Se conservan ampliaciones posteriores a otros medios, conciliación institucional y procedimiento excepcional de sustitución en turno abierto descritas en docs/CAJA_0_39.md.
+
+## Interfaz de cuentas con modales — 0.39.1 preparada
+
+Rediseño de directorio escolar y modales de creación/consulta/edición/baja/reactivación. Conserva API y permisos; no requiere migración. Pendiente publicación con autorización específica, sólo frontend. Capturas sintéticas y guía: docs/CUENTAS_UX_0_39_1.md.
+
+0.39.1 publicada el 01/10/2026 — Cerrados autorización y despliegue del directorio/modal de cuentas. Interfaz verificada con sesión autenticada en HTTPS, lectura/alta sin envío, Escape y móvil; no hubo cambios de cuentas. Sólo frontend reemplazado, 15 contenedores protegidos intactos. Se conservan pendientes funcionales y operativos anteriores.
+
+## Logo institucional — 0.39.2 preparada
+
+Logo original incorporado en portal, personal, módulos internos, modales, reportes académicos/semanales e impresión. Build y navegador público/interno/móvil/PDF aprobados. Pendiente autorización/publicación sólo frontend; sin migraciones ni cambios de datos. Producción conserva 0.39.1. Véase deploy/demo/REDEPLOY_0_39_2.md.
+
+0.39.2 publicada el 01/10/2026 — Cerrados autorización y despliegue del logo institucional. Archivo original íntegro en HTTPS, carga visual pública/autenticada y modales/móvil verificados. Sólo frontend reemplazado; 15 contenedores protegidos intactos, sin migraciones ni cambios de cuentas. Se conservan pendientes operativos/funcionales previos.
+
+01/10/2026 — Retiradas de operación/directorios las cinco cuentas DEMO a solicitud del usuario. Credenciales inutilizadas, funciones revocadas y once sesiones cerradas; cuentas institucionales intactas. No se realizó borrado físico de identidades porque sus relaciones protegidas sostienen importaciones/tareas/auditoría; se conservaron referencias históricas. Respaldo realizado sin interrupción ni despliegue. Esta limpieza no habilita por sí misma operación clínica real.
+
+## Corrección de nombres — 0.39.3 preparada
+
+Implementado modal «Corregir nombre» para autoridades elegibles/cuenta propia sin permitir cambios de acceso. Edición habitual de colaboradores conservada. Pruebas, compilación y restauración aprobadas; pendiente autorización/publicación 0.39.3, sin migraciones. No se han corregido nombres reales automáticamente. Ver deploy/demo/REDEPLOY_0_39_3.md.
+
+0.39.3 publicada el 01/10/2026 — Cerrados autorización y despliegue de corrección limitada de nombres. Modal verificado por HTTPS con cuenta institucional en ambas escuelas, sin cambiar datos reales. Respaldos conservados, sin migraciones pendientes ni cambios en once contenedores ajenos. Cuentas DEMO continúan retiradas.

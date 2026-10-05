@@ -8,6 +8,7 @@ import InstitutionalDirectory, { PublishedService } from "./InstitutionalDirecto
 type School = { id: number; name: string; code: string; can_manage: boolean };
 type Board = School & { published_services?: PublishedService[]; students: number; cycles: number; reports: number; states: { status: string; participations: number; minutes: number }[] };
 const shortcuts = [
+  { href: "/caja", name: "Caja", detail: "Turnos, cobros en efectivo, arqueos y monitoreo por servicio.", icon: "05" },
   { href: "/academico", name: "Prácticas académicas", detail: "Alumnos, ciclos, supervisores y registro de participaciones.", icon: "01" },
   { href: "/academico/evaluaciones", name: "Evaluaciones e informes", detail: "Competencias, informes individuales y cierre del ciclo.", icon: "02" },
   { href: "/escuelas", name: "Escuelas", detail: "Consulta el avance y administra las escuelas autorizadas.", icon: "03" },

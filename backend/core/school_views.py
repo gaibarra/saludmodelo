@@ -85,17 +85,12 @@ class SchoolGrants(AcademicView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
     def get(self,request,pk):
         school=get_object_or_404(manageable(request.user),pk=pk)
-        return Response({'schools':list(School.objects.filter(institution=school.institution).exclude(pk=pk).values('id','name')),'grants':list(SchoolAcademicGrant.objects.filter(school=school).order_by('-id').values('id','reader_school_id','starts','ends','rationale','revoked_at'))})
+        return Response({'schools':[],'grants':[],'sharing_enabled':False})
     @extend_schema(request=GrantInput,responses=OpenApiTypes.OBJECT)
-    @transaction.atomic
     def post(self,request,pk):
-        school=get_object_or_404(manageable(request.user).select_for_update(),pk=pk);v=data(GrantInput,request)
-        target=get_object_or_404(School,pk=v.pop('reader_school'),institution=school.institution)
-        if target.pk==school.pk:raise ValidationError('Seleccione otra escuela.')
-        if SchoolAcademicGrant.objects.filter(school=school,reader_school=target,revoked_at__isnull=True,starts__lte=v['ends'],ends__gte=v['starts']).exists():raise ValidationError('Ya existe una autorización coincidente.')
-        g=SchoolAcademicGrant.objects.create(school=school,reader_school=target,approved_by=request.user,**v)
-        record(request.user,school.institution_id,'school.academic.granted',g.pk,v['rationale'])
-        return Response({'id':g.pk},status=201)
+        get_object_or_404(manageable(request.user),pk=pk)
+        from rest_framework.exceptions import PermissionDenied
+        raise PermissionDenied('El acceso entre escuelas está deshabilitado por disposición institucional.')
 
 class SchoolGrantRevoke(AcademicView):
     @extend_schema(request=ReasonInput,responses=OpenApiTypes.OBJECT)

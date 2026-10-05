@@ -1,0 +1,38 @@
+GUION DE APOYO · REUNIÓN CON DIRECCIONES
+Duración sugerida: 35–40 minutos, incluyendo acuerdos.
+
+01. El objetivo: conocer y respaldar cada práctica
+Abrir con el objetivo académico. Preguntar qué información resulta indispensable para cada Dirección durante el ciclo y al finalizarlo. No presentar las cifras simuladas como resultados reales.
+
+02. Lo que Dirección necesita poder responder
+Pedir a los Directores que prioricen estas cuatro preguntas y agreguen lo que falte. Acordar qué información será necesaria para dar por cerrado el ciclo académico.
+
+03. Una aplicación que conecta el trabajo cotidiano
+Explicar el flujo en lenguaje sencillo. Una captura no equivale automáticamente a una práctica acreditada: debe existir revisión del supervisor. Los módulos académicos sirven de base; los formatos clínicos siguen sujetos a validación y desarrollo.
+
+04. Dos escuelas, administración independiente
+Confirmar la separación administrativa. Salud puede consultar la información académica compartida de Odontología, sin administrar esa Escuela. Este permiso no concede acceso general a los expedientes clínicos.
+
+05. Así se podrá consultar el avance · Salud
+Todas las cifras de esta imagen son simuladas. La suma incluye las escuelas visibles: Salud y la consulta académica de Odontología. No equivale al número de alumnos propios de Salud. No se cargaron registros ficticios en producción para estas imágenes.
+
+06. Así se podrá consultar el avance · Odontología
+Se muestra la Escuela de Odontología con administración propia. Las cifras ilustran el funcionamiento posterior, no los registros reales ni una meta institucional. Los paneles completos también se entregan como PNG y PDF aparte.
+
+07. Primer compromiso: colaboradores en siete días
+Mostrar el Excel preparado. Una fila por colaborador y servicio; repetir correo si participa en varios servicios. La plantilla está lista; la importación no es automática y debe prepararse y validarse. No pedir contraseñas ni información clínica en ese archivo.
+
+08. Mi compromiso: al menos dos días por servicio
+Expresar el compromiso personal de acompañamiento. Las visitas no son una auditoría del personal. Buscan comprender el proceso actual, sus excepciones y los formatos utilizados. Coordinar horarios sin interferir con la atención y respetar la confidencialidad. Dos días mínimos por servicio; ampliar si hace falta.
+
+09. Calendario propuesto: avanzar en paralelo
+No prometer recorrer todos los servicios en una semana. Designar un enlace y reservar al menos dos jornadas por servicio. En la reunión se completa la fecha exacta de entrega del registro: siete días después de la reunión. La fecha del piloto depende de responsables, alcance y condiciones de operación.
+
+10. Expedientes: contenido a revisar por cada Escuela
+Mostrar los PDF separados. Odontología tiene 56 campos o grupos comentados; Salud 90. Son propuestas de contenido y no una certificación de que el expediente clínico esté listo. Psicología y la oferta concreta de USC Casita requieren confirmación. No discutir datos identificables de pacientes en esta reunión.
+
+11. Qué está preparado y qué falta acordar
+Evitar presentar el alcance clínico completo como terminado. Están preparados la demostración, paneles académicos, plantilla Excel y propuestas documentales. Faltan validación institucional y los desarrollos clínicos y de importación correspondientes. Antes de datos reales deben revisarse accesos y reactivarse las medidas de seguridad suspendidas para la demostración. La IA sólo decide asuntos administrativos previamente definidos; no firma ni decide tratamientos.
+
+12. Cerremos con responsables y fechas
+Completar estos acuerdos durante la reunión: responsable de recopilación de cada Escuela; fecha de entrega en siete días; enlace y calendario de visitas por servicio; servicio piloto y sus participantes; revisores de expedientes y fecha de seguimiento. Registrar acuerdos pendientes como pendientes, no como autorizaciones obtenidas.

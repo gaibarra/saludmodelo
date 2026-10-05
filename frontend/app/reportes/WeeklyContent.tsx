@@ -1,3 +1,4 @@
+import InstitutionalLogo from "../../components/InstitutionalLogo";
 import Link from "next/link";
 type Metric = {
   numerator: number;
@@ -62,6 +63,7 @@ const stateLabels: Record<string, string> = {
 
 export default function WeeklyContent({report,service,query="",saved=false}:{report:Report;service:string;query?:string;saved?:boolean}) { return (
         <section aria-label="Borrador semanal">
+          <div className="institutional-report-brand"><InstitutionalLogo size="report"/><div><strong>Universidad Modelo</strong><small>Informe de seguimiento del servicio</small></div></div>
           <h2>{report.service.name} · Informe del servicio</h2>
           <p>
             Desde {report.period.start} hasta antes de{" "}

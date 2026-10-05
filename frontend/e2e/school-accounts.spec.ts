@@ -1,0 +1,23 @@
+import {test,expect} from '@playwright/test';
+test('cuentas escolares: crear buscar editar baja y reactivar preservando registro',async({page})=>{
+ page.setDefaultTimeout(15000);
+ await page.goto('/personal');await page.getByLabel('Usuario',{exact:true}).fill('e2e_dental_director');await page.getByLabel('Contraseña',{exact:true}).fill(process.env.E2E_PASSWORD!);await page.getByRole('button',{name:'Ingresar',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Panel académico',exact:true})).toBeVisible();await page.getByRole('link',{name:'Escuelas',exact:true}).click();
+ await page.getByRole('button',{name:'＋ Crear cuenta',exact:true}).click();
+ const create=page.locator('#registro-cuenta');await create.getByLabel('Usuario',{exact:true}).fill('cuenta_tabla');await create.getByLabel('Nombre',{exact:true}).fill('Lucía');await create.getByLabel('Apellidos',{exact:true}).fill('Ejemplo');await create.getByLabel('Contraseña inicial').fill(process.env.E2E_PASSWORD!);await create.getByRole('button',{name:'Crear cuenta',exact:true}).click();
+ await expect(page.getByText('Cuenta creada. Ya puedes asignarle su función o registrarla como alumno.',{exact:true})).toBeVisible();
+ const area=page.getByRole('region',{name:'Cuentas registradas',exact:true});
+ await area.getByLabel('Buscar por nombre, usuario o correo').fill('Lucía Ejemplo');await area.getByRole('button',{name:'Buscar',exact:true}).click();
+ const row=area.getByRole('row').filter({hasText:'cuenta_tabla'});await expect(row).toBeVisible();await row.getByRole('button',{name:'Ver',exact:true}).click();
+ const detail=page.getByRole('dialog');await expect(detail).toContainText('Lucía Ejemplo');await detail.getByRole('button',{name:'Cerrar detalle'}).click();
+ await row.getByRole('button',{name:'Editar',exact:true}).click();await detail.getByLabel('Nombre',{exact:true}).fill('Lucía Revisada');await detail.getByLabel('Correo',{exact:true}).fill('lucia@example.invalid');await detail.getByLabel('Motivo del cambio').fill('Corrección de datos en ensayo');await detail.getByRole('button',{name:'Guardar cambios'}).click();await expect(detail).toContainText('lucia@example.invalid');await detail.getByRole('button',{name:'Cerrar detalle'}).click();
+ await area.getByLabel('Buscar por nombre, usuario o correo').fill('lucia@example.invalid');await area.getByRole('button',{name:'Buscar',exact:true}).click();await row.getByRole('button',{name:'Dar de baja'}).click();await detail.getByLabel('Motivo del cambio').fill('Baja en ensayo aislado');await detail.getByRole('button',{name:'Confirmar baja',exact:true}).click();await expect(detail).toContainText('Estado: Baja');await detail.getByRole('button',{name:'Cerrar detalle'}).click();
+ await area.getByLabel('Estado de cuentas',{exact:true}).selectOption('inactive');await expect(row).toBeVisible();await row.getByRole('button',{name:'Reactivar',exact:true}).click();await detail.getByLabel('Motivo del cambio').fill('Reactivación de prueba');await detail.getByRole('button',{name:'Confirmar reactivación',exact:true}).click();await expect(detail).toContainText('Estado: Activo');await detail.getByRole('button',{name:'Cerrar detalle'}).click();
+ await area.getByRole('button',{name:'Limpiar búsqueda'}).click();await expect(row).toBeVisible();
+ await row.getByRole('button',{name:'Ver',exact:true}).click();
+ await expect(detail).toBeVisible();await page.keyboard.press('Escape');await expect(detail).toHaveCount(0);await expect(row.getByRole('button',{name:'Ver',exact:true})).toBeFocused();
+ await row.getByRole('button',{name:'Editar',exact:true}).click();await detail.getByLabel('Nombre',{exact:true}).fill('Sin guardar');await page.keyboard.press('Escape');await expect(detail.getByText('Tienes cambios sin guardar')).toBeVisible();await detail.getByRole('button',{name:'Descartar cambios'}).click();
+ await area.screenshot({path:'../docs/capturas/cuentas-escolares-0.39.1.png'});
+ await row.getByRole('button',{name:'Ver',exact:true}).click();await detail.screenshot({path:'../docs/capturas/cuenta-modal-0.39.1.png'});await page.keyboard.press('Escape');
+ await page.setViewportSize({width:390,height:844});await expect(area.getByRole('button',{name:'Ocultar tabla de registrados'})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await row.getByRole('button',{name:'Ver',exact:true}).click();await expect(detail).toBeVisible();expect(await detail.evaluate(el=>el.getBoundingClientRect().width<=innerWidth)).toBe(true);await page.keyboard.press('Tab');expect(await detail.evaluate(el=>el.contains(document.activeElement))).toBe(true);await page.keyboard.press('Escape');
+});

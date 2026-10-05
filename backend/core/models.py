@@ -61,6 +61,8 @@ class InstitutionalService(models.Model):
     service=models.OneToOneField(Service,on_delete=models.PROTECT,related_name='institutional_information')
     public_name=models.CharField(max_length=180)
     area=models.CharField(max_length=40,blank=True)
+    additional_areas=models.JSONField(default=list,blank=True)
+    additional_sources=models.JSONField(default=list,blank=True)
     description=models.TextField()
     audience=models.CharField(max_length=20,choices=[('general','Público en general'),('university','Comunidad universitaria')])
     schedule=models.JSONField(default=list)
@@ -921,3 +923,38 @@ class AcademicCycleReport(models.Model):
     close_reason=models.TextField(blank=True)
     class Meta:
         constraints=[models.UniqueConstraint(fields=['cycle','sequence'],name='academic_cycle_report_sequence'),models.UniqueConstraint(fields=['cycle','client_key'],name='academic_report_retry')]
+
+class CashShift(models.Model):
+    service=models.ForeignKey(Service,on_delete=models.PROTECT)
+    responsible=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.PROTECT,related_name='cash_shifts')
+    assigned_by=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.PROTECT,related_name='+')
+    label=models.CharField(max_length=100)
+    starts=models.DateTimeField()
+    ends=models.DateTimeField()
+    state=models.CharField(max_length=12,default='planned',choices=[('planned','Programado'),('open','Abierto'),('closed','Cerrado'),('cancelled','Cancelado')])
+    opening=models.DecimalField(max_digits=12,decimal_places=2,null=True)
+    counted=models.DecimalField(max_digits=12,decimal_places=2,null=True)
+    expected=models.DecimalField(max_digits=12,decimal_places=2,null=True)
+    difference=models.DecimalField(max_digits=12,decimal_places=2,null=True)
+    opened_at=models.DateTimeField(null=True)
+    closed_at=models.DateTimeField(null=True)
+    close_reason=models.TextField(blank=True)
+    revision=models.PositiveIntegerField(default=0)
+    client_key=models.UUIDField(unique=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    class Meta:
+        constraints=[models.CheckConstraint(condition=Q(starts__lt=F('ends')),name='cash_shift_dates'),models.UniqueConstraint(fields=['service'],condition=Q(state='open'),name='cash_one_open_service'),models.CheckConstraint(condition=Q(opening__isnull=True)|Q(opening__gte=0),name='cash_opening_positive'),models.CheckConstraint(condition=Q(counted__isnull=True)|Q(counted__gte=0),name='cash_counted_positive')]
+
+class CashMovement(models.Model):
+    shift=models.ForeignKey(CashShift,on_delete=models.PROTECT,related_name='movements')
+    kind=models.CharField(max_length=16,choices=[('collection','Cobro'),('fund_in','Ingreso de fondo'),('withdrawal','Retiro / entrega'),('refund','Devolución')])
+    method=models.CharField(max_length=16,default='cash')
+    amount=models.DecimalField(max_digits=12,decimal_places=2)
+    concept=models.CharField(max_length=240)
+    reference=models.CharField(max_length=100,blank=True)
+    related=models.ForeignKey('self',null=True,on_delete=models.PROTECT)
+    actor=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.PROTECT)
+    created_at=models.DateTimeField(auto_now_add=True)
+    client_key=models.UUIDField(unique=True)
+    class Meta:
+        constraints=[models.CheckConstraint(condition=Q(amount__gt=0),name='cash_amount_positive'),models.CheckConstraint(condition=Q(method='cash'),name='cash_only_method')]

@@ -3,7 +3,7 @@ test("directorio institucional: fuente, contactos, público destinatario y escue
  test.skip(process.env.E2E_INSTITUTIONAL_CATALOG!=="1","Requires the isolated catalog fixture");
  await page.goto("/");
  const directory=page.getByRole("region",{name:"Directorio institucional publicado",exact:true});
- await expect(directory.getByRole("article")).toHaveCount(6);
+ await expect(directory.getByRole("article")).toHaveCount(7);
  await page.goto("/portal/servicios/fisioterapia");
  await expect(directory.getByRole("article",{name:"Clínica de Fisioterapia",exact:true})).toBeVisible();
  await expect(directory).toContainText("nueve dígitos");
@@ -12,7 +12,11 @@ test("directorio institucional: fuente, contactos, público destinatario y escue
  await page.goto("/portal/servicios/nutricion");
  await expect(directory.locator('a[href="https://wa.me/529996491058"]')).toBeVisible();
  await page.goto("/portal/servicios/psicologia");
- await expect(directory).toContainText("no publica una consulta independiente de Psicología");
+ await expect(directory.getByRole("article",{name:"Psicología · USC Casita",exact:true})).toBeVisible();
+ await expect(directory).toContainText("Gobierno de Yucatán");
+ await page.goto("/portal/servicios/atencion-comunitaria");
+ await expect(directory.getByRole("article",{name:"Atención Comunitaria · La Casita",exact:true})).toBeVisible();
+ await expect(directory.getByRole("article")).toHaveCount(1);
  await page.goto("/portal/directorio");
  const unit=directory.getByRole("article",{name:"Unidad de Atención y Prevención de la Salud",exact:true});
  await expect(unit).toContainText("Comunidad universitaria");
@@ -22,7 +26,7 @@ test("directorio institucional: fuente, contactos, público destinatario y escue
  await page.setViewportSize({width:1280,height:900});
  await page.goto("/personal");await page.getByLabel("Usuario",{exact:true}).fill("e2e_dental_director");await page.getByLabel("Contraseña",{exact:true}).fill(process.env.E2E_PASSWORD!);await page.getByRole("button",{name:"Ingresar",exact:true}).click();
  await expect(page.getByRole("heading",{name:"Panel académico",exact:true})).toBeVisible();
- await expect(directory.getByRole("article")).toHaveCount(6);
+ await expect(directory.getByRole("article")).toHaveCount(7);
  await page.getByRole("link",{name:"Escuelas",exact:true}).click();
  await expect(directory).not.toBeVisible();
  await page.getByText("Consultar servicios publicados (1)",{exact:true}).click();

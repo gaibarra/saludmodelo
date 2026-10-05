@@ -1,4 +1,5 @@
 "use client";
+import InstitutionalLogo from "../../../../components/InstitutionalLogo";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
@@ -147,7 +148,7 @@ export default function ReportPage() {
           </div>
           <article className="academic-report-content">
             <div className="academic-report-heading">
-              <span>{content.cycle.institution}</span>
+              <div className="institutional-report-brand"><InstitutionalLogo size="report"/><strong>{content.cycle.institution}</strong></div>
               <h1>
                 {chosen || report.kind === "individual"
                   ? "Informe individual de prácticas"

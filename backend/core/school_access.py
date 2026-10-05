@@ -1,4 +1,4 @@
-"""School administration and academic-only sharing. Null ownership is never shared."""
+"""Independent school administration. Inter-school access is prohibited."""
 from django.db.models import Q
 from django.utils import timezone
 from rest_framework.exceptions import PermissionDenied,ValidationError
@@ -9,8 +9,8 @@ def managed_schools(user):
     return SchoolMandate.objects.filter(user=user,starts__lte=today,ends__gte=today,revoked_at__isnull=True).values_list('school_id',flat=True) if user.is_authenticated and user.is_active else SchoolMandate.objects.none().values_list('school_id',flat=True)
 
 def shared_schools(user):
-    today=timezone.localdate()
-    return SchoolAcademicGrant.objects.filter(reader_school_id__in=managed_schools(user),starts__lte=today,ends__gte=today,revoked_at__isnull=True).values_list('school_id',flat=True)
+    # Historical grants are retained but never confer access.
+    return SchoolAcademicGrant.objects.none().values_list('school_id',flat=True)
 
 def owned(user,prefix='',read=False):
     from .governance import managed_institutions

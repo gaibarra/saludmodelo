@@ -45,13 +45,13 @@ def available_slugs():
     return set(Service.objects.filter(confirmed=True,public_slug__in=SLUGS,roleassignment__role__in=STAFF_ROLES,roleassignment__starts__lte=today,roleassignment__ends__gte=today,roleassignment__revoked_at__isnull=True,roleassignment__user__is_active=True).values_list('public_slug',flat=True))
 
 def enabled():
-    if not settings.PATIENT_PORTAL_ENABLED:raise PermissionDenied('Las cuentas y solicitudes de pacientes aún no están habilitadas.')
+    if not settings.PATIENT_PORTAL_ENABLED:raise PermissionDenied('Las cuentas y solicitudes de usuarios de servicios aún no están habilitadas.')
 
 def patient_for(user):
     enabled()
-    if not user.is_authenticated:raise PermissionDenied('Ingrese con su cuenta de paciente.')
+    if not user.is_authenticated:raise PermissionDenied('Ingrese con su cuenta de usuario de servicios.')
     profile=PatientProfile.objects.select_related('user').filter(user=user,user__is_active=True).first()
-    if not profile:raise PermissionDenied('Ingrese con una cuenta de paciente.')
+    if not profile:raise PermissionDenied('Ingrese con una cuenta de usuario de servicios.')
     return profile
 
 def item(row):

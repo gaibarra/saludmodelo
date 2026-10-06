@@ -2,6 +2,7 @@ import uuid
 from datetime import timedelta
 from django.contrib.auth import get_user_model
 from django.test import TestCase,override_settings
+from django.core.cache import cache
 from django.utils import timezone
 from rest_framework.test import APIClient
 from .models import Institution,Campus,Site,Service,RoleAssignment,PatientProfile,AppointmentRequest
@@ -9,6 +10,7 @@ from .models import Institution,Campus,Site,Service,RoleAssignment,PatientProfil
 @override_settings(PATIENT_PORTAL_ENABLED=True)
 class PatientPortalTests(TestCase):
     def setUp(self):
+        cache.clear();self.addCleanup(cache.clear)
         User=get_user_model()
         self.institution=Institution.objects.create(name='Institución sintética')
         site=Site.objects.create(campus=Campus.objects.create(institution=self.institution,name='Campus ficticio'),name='Sede ficticia')
@@ -82,3 +84,46 @@ class PatientPortalTests(TestCase):
         self.assertFalse(self.client.get('/api/v1/public/services/').data['appointments_enabled'])
         self.assertEqual(self.client.post('/api/v1/public/register/',{'name':'Prueba','email':'off@example.org','phone':'9991234567','password':'TestPassword123!'},format='json').status_code,403)
         self.assertEqual(PatientProfile.objects.count(),0)
+
+    def test_account_persists_after_logout_duplicate_and_invalid_password(self):
+        self.register(self.client,'shared@example.org')
+        profile=PatientProfile.objects.get()
+        self.assertTrue(profile.user.check_password('TestPassword123!'))
+        token=self.client.get('/api/v1/public/session/').data['csrf']
+        self.assertEqual(self.client.delete('/api/v1/session/',HTTP_X_CSRFTOKEN=token).status_code,204)
+        self.assertFalse(self.client.get('/api/v1/public/session/').data['authenticated'])
+        def post(path,payload):
+            token=self.client.get('/api/v1/public/session/').data['csrf']
+            return self.client.post(path,payload,format='json',HTTP_X_CSRFTOKEN=token)
+        payload={'name':'Registro aislado','email':'SHARED@example.org','phone':'9991234567','password':'TestPassword123!'}
+        self.assertEqual(post('/api/v1/public/register/',payload).status_code,400)
+        payload.update(email='new@example.org',password='123')
+        self.assertEqual(post('/api/v1/public/register/',payload).status_code,400)
+        self.assertEqual(PatientProfile.objects.count(),1)
+        cache.clear()  # Login is a separate scenario, not a burst of registration failures.
+        self.assertEqual(post('/api/v1/public/session/',{'email':'SHARED@example.org','password':'wrong'}).status_code,400)
+        self.assertEqual(post('/api/v1/public/session/',{'email':'SHARED@example.org','password':'TestPassword123!'}).status_code,200)
+        self.assertEqual(PatientProfile.objects.get().pk,profile.pk)
+
+    def test_shared_identity_school_separation_decline_and_withdraw(self):
+        from .models import School,SchoolMandate
+        for code,service,user,approver in [('salud',self.psych,self.other_staff,self.staff),('odontologia',self.dental,self.staff,self.other_staff)]:
+            school=School.objects.create(institution=self.institution,code=code,name=code)
+            service.school=school;service.save()
+            SchoolMandate.objects.create(school=school,user=user,approved_by=approver,starts=timezone.localdate()-timedelta(days=1),ends=timezone.localdate()+timedelta(days=30),rationale='Ensayo privado')
+        self.register(self.client,'both@example.org')
+        dental=self.request(self.client,'odontologia').data
+        psych=self.request(self.client,'psicologia').data
+        self.assertEqual(PatientProfile.objects.count(),1)
+        self.assertEqual(len(self.client.get('/api/v1/public/appointments/').data['results']),2)
+        for staff,own,foreign in [(self.staff,dental,psych),(self.other_staff,psych,dental)]:
+            c=APIClient();c.force_authenticate(staff)
+            rows=c.get('/api/v1/staff/appointments/').data['results']
+            self.assertEqual([row['id'] for row in rows],[own['id']])
+            self.assertEqual(c.get('/api/v1/staff/appointments/?service='+foreign['service']).status_code,403)
+            self.assertEqual(c.post(f"/api/v1/staff/appointments/{foreign['id']}/decision/",{'version':1,'action':'decline'},format='json').status_code,403)
+        c=APIClient();c.force_authenticate(self.staff)
+        self.assertEqual(c.post(f"/api/v1/staff/appointments/{dental['id']}/decision/",{'version':1,'action':'decline'},format='json').status_code,200)
+        token=self.client.get('/api/v1/public/session/').data['csrf']
+        self.assertEqual(self.client.post(f"/api/v1/public/appointments/{psych['id']}/withdraw/",{'version':1},format='json',HTTP_X_CSRFTOKEN=token).status_code,200)
+        self.assertEqual(set(AppointmentRequest.objects.values_list('status',flat=True)),{'declined','withdrawn'})

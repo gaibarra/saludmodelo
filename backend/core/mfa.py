@@ -57,13 +57,14 @@ def recovery_bound(request,device):
 def status(request):
     user=request.user
     demo_password_only=settings.MFA_DEMO_PASSWORD_ONLY and not settings.PATIENT_PORTAL_ENABLED
+    pilot_password_only=settings.MFA_PASSWORD_ONLY_PILOT
     if not user.is_authenticated:
-        return {'authenticated':False,'username':'','mfa_required':False,'mfa_enabled':False,'mfa_verified':False,'password_only_demo':demo_password_only}
+        return {'authenticated':False,'username':'','mfa_required':False,'mfa_enabled':False,'mfa_verified':False,'password_only_demo':demo_password_only,'password_only_pilot':pilot_password_only}
     device=MFADevice.objects.filter(user=user).first()
-    needed=not demo_password_only and (required(user) or bool(device and (device.enabled or device.recovery_required)))
+    needed=not (demo_password_only or pilot_password_only) and (required(user) or bool(device and (device.enabled or device.recovery_required)))
     checked=verified(request,device)
     return {'authenticated':not needed or checked,'username':user.username,'mfa_required':needed,
-            'mfa_enabled':bool(device and device.enabled),'mfa_verified':checked,'password_only_demo':demo_password_only,
+            'mfa_enabled':bool(device and device.enabled),'mfa_verified':checked,'password_only_demo':demo_password_only,'password_only_pilot':pilot_password_only,
             'mfa_configured':bool(settings.MFA_ENCRYPTION_KEY),
             'recovery_pending':bool(device and device.recovery_required),
             'recovery_enrollment_allowed':recovery_bound(request,device),

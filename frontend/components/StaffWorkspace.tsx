@@ -79,6 +79,7 @@ export default function StaffWorkspace({ planning = false }: { planning?: boolea
   const [user, setUser] = useState("");
   const [ready, setReady] = useState(false);
   const [passwordOnlyDemo, setPasswordOnlyDemo] = useState(false);
+  const [passwordOnlyPilot, setPasswordOnlyPilot] = useState(false);
   const [error, setError] = useState("");
   const [services, setServices] = useState<Service[]>([]);
   const [service, setService] = useState<number>();
@@ -104,6 +105,7 @@ export default function StaffWorkspace({ planning = false }: { planning?: boolea
       .then((s) => {
         setCsrf(s.csrf);
         setPasswordOnlyDemo(!!s.password_only_demo);
+        setPasswordOnlyPilot(!!s.password_only_pilot);
         if (s.username && !s.authenticated) setMfa(s);
         if (s.authenticated) {
           setUser(s.username);
@@ -171,8 +173,9 @@ export default function StaffWorkspace({ planning = false }: { planning?: boolea
           <ul className="staff-features"><li>Prácticas y seguimiento de alumnos</li><li>Evaluación por competencias</li><li>Informes y cierre del ciclo académico</li></ul>
         </aside>}
         <div className={user ? "staff-content" : "staff-access-card"}>
-        {!user && !passwordOnlyDemo && <div className="staff-progress" aria-label="Etapas de acceso"><span className={!mfa ? "current" : "done"}>1 · Tu cuenta</span><span aria-hidden>—</span><span className={mfa ? "current" : ""}>2 · Verificación</span></div>}
-        {passwordOnlyDemo && <p className="staff-demo-access" role="status">Demostración y pruebas · Acceso con usuario y contraseña. El autenticador se reactivará antes de trabajar con información real.</p>}
+        {!user && !passwordOnlyDemo && !passwordOnlyPilot && <div className="staff-progress" aria-label="Etapas de acceso"><span className={!mfa ? "current" : "done"}>1 · Tu cuenta</span><span aria-hidden>—</span><span className={mfa ? "current" : ""}>2 · Verificación</span></div>}
+        {passwordOnlyPilot && <p className="staff-demo-access" role="status">Acceso del personal con usuario y contraseña habilitado para este piloto.</p>}
+        {passwordOnlyDemo && !passwordOnlyPilot && <p className="staff-demo-access" role="status">Demostración y pruebas · Acceso con usuario y contraseña. El autenticador se reactivará antes de trabajar con información real.</p>}
         {user && planning && (
           <nav
             className="panel flex flex-wrap gap-6"

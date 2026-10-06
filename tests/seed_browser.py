@@ -288,3 +288,13 @@ if os.environ.get('E2E_INSTITUTIONAL_CATALOG')=='1':
     from django.core.management import call_command
     import io
     call_command('import_institutional_services',institution=si.pk,actor=home_admin.username,apply=True,stdout=io.StringIO())
+
+# Only the guarded disposable cluster receives portal acceptance fixtures.
+if os.environ.get('E2E_PORTAL_PILOT')=='1':
+    from core.models import School,Campus,Site,Service,RoleAssignment
+    campus=Campus.objects.create(institution=institution,name='Campus del ensayo de portal')
+    site=Site.objects.create(campus=campus,name='Sede del ensayo de portal')
+    for code,slug in [('salud','psicologia'),('odontologia','odontologia')]:
+        school=School.objects.get_or_create(institution=institution,code=code,defaults={'name':code})[0]
+        service=Service.objects.create(site=site,school=school,name='Servicio de ensayo '+slug,public_slug=slug,confirmed=True)
+        RoleAssignment.objects.create(service=service,user=director,role='manager',starts=timezone.localdate()-timedelta(days=1),ends=timezone.localdate()+timedelta(days=30),approved_by=operator)

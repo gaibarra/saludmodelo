@@ -218,3 +218,24 @@ class DemoPasswordOnlyTests(TestCase):
         self.assertFalse(response.data['authenticated'])
         self.assertTrue(response.data['mfa_required'])
         self.assertEqual(self.client.get('/api/v1/services/').status_code,403)
+
+@override_settings(MFA_REQUIRE_PRIVILEGED=True,MFA_ENCRYPTION_KEY=Fernet.generate_key().decode(),MFA_DEMO_PASSWORD_ONLY=False,MFA_PASSWORD_ONLY_PILOT=True,PATIENT_PORTAL_ENABLED=True)
+class PersistentPilotPasswordTests(TestCase):
+    def test_pilot_retains_device_and_reenabling_mfa_blocks_existing_session(self):
+        from .mfa import cipher
+        cache.clear();self.addCleanup(cache.clear)
+        user=get_user_model().objects.create_superuser('pilot-admin',password='PilotPassword123!')
+        device=MFADevice.objects.create(user=user,enabled=True,generation=4,secret=cipher().encrypt(pyotp.random_base32().encode()).decode())
+        before=MFADevice.objects.filter(pk=device.pk).values().get()
+        client=APIClient()
+        self.assertEqual(client.post('/api/v1/session/',{'username':user.username,'password':'wrong'},format='json').status_code,400)
+        response=client.post('/api/v1/session/',{'username':user.username,'password':'PilotPassword123!'},format='json')
+        self.assertTrue(response.data['authenticated'])
+        self.assertTrue(response.data['password_only_pilot'])
+        self.assertFalse(response.data['password_only_demo'])
+        self.assertEqual(client.get('/api/v1/schools/').status_code,200)
+        self.assertEqual(MFADevice.objects.filter(pk=device.pk).values().get(),before)
+        self.assertNotIn('mfa_verified_at',client.session)
+        with override_settings(MFA_PASSWORD_ONLY_PILOT=False):
+            self.assertTrue(client.get('/api/v1/session/').data['mfa_required'])
+            self.assertEqual(client.get('/api/v1/schools/').status_code,403)

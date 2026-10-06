@@ -57,3 +57,6 @@ PATIENT_PORTAL_ENABLED=os.getenv('PATIENT_PORTAL_ENABLED','0')=='1'
 
 # Temporary, explicit demonstration mode; never active with patient intake.
 MFA_DEMO_PASSWORD_ONLY=os.getenv('MFA_DEMO_PASSWORD_ONLY','0')=='1'
+
+# Explicitly authorized persistent-registration pilot; reversible, off by default.
+MFA_PASSWORD_ONLY_PILOT=os.getenv('MFA_PASSWORD_ONLY_PILOT','0')=='1'

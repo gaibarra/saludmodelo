@@ -51,6 +51,7 @@ class TaskSerializer(serializers.ModelSerializer):
 
 class SessionSerializer(serializers.Serializer):
     password_only_demo=serializers.BooleanField(required=False)
+    password_only_pilot=serializers.BooleanField(required=False)
     mfa_required=serializers.BooleanField()
     mfa_enabled=serializers.BooleanField()
     mfa_verified=serializers.BooleanField()

@@ -4,6 +4,7 @@ import { api, setCsrf } from "../lib/api";
 export type Session = {
   csrf: string;
   password_only_demo?: boolean;
+  password_only_pilot?: boolean;
   authenticated: boolean;
   username: string;
   mfa_required: boolean;

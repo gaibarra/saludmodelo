@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import PasswordChange from "../../components/PasswordChange";
 import ExceptionalRecovery from './ExceptionalRecovery';
 import MFA, { Session } from "../../components/MFA";
 import { api, setCsrf } from "../../lib/api";
@@ -19,6 +20,7 @@ export default function Security() {
     <main>
       <h1>Seguridad de la cuenta</h1>
       {error && <p role="alert">{error}</p>}
+      {session?.authenticated && <PasswordChange/>}
       {session?.authenticated && <ExceptionalRecovery username={session.username}/>}
       {session?.username ? (
         <MFA

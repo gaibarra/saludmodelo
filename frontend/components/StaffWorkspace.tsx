@@ -149,6 +149,7 @@ export default function StaffWorkspace({ planning = false }: { planning?: boolea
           <span><strong>Salud y Odontología</strong><small>UNIVERSIDAD MODELO</small></span>
         </Link>
         <Link href="/" className="staff-return">← Portal de servicios</Link>
+        {user && <Link href="/seguridad">Cambiar contraseña</Link>}
         {user && (
           <button
             onClick={async () => {

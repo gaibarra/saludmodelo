@@ -1,3 +1,4 @@
+from .person_names import person_name
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers, viewsets
 from rest_framework.decorators import action
@@ -70,7 +71,7 @@ class ConsultationView(viewsets.ReadOnlyModelViewSet):
         value=request.query_params.get('instance','')
         if not value.isdecimal():raise ValidationError('Seleccione una pregunta.')
         instance=get_object_or_404(QuestionnaireInstance,pk=int(value),service_id__in=scopes(request.user,CONSULT_ROLES))
-        values={a.user_id:{'id':a.user_id,'name':a.user.get_full_name() or a.user.username,'username':a.user.username} for a in recipients(instance,request.user)}
+        values={a.user_id:{'id':a.user_id,'name':person_name(a.user),'username':a.user.username} for a in recipients(instance,request.user)}
         return Response({'people':list(values.values())})
     @extend_schema(request=MessageInput,responses=RequestSerializer)
     @action(detail=True,methods=['post'])

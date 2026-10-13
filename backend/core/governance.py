@@ -20,7 +20,7 @@ def require_institution(user, institution_id):
 
 def managed_services(user):
     from .school_access import managed_schools
-    return Service.objects.filter(Q(site__campus__institution_id__in=managed_institutions(user)) | Q(pk__in=scopes(user, {'director'})) | Q(school_id__in=managed_schools(user)))
+    return Service.objects.filter(Q(site__campus__institution_id__in=managed_institutions(user)) | Q(pk__in=scopes(user, {'director'})) | Q(school_id__in=managed_schools(user)),archived_at__isnull=True)
 
 def can_manage(user, service):
     return managed_services(user).filter(pk=service.pk).exists()

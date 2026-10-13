@@ -49,6 +49,7 @@ class Site(models.Model):
     name=models.CharField(max_length=120)
     timezone=models.CharField(max_length=60,default='America/Merida')
 class Service(models.Model):
+    archived_at=models.DateTimeField(null=True,blank=True)
     school=models.ForeignKey(School,null=True,blank=True,on_delete=models.PROTECT)
     public_slug=models.CharField(max_length=40,unique=True,null=True,blank=True)
     etag=models.PositiveIntegerField(default=0)

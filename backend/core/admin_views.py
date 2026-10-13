@@ -1,3 +1,4 @@
+from .person_names import person_name
 from django.contrib.auth import get_user_model
 from django.db import transaction, IntegrityError
 from django.db.models import Q, Exists, OuterRef
@@ -30,7 +31,7 @@ class SetupView(APIView):
         sites = Site.objects.filter(campus__in=campuses)
         services = managed_services(request.user).select_related('site__campus')
         members = InstitutionMember.objects.filter(institution__in=institutions, user__is_active=True).select_related('user')
-        return Response({'institutions': list(institutions.values('id', 'name')), 'campuses': list(campuses.values('id', 'name', 'institution')), 'sites': list(sites.values('id', 'name', 'campus', 'timezone')), 'services': ServiceAdminSerializer(services, many=True).data, 'users': [{'id': m.user_id, 'username': m.user.username, 'name': m.user.get_full_name(), 'institution': m.institution_id} for m in members], 'questionnaire_services': ServiceAdminSerializer(questionnaire_services(request.user).select_related('site__campus'), many=True).data})
+        return Response({'institutions': list(institutions.values('id', 'name')), 'campuses': list(campuses.values('id', 'name', 'institution')), 'sites': list(sites.values('id', 'name', 'campus', 'timezone')), 'services': ServiceAdminSerializer(services, many=True).data, 'users': [{'id': m.user_id, 'username': m.user.username, 'name': person_name(m.user), 'institution': m.institution_id} for m in members], 'questionnaire_services': ServiceAdminSerializer(questionnaire_services(request.user).select_related('site__campus'), many=True).data})
 
 class CampusCreate(APIView):
     @extend_schema(request=CampusInput, responses={201: OpenApiTypes.OBJECT})

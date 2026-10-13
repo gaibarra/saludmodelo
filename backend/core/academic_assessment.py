@@ -1,3 +1,4 @@
+from .person_names import person_name
 """Versioned competency evaluations and preserved, scoped cycle closing reports."""
 import hashlib
 import json
@@ -28,11 +29,11 @@ def rubric_item(r):
     return {'id':r.pk,'competency':r.competency_id,'cycle':r.competency.cycle_id,'service':r.competency.service_id,
         'service_name':r.competency.service.name,'program':r.competency.program,'code':r.competency.code,'version':r.version,
         'title':r.title,'criterion':r.criterion,'levels':r.levels,'required_level':r.required_level,'required':r.required,
-        'author':r.created_by.get_full_name() or r.created_by.username,'rationale':r.rationale,'created_at':r.created_at.isoformat()}
+        'author':person_name(r.created_by),'rationale':r.rationale,'created_at':r.created_at.isoformat()}
 
 def evaluation_item(e):
     return {'id':e.pk,'placement':e.placement_id,'competency':e.competency_id,'rubric':e.rubric_id,'version':e.version,
-        'score':e.score,'rationale':e.rationale,'evidence':e.evidence,'evaluator':e.evaluator.get_full_name() or e.evaluator.username,
+        'score':e.score,'rationale':e.rationale,'evidence':e.evidence,'evaluator':person_name(e.evaluator),
         'created_at':e.created_at.isoformat(),'rubric_snapshot':rubric_item(e.rubric)}
 
 def evaluation_state(r,e,practice_map):
@@ -170,7 +171,7 @@ def build_snapshot(cycle):
     rubrics=list(latest_rubrics().filter(competency__cycle=cycle).order_by('competency_id'))
     ps=AcademicPlacement.objects.filter(cycle=cycle).select_related('student__user','supervisor','service__site').prefetch_related('practices__events__actor','evaluations__evaluator','evaluations__rubric__created_by','evaluations__rubric__competency__service').order_by('student_id','id')
     for p in ps:
-        student=students.setdefault(p.student_id,{'id':p.student_id,'name':p.student.user.get_full_name() or p.student.user.username,'enrollment':p.student.enrollment,'program':p.student.program,'placements':[],'totals':empty_totals(),'issues':[]})
+        student=students.setdefault(p.student_id,{'id':p.student_id,'name':person_name(p.student.user),'enrollment':p.student.enrollment,'program':p.student.program,'placements':[],'totals':empty_totals(),'issues':[]})
         pr=list(p.practices.all());pm={x.pk:x for x in pr};pt=empty_totals();issues=[]
         for row in pr:
             pt[row.status]['participations']+=1;pt[row.status]['minutes']+=row.minutes
@@ -188,8 +189,8 @@ def build_snapshot(cycle):
             if p.target_minutes and pt['validated']['minutes']<p.target_minutes:issues.append('Meta de minutos validados pendiente.')
         practice_rows=[]
         for row in pr:
-            practice_rows.append({'id':row.pk,'version':row.etag,**snapshot(row),'history':[{'version':e.version,'action':e.action,'actor':e.actor.get_full_name() or e.actor.username,'rationale':e.rationale,'snapshot':e.snapshot,'created_at':e.created_at.isoformat()} for e in sorted(row.events.all(),key=lambda e:e.version)]})
-        entry={'id':p.pk,'service':p.service_id,'service_name':p.service.name,'site_name':p.service.site.name,'group':p.group,'supervisor':p.supervisor.get_full_name() or p.supervisor.username,'starts':p.starts.isoformat(),'ends':p.ends.isoformat(),'target_minutes':p.target_minutes,'revoked_at':p.revoked_at.isoformat() if p.revoked_at else None,'revocation_reason':p.revocation_reason,'totals':pt,'practices':practice_rows,'competencies':evaluations,'issues':issues}
+            practice_rows.append({'id':row.pk,'version':row.etag,**snapshot(row),'history':[{'version':e.version,'action':e.action,'actor':person_name(e.actor),'rationale':e.rationale,'snapshot':e.snapshot,'created_at':e.created_at.isoformat()} for e in sorted(row.events.all(),key=lambda e:e.version)]})
+        entry={'id':p.pk,'service':p.service_id,'service_name':p.service.name,'site_name':p.service.site.name,'group':p.group,'supervisor':person_name(p.supervisor),'starts':p.starts.isoformat(),'ends':p.ends.isoformat(),'target_minutes':p.target_minutes,'revoked_at':p.revoked_at.isoformat() if p.revoked_at else None,'revocation_reason':p.revocation_reason,'totals':pt,'practices':practice_rows,'competencies':evaluations,'issues':issues}
         student['placements'].append(entry);merge_totals(student['totals'],pt);merge_totals(totals,pt)
         context=[f'{p.service.name} / rotación {p.pk}: {issue}' for issue in issues];student['issues'].extend(context)
         all_issues.extend([f'{p.student.enrollment}: {issue}' for issue in context])
@@ -221,7 +222,7 @@ def report_item(row,user,selected=None,detail=False):
     if digest(row.snapshot)!=row.digest:raise ValidationError('La integridad del informe no pudo verificarse.')
     content,kind=report_snapshot(row,user,selected)
     manager=can_manage_academic(user,row.cycle)
-    result={'school':row.cycle.school_id,'school_name':row.cycle.school.name if row.cycle.school_id else 'Sin clasificar','id':row.pk,'cycle':row.cycle_id,'cycle_name':row.snapshot['cycle']['name'],'sequence':row.sequence,'source_revision':row.source_revision,'kind':kind,'created_at':row.created_at,'created_by':row.created_by.get_full_name() or row.created_by.username,'closed_at':row.closed_at,'closed_by':row.closed_by.get_full_name() or row.closed_by.username if row.closed_by else None,'close_reason':row.close_reason if manager else ('Cierre documental autorizado por Dirección.' if row.closed_at else ''),'current_closure':row.cycle.closed_report_id==row.pk,'stale':not row.closed_at and row.cycle.revision!=row.source_revision,'issues_count':len(content['issues']),'can_close':manager and not row.closed_at and not row.cycle.closed_at and row.cycle.revision==row.source_revision,'can_reopen':manager and row.cycle.closed_report_id==row.pk,'digest':digest(content)}
+    result={'school':row.cycle.school_id,'school_name':row.cycle.school.name if row.cycle.school_id else 'Sin clasificar','id':row.pk,'cycle':row.cycle_id,'cycle_name':row.snapshot['cycle']['name'],'sequence':row.sequence,'source_revision':row.source_revision,'kind':kind,'created_at':row.created_at,'created_by':person_name(row.created_by),'closed_at':row.closed_at,'closed_by':person_name(row.closed_by) if row.closed_by else None,'close_reason':row.close_reason if manager else ('Cierre documental autorizado por Dirección.' if row.closed_at else ''),'current_closure':row.cycle.closed_report_id==row.pk,'stale':not row.closed_at and row.cycle.revision!=row.source_revision,'issues_count':len(content['issues']),'can_close':manager and not row.closed_at and not row.cycle.closed_at and row.cycle.revision==row.source_revision,'can_reopen':manager and row.cycle.closed_report_id==row.pk,'digest':digest(content)}
     if detail:result['snapshot']=content
     return result
 

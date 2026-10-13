@@ -1,3 +1,4 @@
+from .person_names import person_name
 """Public service catalogue, private patient requests, and staff confirmation."""
 import re
 import uuid
@@ -42,7 +43,7 @@ STAFF_ROLES={'director','coordinator','manager','clinical'}
 
 def available_slugs():
     today=timezone.localdate()
-    return set(Service.objects.filter(confirmed=True,public_slug__in=SLUGS,roleassignment__role__in=STAFF_ROLES,roleassignment__starts__lte=today,roleassignment__ends__gte=today,roleassignment__revoked_at__isnull=True,roleassignment__user__is_active=True).values_list('public_slug',flat=True))
+    return set(Service.objects.filter(archived_at__isnull=True,confirmed=True,public_slug__in=SLUGS,roleassignment__role__in=STAFF_ROLES,roleassignment__starts__lte=today,roleassignment__ends__gte=today,roleassignment__revoked_at__isnull=True,roleassignment__user__is_active=True).values_list('public_slug',flat=True))
 
 def enabled():
     if not settings.PATIENT_PORTAL_ENABLED:raise PermissionDenied('Las cuentas y solicitudes de usuarios de servicios aún no están habilitadas.')
@@ -58,7 +59,15 @@ def item(row):
     return {'id':str(row.public_id),'service':row.service_slug,'site_preference':row.site_preference,'preferred_day':row.preferred_day,'status':row.status,'confirmed_start':row.confirmed_start,'confirmed_site':row.confirmed_site,'etag':row.etag,'created_at':row.created_at}
 
 class RegisterInput(StrictSerializer):
-    name=serializers.CharField(max_length=150)
+    name=serializers.CharField(max_length=150,required=False)
+    first_name=serializers.CharField(max_length=150,required=False)
+    last_name=serializers.CharField(max_length=150,required=False)
+    def validate(self,data):
+        if "name" in data:
+            if "first_name" in data or "last_name" in data:raise serializers.ValidationError("Use nombre separado o nombre completo, no ambos.")
+        elif not data.get("first_name") or not data.get("last_name"):
+            raise serializers.ValidationError("Indique apellidos y nombres.")
+        return data
     email=serializers.EmailField(max_length=254)
     phone=serializers.CharField(max_length=20)
     password=serializers.CharField(min_length=12,max_length=128,trim_whitespace=False,write_only=True)
@@ -122,11 +131,11 @@ class PatientRegister(APIView):
         User=get_user_model()
         try:
             with transaction.atomic():
-                user=User.objects.create_user(username='paciente_'+uuid.uuid4().hex,email=email,password=v['password'],first_name=v['name'])
+                user=User.objects.create_user(username='paciente_'+uuid.uuid4().hex,email=email,password=v['password'],first_name=v.get('first_name',v.get('name','')),last_name=v.get('last_name',''))
                 PatientProfile.objects.create(user=user,email_normalized=email,phone=v['phone'])
         except IntegrityError:raise ValidationError({'email':'No se pudo crear esta cuenta. Revise el correo o utilice el acceso existente.'})
         login(request,user)
-        return Response({'authenticated':True,'name':user.first_name,'email':email,'csrf':get_token(request)},status=201)
+        return Response({'authenticated':True,'name':person_name(user),'email':email,'csrf':get_token(request)},status=201)
 
 class PatientSession(APIView):
     authentication_classes=[SessionAuthentication]
@@ -137,7 +146,7 @@ class PatientSession(APIView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
     def get(self,request):
         profile=PatientProfile.objects.filter(user=request.user,user__is_active=True).first() if request.user.is_authenticated and settings.PATIENT_PORTAL_ENABLED else None
-        return Response({'enabled':settings.PATIENT_PORTAL_ENABLED,'authenticated':bool(profile),'name':profile.user.first_name if profile else '', 'email':profile.email_normalized if profile else '', 'csrf':get_token(request)})
+        return Response({'enabled':settings.PATIENT_PORTAL_ENABLED,'authenticated':bool(profile),'name':person_name(profile.user) if profile else '', 'email':profile.email_normalized if profile else '', 'csrf':get_token(request)})
     @extend_schema(request=LoginInput,responses=OpenApiTypes.OBJECT)
     @method_decorator(csrf_protect)
     def post(self,request):
@@ -147,7 +156,7 @@ class PatientSession(APIView):
         user=authenticate(request,username=profile.user.username,password=v['password']) if profile else None
         if not user:return Response({'detail':'Correo o contraseña incorrectos.'},status=400)
         login(request,user)
-        return Response({'enabled':True,'authenticated':True,'name':user.first_name,'email':profile.email_normalized,'csrf':get_token(request)})
+        return Response({'enabled':True,'authenticated':True,'name':person_name(user),'email':profile.email_normalized,'csrf':get_token(request)})
 
 class PatientAppointments(APIView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
@@ -197,7 +206,7 @@ class StaffAppointments(APIView):
             if pk<1:raise ValidationError('Paginación inválida.')
             q=q.filter(pk__lt=pk)
         rows=list(q.select_related('patient__user').order_by('-id')[:51]);next_before=rows[49].pk if len(rows)>50 else None
-        results=[{**item(row),'patient_name':row.patient.user.first_name,'patient_email':row.patient.email_normalized,'patient_phone':row.patient.phone} for row in rows[:50]]
+        results=[{**item(row),'patient_name':person_name(row.patient.user),'patient_email':row.patient.email_normalized,'patient_phone':row.patient.phone} for row in rows[:50]]
         response=Response({'results':results,'next_before':next_before,'services':sorted(slugs)});response['Cache-Control']='private, no-store';return response
 
 class StaffAppointmentDecision(APIView):

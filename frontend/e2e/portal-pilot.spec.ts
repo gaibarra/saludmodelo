@@ -3,6 +3,7 @@ test('portal persistente registra, solicita en ambas escuelas y reingresa', asyn
  test.skip(process.env.E2E_PORTAL_PILOT !== '1','Requires isolated portal fixture');
  await page.goto('/portal/cuenta');
  await expect(page.getByRole('heading',{name:'Crear cuenta de usuario de servicios'})).toBeVisible();
+ await page.getByLabel('Apellidos',{exact:true}).fill('Pérez López');
  await page.getByLabel('Nombre',{exact:true}).fill('Usuario del ensayo aislado');
  await page.getByLabel('Correo electrónico').fill('portal@example.invalid');
  await page.getByLabel('Teléfono de contacto').fill('9991234567');

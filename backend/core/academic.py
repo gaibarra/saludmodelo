@@ -1,3 +1,4 @@
+from .person_names import person_name
 """Academic participation records; no clinical chart or automatic accreditation."""
 from django.contrib.auth import get_user_model
 from django.db import transaction, IntegrityError
@@ -43,10 +44,10 @@ def can_review(user,p):
 def practice_item(p,user):
     row={field:getattr(p,field) for field in FIELDS}
     row.update(id=p.pk,placement=p.placement_id,etag=p.etag,status=p.status,created_at=p.created_at,
-        student=p.placement.student_id,student_name=p.placement.student.user.get_full_name() or p.placement.student.user.username,
+        student=p.placement.student_id,student_name=person_name(p.placement.student.user),
         enrollment=p.placement.student.enrollment,program=p.placement.student.program,group=p.placement.group,
         service=p.placement.service_id,service_name=p.placement.service.name,cycle=p.placement.cycle_id,
-        supervisor_name=p.placement.supervisor.get_full_name() or p.placement.supervisor.username,
+        supervisor_name=person_name(p.placement.supervisor),
         can_resubmit=p.placement.student.user_id==user.pk and not p.placement.revoked_at and not p.placement.cycle.closed_at and p.status=='returned',
         can_review=can_review(user,p.placement) and p.status=='submitted',
         can_void=not p.placement.cycle.closed_at and p.status!='void' and p.placement.student.user_id!=user.pk and (can_review(user,p.placement) or is_manager(user,p.placement)))
@@ -59,10 +60,10 @@ def event(p,user,action,rationale=''):
     AcademicPracticeEvent.objects.create(practice=p,version=p.etag,action=action,actor=user,rationale=rationale,snapshot=snapshot(p))
 
 def placement_item(p,user):
-    return {'id':p.pk,'student':p.student_id,'student_name':p.student.user.get_full_name() or p.student.user.username,
+    return {'id':p.pk,'student':p.student_id,'student_name':person_name(p.student.user),
         'enrollment':p.student.enrollment,'program':p.student.program,'cycle':p.cycle_id,'cycle_name':p.cycle.name,'school':p.cycle.school_id,'school_name':p.cycle.school.name if p.cycle.school_id else 'Sin clasificar',
         'service':p.service_id,'service_name':p.service.name,'site_name':p.service.site.name,'supervisor':p.supervisor_id,
-        'supervisor_name':p.supervisor.get_full_name() or p.supervisor.username,'group':p.group,'starts':p.starts,'ends':p.ends,
+        'supervisor_name':person_name(p.supervisor),'group':p.group,'starts':p.starts,'ends':p.ends,
         'target_minutes':p.target_minutes,'revoked_at':p.revoked_at,'revocation_reason':p.revocation_reason,
         'can_submit':p.student.user_id==user.pk and not p.revoked_at and p.service.confirmed and not p.cycle.closed_at,
         'can_manage':is_manager(user,p) and not p.cycle.closed_at}
@@ -165,14 +166,14 @@ class AcademicOptions(AcademicView):
         visible=placements(request.user)
         institutions=Institution.objects.filter(Q(pk__in=managed)|Q(pk__in=School.objects.filter(pk__in=schools).values('institution_id'))|Q(pk__in=visible.values('student__institution_id'))|Q(pk__in=AcademicStudent.objects.filter(user=request.user).values('institution_id'))).distinct()
         members=InstitutionMember.objects.filter(Q(institution_id__in=managed)|Q(user_id__in=SchoolMember.objects.filter(school_id__in=schools).values('user_id'),institution_id__in=School.objects.filter(pk__in=schools).values('institution_id')),user__is_active=True,user__patient_profile__isnull=True).select_related('user').distinct()
-        services=Service.objects.filter(Q(site__campus__institution_id__in=managed)|Q(school_id__in=schools),confirmed=True).select_related('site__campus')
+        services=Service.objects.filter(Q(site__campus__institution_id__in=managed)|Q(school_id__in=schools),confirmed=True,archived_at__isnull=True).select_related('site__campus')
         supervisors=RoleAssignment.objects.filter(service__in=services,role__in=SUPERVISE,revoked_at__isnull=True,user__is_active=True).select_related('user')
         school_rows=School.objects.filter(Q(institution_id__in=managed)|Q(pk__in=schools)|Q(pk__in=shared_schools(request.user))).distinct()
         return Response({'institutions':[{'id':i.pk,'name':i.name,'can_manage':i.pk in managed} for i in institutions],
             'schools':[{'id':s.pk,'institution':s.institution_id,'name':s.name,'can_manage':s.pk in schools or s.institution_id in managed} for s in school_rows],
-            'users':[{'id':m.user_id,'institution':m.institution_id,'schools':list(SchoolMember.objects.filter(user=m.user,school__in=school_rows).values_list('school_id',flat=True)),'name':m.user.get_full_name() or m.user.username} for m in members],
+            'users':[{'id':m.user_id,'institution':m.institution_id,'schools':list(SchoolMember.objects.filter(user=m.user,school__in=school_rows).values_list('school_id',flat=True)),'name':person_name(m.user)} for m in members],
             'services':[{'id':s.pk,'institution':s.site.campus.institution_id,'school':s.school_id,'name':s.name,'site_name':s.site.name} for s in services],
-            'supervisors':[{'id':a.user_id,'service':a.service_id,'name':a.user.get_full_name() or a.user.username,'starts':a.starts,'ends':a.ends} for a in supervisors]})
+            'supervisors':[{'id':a.user_id,'service':a.service_id,'name':person_name(a.user),'starts':a.starts,'ends':a.ends} for a in supervisors]})
 
 class AcademicCycles(AcademicView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
@@ -194,7 +195,7 @@ class AcademicStudents(AcademicView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
     def get(self,request):
         qs=AcademicStudent.objects.filter(owned(request.user,read=True)|Q(user=request.user)|Q(pk__in=placements(request.user).values('student_id'))).select_related('user').distinct().order_by('enrollment','id')
-        return self.page(request,qs,lambda s:{'id':s.pk,'institution':s.institution_id,'user':s.user_id,'name':s.user.get_full_name() or s.user.username,'enrollment':s.enrollment,'program':s.program,'school':s.school_id})
+        return self.page(request,qs,lambda s:{'id':s.pk,'institution':s.institution_id,'user':s.user_id,'name':person_name(s.user),'enrollment':s.enrollment,'program':s.program,'school':s.school_id})
     @extend_schema(request=StudentInput,responses=OpenApiTypes.OBJECT)
     @transaction.atomic
     def post(self,request):
@@ -220,7 +221,7 @@ class AcademicPlacements(AcademicView):
         cycle=get_object_or_404(AcademicCycle,pk=v['cycle'],institution_id=student.institution_id,school_id=student.school_id)
         cycle=lock_open(cycle.pk)
         AcademicStudent.objects.select_for_update().get(pk=student.pk)
-        service=get_object_or_404(Service.objects.select_for_update(),pk=v['service'],confirmed=True,site__campus__institution_id=student.institution_id,school_id=cycle.school_id)
+        service=get_object_or_404(Service.objects.select_for_update(),pk=v['service'],confirmed=True,archived_at__isnull=True,site__campus__institution_id=student.institution_id,school_id=cycle.school_id)
         if not cycle.starts<=v['starts']<=v['ends']<=cycle.ends:raise ValidationError('La rotación debe quedar dentro de las fechas del ciclo.')
         if v['supervisor']==student.user_id:raise ValidationError('El alumno no puede ser su propio supervisor.')
         if not RoleAssignment.objects.filter(user_id=v['supervisor'],user__is_active=True,service=service,role__in=SUPERVISE,revoked_at__isnull=True,starts__lte=v['starts'],ends__gte=v['ends']).exists():raise ValidationError('El supervisor requiere un nombramiento clínico o responsable del servicio que cubra toda la rotación.')
@@ -320,7 +321,7 @@ class AcademicHistory(AcademicView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
     def get(self,request,pk):
         row=get_object_or_404(AcademicPractice,pk=pk,placement__in=placements(request.user))
-        return self.page(request,row.events.select_related('actor').order_by('version'),lambda e:{'id':e.pk,'version':e.version,'action':e.action,'actor':e.actor.get_full_name() or e.actor.username,'rationale':e.rationale,'snapshot':e.snapshot,'created_at':e.created_at})
+        return self.page(request,row.events.select_related('actor').order_by('version'),lambda e:{'id':e.pk,'version':e.version,'action':e.action,'actor':person_name(e.actor),'rationale':e.rationale,'snapshot':e.snapshot,'created_at':e.created_at})
 
 class AcademicSummary(AcademicView):
     @extend_schema(parameters=[AcademicFilter],responses=OpenApiTypes.OBJECT)

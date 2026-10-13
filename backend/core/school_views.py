@@ -1,3 +1,4 @@
+from .person_names import person_name
 from django.contrib.auth import get_user_model
 from django.db import transaction,IntegrityError
 from django.db.models import Q,Sum,Count
@@ -43,8 +44,8 @@ class SchoolManagement(AcademicView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
     def get(self,request,pk):
         school=get_object_or_404(manageable(request.user),pk=pk)
-        return Response({**item(school,request.user),'users':[{'id':m.user_id,'name':m.user.get_full_name() or m.user.username} for m in SchoolMember.objects.filter(school=school,user__is_active=True,user__patient_profile__isnull=True).select_related('user').order_by('user_id')],
-            'services':list(Service.objects.filter(school=school).values('id','name','site_id','confirmed','etag')),
+        return Response({**item(school,request.user),'users':[{'id':m.user_id,'name':person_name(m.user)} for m in SchoolMember.objects.filter(school=school,user__is_active=True,user__patient_profile__isnull=True).select_related('user').order_by('user__last_name','user__first_name','user_id')],
+            'services':list(Service.objects.filter(school=school,archived_at__isnull=True).values('id','name','site_id','confirmed','etag')),
             'sites':list(Site.objects.filter(campus__institution_id=school.institution_id).values('id','name'))})
 
 class SchoolUserCreate(AcademicView):

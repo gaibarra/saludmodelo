@@ -44,7 +44,7 @@ class PeriodInput(StrictSerializer):
         return value
 
 def assignments(institution,person,day):
-    return RoleAssignment.objects.filter(service__site__campus__institution_id=institution,user_id=person,user__is_active=True,role__in=WORK|{'director'},revoked_at__isnull=True,starts__lte=day,ends__gte=day)
+    return RoleAssignment.objects.filter(service__archived_at__isnull=True,service__site__campus__institution_id=institution,user_id=person,user__is_active=True,role__in=WORK|{'director'},revoked_at__isnull=True,starts__lte=day,ends__gte=day)
 def validate_person(institution,person,day,rows,minutes,unavailable):
     if not assignments(institution,person,day).exists() and not (minutes==0 and unavailable==0 and not rows and CapacityDay.objects.filter(institution_id=institution,person_id=person,day=day).exists()):raise serializers.ValidationError('La persona necesita un nombramiento de trabajo vigente para ese día.')
     valid=set(assignments(institution,person,day).values_list('service_id',flat=True))
@@ -122,8 +122,8 @@ class CapacityBoard(Private):
         for day in days:
             current=state(day);valid=set(assignments(institution,day.person_id,day.day).values_list('service_id',flat=True));allocated=sum(a['minutes'] for a in current['allocations'])
             rows.append({'id':day.pk,'person':day.person_id,'name':day.person.username,'day':day.day,**current,'available_minutes':day.minutes-day.unavailable_minutes if day.confirmed else None,'unallocated_minutes':day.minutes-day.unavailable_minutes-allocated if day.confirmed else None,'needs_review':(not valid and day.minutes>0) or any(a['service_id'] not in valid for a in current['allocations'])})
-        people=RoleAssignment.objects.filter(service__site__campus__institution_id=institution,user__is_active=True,role__in=WORK|{'director'},revoked_at__isnull=True,starts__lt=end,ends__gte=start).order_by('user_id').values('user_id','user__username').distinct()
-        return Response({'start':start,'end_exclusive':end,'user_id':request.user.pk,'days':rows,'changes':[serialize_change(c) for c in changes],'people':list({p['user_id']:p for p in list(people)+[{'user_id':d.person_id,'user__username':d.person.username} for d in days]}.values()),'services':list(Service.objects.filter(site__campus__institution_id=institution).order_by('id').values('id','name')),'scope':'institution_only','reference_hours':{'base':295,'reserve':59,'total':354,'status':'provisional_reference_not_multiplied_or_committed'}})
+        people=RoleAssignment.objects.filter(service__archived_at__isnull=True,service__site__campus__institution_id=institution,user__is_active=True,role__in=WORK|{'director'},revoked_at__isnull=True,starts__lt=end,ends__gte=start).order_by('user_id').values('user_id','user__username').distinct()
+        return Response({'start':start,'end_exclusive':end,'user_id':request.user.pk,'days':rows,'changes':[serialize_change(c) for c in changes],'people':list({p['user_id']:p for p in list(people)+[{'user_id':d.person_id,'user__username':d.person.username} for d in days]}.values()),'services':list(Service.objects.filter(site__campus__institution_id=institution,archived_at__isnull=True).order_by('id').values('id','name')),'scope':'institution_only','reference_hours':{'base':295,'reserve':59,'total':354,'status':'provisional_reference_not_multiplied_or_committed'}})
     @extend_schema(request=CapacityInput,responses=OpenApiTypes.OBJECT)
     def post(self,request,institution):
         s=CapacityInput(data=request.data);s.is_valid(raise_exception=True)

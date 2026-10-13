@@ -11,6 +11,8 @@ from core.models import InstitutionMandate,CapacityDay,CapacityChange,RoleAssign
 class CapacityTests(TestCase):
     def setUp(self):
         fixtures.TrackingTests.setUp(self)
+        # The capacity scenarios use October 2026; grants must cover those dates.
+        RoleAssignment.objects.update(starts=date(2026,10,1))
         self.institution=self.service.site.campus.institution
         for person in [self.author,self.reviewer]:InstitutionMandate.objects.create(institution=self.institution,user=person,approved_by=self.admin,starts=timezone.localdate()-timedelta(days=1),ends=date(2027,12,31),rationale='Synthetic institutional capacity authority')
         self.url=f'/api/v1/capacity/institutions/{self.institution.pk}/'

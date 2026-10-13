@@ -37,6 +37,13 @@ export default function SchoolsPage() {
   const [error, setError] = useState(""),
     [message, setMessage] = useState(""),
     [busy, setBusy] = useState(false);
+  const [personSearch, setPersonSearch] = useState("");
+  const [selectedPerson, setSelectedPerson] = useState("");
+  const normalizeName = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es").trim();
+  const searchWords = normalizeName(personSearch).split(/\s+/).filter(Boolean);
+  const people = [...(management?.users ?? [])]
+    .filter(person => searchWords.every(word => normalizeName(person.name).includes(word)))
+    .sort((a, b) => a.name.localeCompare(b.name, "es", { sensitivity: "base" }) || a.id - b.id);
   const revision = useRef(0);
   const selectedSchool = useRef<number|undefined>(undefined);
   const [accountRevision,setAccountRevision]=useState(0);
@@ -45,6 +52,8 @@ export default function SchoolsPage() {
     selectedSchool.current=id;
     setBoard(undefined);
     setManagement(undefined);
+    setPersonSearch("");
+    setSelectedPerson("");
     setError("");
     setMessage("");
     try {
@@ -260,10 +269,15 @@ export default function SchoolsPage() {
                   >
                     <h3>Asignar función de colaborador</h3>
                     <label>
+                      Buscar persona por nombre o apellidos
+                      <input type="search" value={personSearch} onChange={e => {setPersonSearch(e.target.value);setSelectedPerson("");}} placeholder="Escribe un nombre o apellido" autoComplete="off" />
+                    </label>
+                    <p role="status">{people.length === 0 ? "No se encontraron personas con esa búsqueda." : `${people.length} persona${people.length === 1 ? "" : "s"} disponible${people.length === 1 ? "" : "s"}, en orden alfabético.`}</p>
+                    <label>
                       Persona
-                      <select aria-label="Persona" name="user" required>
+                      <select aria-label="Persona" name="user" required value={selectedPerson} onChange={e => setSelectedPerson(e.target.value)}>
                         <option value="">Seleccionar</option>
-                        {management.users.map((u) => (
+                        {people.map((u) => (
                           <option key={u.id} value={u.id}>
                             {u.name}
                           </option>

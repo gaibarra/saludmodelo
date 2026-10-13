@@ -13,7 +13,7 @@ def scopes(user,roles=READ):
     if SchoolMandate.objects.filter(user=user).exists():assignments=assignments.filter(service__school_id__in=managed_schools(user))
     predicate=Q(pk__in=assignments.values('service_id'))
     if 'director' in roles:predicate|=Q(school_id__in=managed_schools(user))
-    return Service.objects.filter(predicate).annotate(service_id=F('id')).values_list('service_id',flat=True)
+    return Service.objects.filter(predicate,archived_at__isnull=True).annotate(service_id=F('id')).values_list('service_id',flat=True)
 
 def require(user,service,roles):
     if not scopes(user,roles).filter(service_id=service).exists():

@@ -1,3 +1,4 @@
+from .person_names import person_name
 """Cash ledger: school isolation, accountable shifts and append-only movements."""
 from decimal import Decimal
 from django.contrib.auth import get_user_model
@@ -21,13 +22,13 @@ ZERO=Decimal('0.00')
 INCOMING={'collection','fund_in'}
 
 def managers(user):
-    return Service.objects.filter(Q(school_id__in=managed_schools(user))|Q(site__campus__institution_id__in=managed_institutions(user)))
+    return Service.objects.filter(Q(school_id__in=managed_schools(user))|Q(site__campus__institution_id__in=managed_institutions(user)),archived_at__isnull=True)
 
 def eligible(user):
     # Membership is rechecked on every request, including historical access.
     q=Q(school_id__in=SchoolMember.objects.filter(user=user).values('school_id'))|Q(school__isnull=True,site__campus__institution_id__in=InstitutionMember.objects.filter(user=user).values('institution_id'))
     if SchoolMandate.objects.filter(user=user).exists():q &= Q(school_id__in=managed_schools(user))
-    return Service.objects.filter(q)
+    return Service.objects.filter(q,archived_at__isnull=True)
 
 def shifts(user):
     return CashShift.objects.filter(Q(service__in=managers(user))|Q(responsible=user,service__in=eligible(user))).select_related('service__school','responsible','assigned_by')
@@ -36,7 +37,7 @@ def services(user):
     return Service.objects.filter(Q(pk__in=managers(user))|Q(pk__in=shifts(user).values('service_id'))).select_related('school')
 
 def money(value):return str(value.quantize(Decimal('0.01')))
-def name(user):return user.get_full_name() or user.username
+def name(user):return person_name(user)
 
 def balance(shift):
     totals={x['kind']:x['total'] for x in shift.movements.values('kind').annotate(total=Sum('amount'))}
@@ -114,7 +115,7 @@ class CashCandidates(AcademicView):
     @extend_schema(responses=OpenApiTypes.OBJECT)
     def get(self,request,pk):
         service=get_object_or_404(managers(request.user),pk=pk)
-        return self.page(request,candidates(service).order_by('first_name','id'),lambda u:{'id':u.pk,'name':name(u),'username':u.username})
+        return self.page(request,candidates(service).order_by('last_name','first_name','id'),lambda u:{'id':u.pk,'name':name(u),'username':u.username})
 class CashShifts(AcademicView):
     @extend_schema(operation_id="cash_shifts_list",responses=OpenApiTypes.OBJECT)
     def get(self,request):return self.page(request,filtered(request),lambda s:shift_item(s,request.user))

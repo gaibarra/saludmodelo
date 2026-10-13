@@ -144,3 +144,15 @@ Implementado modal «Corregir nombre» para autoridades elegibles/cuenta propia 
 0.40.1 — 13/10/2026: creadas las 56 cuentas de colaboradores de Odontología solicitadas, Mario excluido y cuentas existentes conservadas. Publicado y verificado el cambio de contraseña personal en `/seguridad`, accesible desde `/personal`. Relación de usuarios entregada en CSV sin contraseñas. ODO-OBJ-11: identidad/trazabilidad de cuentas parcialmente atendidas; permisos clínicos, asignaciones por servicio y protección integral del expediente siguen pendientes. No se otorgaron funciones automáticamente. Ver docs/CUENTAS_ODONTOLOGIA_0_40_1.md.
 
 13/10/2026 — Completadas 53 altas de colaboradores de Salud desde Excel, excluyendo a Carla y conservando las 65 cuentas existentes. Acceso y cambio de contraseña personal verificados; CSV de usuarios entregado. Asignaciones operativas y permisos clínicos por servicio siguen pendientes de Dirección; no se otorgaron automáticamente. No se modificó Odontología ni se realizó despliegue. Ver docs/CUENTAS_SALUD_2026_10_13.md.
+
+0.40.2 — Selector de Persona con búsqueda y orden alfabético implementado y compilado; paquete sólo frontend preparado. Pendiente autorización de publicación. Conserva separación escolar y asignaciones; no modifica registros. Ver docs/SELECTOR_PERSONAS_0_40_2.md.
+
+0.40.2 publicada el 13/10/2026 tras autorización: selector de Persona con búsqueda y orden alfabético verificado por HTTPS en ambas escuelas. Resuelto pendiente de publicación. Sólo frontend actualizado; backend, base y demás contenedores intactos.
+
+0.40.3 — Apellidos antes de nombres implementado en presentación de personas y formularios; portal con captura separada y compatibilidad histórica. Sin reescritura de cuentas/informes. Paquete preparado; pendiente autorización de publicación. Los nombres completos antiguos sin separación requieren corrección explícita, no inferencia automática. Ver docs/APELLIDOS_PRIMERO_0_40_3.md.
+
+0.40.3 publicada y verificada el 13/10/2026 tras autorización expresa. Resuelto despliegue de apellidos antes de nombres en la aplicación. Se mantienen por corregir explícitamente los nombres antiguos guardados sin separación; no se modifican snapshots ni documentos históricos. Ver docs/APELLIDOS_PRIMERO_0_40_3.md.
+
+0.40.4 — Preparado retiro operativo de `Odontología · DEMO`, conservando historial y Clínica Dental como servicio real. Migración, filtros, comando auditado, respaldo y ensayo privado listos. Pendientes autorización específica, publicación del backend y archivo del servicio 1 con verificación HTTPS; producción aún sin cambios. No se cierra alcance clínico ni validación de ODO-OBJ-11. Ver docs/ARCHIVO_SERVICIOS_DEMO_0_40_4.md.
+
+0.40.4 publicada y retiro aplicado el 13/10/2026 tras autorización expresa. Cerrado pendiente de publicación/archivo de DEMO: Odontología muestra sólo Clínica Dental; servicios de Salud, cuentas e historial conservados. Verificación HTTPS aprobada, sin afectar aplicaciones ajenas. Los pendientes clínicos e institucionales previos continúan abiertos.

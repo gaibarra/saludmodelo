@@ -484,6 +484,8 @@ export default function Administration() {
                         maxLength={150}
                         required
                       />
+                      <label htmlFor="last-name">Apellidos</label>
+                      <input id="last-name" name="last_name" maxLength={150} />
                       <label htmlFor="first-name">Nombre</label>
                       <input
                         id="first-name"
@@ -491,8 +493,7 @@ export default function Administration() {
                         maxLength={150}
                         required
                       />
-                      <label htmlFor="last-name">Apellidos</label>
-                      <input id="last-name" name="last_name" maxLength={150} />
+
                       <label htmlFor="new-password">
                         Contraseña inicial (mínimo 12 caracteres)
                       </label>

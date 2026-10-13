@@ -78,7 +78,7 @@ class SchoolAccounts(AcademicView):
         state=request.query_params.get('state','all')
         if state not in ('all','active','inactive'):raise ValidationError('Estado inválido.')
         if state!='all':qs=qs.filter(is_active=state=='active')
-        if query:qs=qs.annotate(full_name=Concat('first_name',Value(' '),'last_name')).filter(Q(username__icontains=query)|Q(full_name__icontains=query)|Q(email__icontains=query))
+        if query:qs=qs.annotate(full_name=Concat('last_name',Value(' '),'first_name'), legacy_full_name=Concat('first_name',Value(' '),'last_name')).filter(Q(username__icontains=query)|Q(full_name__icontains=query)|Q(legacy_full_name__icontains=query)|Q(email__icontains=query))
         return self.page(request,qs.order_by('last_name','first_name','id'),lambda u:item(u,school,request.user))
 
 class SchoolAccountDetail(AcademicView):
